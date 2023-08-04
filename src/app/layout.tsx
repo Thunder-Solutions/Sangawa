@@ -2,6 +2,16 @@ import './theme.css';
 import type { Metadata } from 'next';
 import { Quicksand } from 'next/font/google';
 import { PropsWithChildren } from 'react';
+import { fetchGlobalContent } from '@/api-client/api-client';
+
+const [error, globalContent] = await fetchGlobalContent();
+
+if (error || !globalContent) {
+	const _error = error instanceof Error
+		? error
+		: new Error('Content could not be found.');
+	console.error(_error);
+};
 
 const font = Quicksand({ subsets: ['latin'] });
 
@@ -13,6 +23,11 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: PropsWithChildren) => {
 	return (
 		<html lang="en">
+			<head>
+				<script type="application/json" id="GlobalContent" dangerouslySetInnerHTML={{
+					__html: JSON.stringify(globalContent),
+				}}></script>
+			</head>
 			<body className={font.className}>{children}</body>
 		</html>
 	);
