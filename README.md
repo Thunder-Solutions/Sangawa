@@ -14,7 +14,7 @@ We are using those fancy new [server components](https://nextjs.org/docs/getting
 
 > **NOTE**: you will need 'use-client' at the top of each page. Right now, only the layout is taking advantage of server-side data fetching. To pass it through to client components, we're dropping the result in a JSON script tag, then grabbing the data synchronously from there.
 
-I wrote an "api client" that is basically just a stand-in for what will eventually be HTTP requests. For now, I just hardcoded the data we'll expect to get back. Pretending it's a real API will make it easy to transition when the time comes.
+I wrote an "api client" that is basically just a stand-in for what will eventually be HTTP requests. For now, I just built-in the data we'll expect to get back. We should add ALL text content to this layer, and avoid hardcoding any text content in the components. Pretending it's a real API will make it easy to transition to a CMS when the time comes, where each department will be in control of their own text.
 
 With Netlify's edge functions, we'll have limited access to runtime server-side code, but I think we can mostly get away with just fetching page information from a third party. Just something to keep in mind.
 
