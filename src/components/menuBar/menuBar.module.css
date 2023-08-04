@@ -1,0 +1,33 @@
+.registerLink {
+	font-family: "Brasspounder";
+	background-color: var(--color-brand-1-c);
+	border: 0 solid;
+	border-radius: 5px;
+	color: var(--color-brand-1);
+	text-decoration: none;
+	padding: 10px 20px;
+	display: inline-block;
+}
+
+.navBar {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.navLink {
+	color: var(--color-brand-1-c);
+	text-decoration: none;
+}
+
+.logo {
+	height: 50px;
+}
+
+.menuBar {
+	background-color: var(--color-brand-1);
+	padding: 5px 20px;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	justify-items: right;
+}

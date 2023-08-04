@@ -1,0 +1,19 @@
+:root {
+	--font-1: 'Quicksand', sans-serif;
+
+	--color-brand-1: #ff0000;
+	--color-brand-1-c: #fff;
+
+	--color-site-1: #e3ebee;
+	--color-site-1-c: #000;
+}
+
+html,
+body {
+	background-color: var(--color-site-1);
+	color: var(--color-site-1-c);
+	font-family: var(--font-1);
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
