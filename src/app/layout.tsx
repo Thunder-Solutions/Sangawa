@@ -4,9 +4,9 @@ import { Quicksand } from 'next/font/google';
 import { PropsWithChildren } from 'react';
 import { fetchGlobalContent } from '@/api-client/api-client';
 
-const [error, globalContent] = await fetchGlobalContent();
+const [error, global] = await fetchGlobalContent();
 
-if (error || !globalContent) {
+if (error || !global) {
 	const _error = error instanceof Error
 		? error
 		: new Error('Content could not be found.');
@@ -25,7 +25,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 		<html lang="en">
 			<head>
 				<script type="application/json" id="GlobalContent" dangerouslySetInnerHTML={{
-					__html: JSON.stringify(globalContent),
+					__html: JSON.stringify({ global }),
 				}}></script>
 			</head>
 			<body className={font.className}>{children}</body>

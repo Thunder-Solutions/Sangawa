@@ -6,34 +6,30 @@ export type ContentSet = {
 	}[],
 };
 
-type ContentMap = { [set: string]: ContentSet };
-
 // this represents our content for now. Should be easy enough to swap in a CMS later, with this setup.
-const contentMap: ContentMap = {
-	global: {
-		title: [
-			{ text: 'Sangawa Project' },
-		],
-		nav: [
-			{ text: 'Home', href: '/' },
-			{ text: 'About', href: '/about' },
-			{ text: 'Guests', href: '/guests' },
-			{ text: 'Events', href: '/events' },
-		],
-		register: [
-			{ text: 'REGISTER', href: '/registration' },
-		],
-	},
+const global: ContentSet = {
+	title: [
+		{ text: 'Sangawa Project' },
+	],
+	nav: [
+		{ text: 'Home', href: '/' },
+		{ text: 'About', href: '/about' },
+		{ text: 'Guests', href: '/guests' },
+		{ text: 'Events', href: '/events' },
+	],
+	register: [
+		{ text: 'REGISTER', href: '/registration' },
+	],
 };
 
-export const fetchGlobalContent = async (): Promise<Result<ContentMap>> => {
+export const fetchGlobalContent = async (): Promise<Result<ContentSet>> => {
 	return safeTry(() => {
-		return contentMap ?? {};
+		return global ?? {};
 	});
 };
 
 const cache: {
-	content: null | ContentMap,
+	content: null | { [set: string]: ContentSet },
 } = {
 	content: null,
 };
