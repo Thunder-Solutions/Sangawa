@@ -1,12 +1,15 @@
+'use client';
+
 import Head from 'next/head';
-import MenuBar from '@/components/menuBar/menuBar';
-import Page from '@/components/page/page';
+import Page from '@/components/page';
 
 const Home = () => {
 	return (
 		<Page>
-			<Head><title>Sangawa</title></Head>
-			<MenuBar />
+			<Head>
+				<title>Sangawa Project</title>
+			</Head>
+			{'(placeholder content)'}
 		</Page>
 	);
 };
