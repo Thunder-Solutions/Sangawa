@@ -1,28 +1,77 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { css, Scope } from 'react-shadow-scope';
 import { GlobalContent } from './page';
+import MobileNav from './mobileNav';
+import HamburgerIcon from './hamburgerIcon';
 
 const stylesheet = css`
 header {
 	background-color: var(--color-brand-1);
-	padding: 5px 20px;
+	padding: 0 20px;
 	display: grid;
 	grid-template-columns: auto 1fr;
 	justify-items: right;
 }
 .logo {
 	height: 50px;
+	margin: 5px 0;
 }
 nav {
 	display: flex;
-	gap: 1rem;
+	gap: .5rem;
 	align-items: center;
 }
 .nav-link {
 	color: var(--color-brand-1-c);
 	text-decoration: none;
+}
+.nav-link:hover {
+	background-color: var(--color-nav-hover);
+}
+nav > .nav-link {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 12px;
+}
+.subnav {
+	position: relative;
+	height: calc(100% + 11px);
+	cursor: pointer;
+}
+.subnav .subnav-btn {
+	border: none;
+  outline: none;
+	background-color: transparent;
+	font-family: inherit;
+	margin: calc(20% + 16px) 0 0 0;
+	cursor: pointer;
+}
+.subnav:hover {
+	background-color: var(--color-nav-hover);
+}
+.subnav:hover .subnav-content {
+	display: flex;
+}
+.subnav-content {
+	display: none;
+	flex-direction: column;
+	gap: 6px;
+	position: absolute;
+	top: 70px;
+	right: 0;
+	background-color: var(--color-brand-1);
+	z-index: 1;
+	border-radius: 5px;
+	text-align: right;
+	min-width: 175px;
+	padding: 12px 0;
+}
+.subnav-link {
+	padding: 4px 10px;
 }
 .register-link {
 	font-family: "Brasspounder";
@@ -34,6 +83,11 @@ nav {
 	padding: 10px 20px;
 	display: inline-block;
 }
+.mobile-nav-icon { display: none; }
+@media screen and (max-width: 767px) {
+	nav.desktop-nav .nav-link, a.register-link { display: none; }
+	nav .mobile-nav-icon { display: block; }
+}
 `;
 
 const MenuBar = () => {
@@ -42,6 +96,13 @@ const MenuBar = () => {
 	const titleText = global.title?.[0]?.text ?? '';
 	const registerTxt = global.register?.[0]?.text ?? '';
 	const registerHref = global.register?.[0]?.href ?? '';
+
+	const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+	const toggleMobileNav = () => {
+		setMobileNavOpen(!mobileNavOpen);
+	};
+
 	return (
 		<Scope stylesheet={stylesheet}>
 			<header>
@@ -54,18 +115,41 @@ const MenuBar = () => {
 						width={165}
 					/>
 				</Link>
-				<nav>
-					{nav?.map(({ text, href }) => (
-						<Link
-							key={href}
-							href={href}
-							className="nav-link"
-						>{text}</Link>
-					))}
+				<nav className="desktop-nav">
+					{nav?.map(({ text, href, children }) => {
+						if (children !== undefined && children.length > 0) {
+							return (
+								<div key={href} className="subnav">
+									<button className="nav-link subnav-btn">{text}</button>
+									<div className="subnav-content">
+										{children.map(({ text, href }) => (
+											<Link
+												key={href}
+												href={href}
+												className="nav-link subnav-link"
+											>{text}</Link>
+										))}
+									</div>
+								</div>
+							);
+						}
+
+						return (
+							<Link
+								key={href}
+								href={href}
+								className="nav-link"
+							>{text}</Link>
+						);
+					})}
 					<Link
 						href={registerHref}
 						className="register-link"
 					>{registerTxt}</Link>
+					<div className="mobile-nav-icon">
+						<HamburgerIcon isOpen={mobileNavOpen} onClick={toggleMobileNav} />
+						<MobileNav isOpen={mobileNavOpen} />
+					</div>
 				</nav>
 			</header>
 		</Scope>

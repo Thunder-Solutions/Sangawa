@@ -2,7 +2,9 @@ import { Result, safeTry } from '@/utilities/utilities';
 
 export type ContentSet = {
 	[collection: string]: {
-		[key: string]: string,
+		text: string,
+		href?: string,
+		children?: { text: string, href: string }[],
 	}[],
 };
 
@@ -13,7 +15,12 @@ const global: ContentSet = {
 	],
 	nav: [
 		{ text: 'Home', href: '/' },
-		{ text: 'About', href: '/about' },
+		{ text: 'About', href: '#about', children: [
+			{ text: 'Contact Us', href: '/contact-us' },
+			{ text: 'Media & Press', href: '/press' },
+			{ text: 'Hotel Reservations', href: '/hotel-reservations' },
+			{ text: 'Rules', href: '/rules' },
+		]},
 		{ text: 'Guests', href: '/guests' },
 		{ text: 'Events', href: '/events' },
 	],

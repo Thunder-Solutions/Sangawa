@@ -13,6 +13,8 @@ https://levelup.gitconnected.com/air-naming-css-color-variables-437cb4d261a6
 
 	--color-site-1: #e3ebee;
 	--color-site-1-c: #000;
+
+	--color-nav-hover: rgba(255, 255, 255, 0.25);
 }
 
 /*
@@ -27,4 +29,8 @@ body {
 	margin: 0;
 	padding: 0;
 	min-height: 100vh;
+	box-sizing: border-box
+}
+*, *:before, *:after {
+	box-sizing: inherit;
 }
