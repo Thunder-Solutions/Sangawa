@@ -9,14 +9,14 @@ import HamburgerIcon from './hamburgerIcon';
 const stylesheet = css`
 header {
 	background-color: var(--color-brand-1);
-	padding: 0 20px;
+	padding: 0 1.25rem;
 	display: grid;
 	grid-template-columns: auto 1fr;
 	justify-items: right;
 }
 .logo {
 	height: 50px;
-	margin: 5px 0;
+	margin: 0.375rem 0;
 }
 nav {
 	display: flex;
@@ -35,11 +35,11 @@ nav > .nav-link {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 0 12px;
+	padding: 0 0.75rem;
 }
 .subnav {
 	position: relative;
-	height: calc(100% + 11px);
+	height: calc(100% + 0.75rem);
 	cursor: pointer;
 }
 .subnav .subnav-btn {
@@ -47,7 +47,7 @@ nav > .nav-link {
   outline: none;
 	background-color: transparent;
 	font-family: inherit;
-	margin: calc(20% + 16px) 0 0 0;
+	margin: calc(20% + 1rem) 0 0 0;
 	cursor: pointer;
 }
 .subnav:hover {
@@ -59,28 +59,28 @@ nav > .nav-link {
 .subnav-content {
 	display: none;
 	flex-direction: column;
-	gap: 6px;
+	gap: 0.375rem;
 	position: absolute;
-	top: 70px;
+	top: 4.375rem;
 	right: 0;
 	background-color: var(--color-brand-1);
 	z-index: 1;
-	border-radius: 5px;
+	border-radius: 0.375rem;
 	text-align: right;
-	min-width: 175px;
-	padding: 12px 0;
+	min-width: 11rem;
+	padding: 0.75rem 0;
 }
 .subnav-link {
-	padding: 4px 10px;
+	padding: 0.25rem 0.625rem;
 }
 .register-link {
 	font-family: "Brasspounder";
 	background-color: var(--color-brand-1-c);
 	border: 0 solid;
-	border-radius: 5px;
+	border-radius: 0.375rem;
 	color: var(--color-brand-1);
 	text-decoration: none;
-	padding: 10px 20px;
+	padding: 0.625rem 1.25rem;
 	display: inline-block;
 }
 .mobile-nav-icon { display: none; }

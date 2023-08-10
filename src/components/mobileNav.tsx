@@ -7,21 +7,21 @@ import { GlobalContent } from './page';
 const stylesheet = css`
 nav {
 	position: absolute;
-	top: 66px;
-	right: 0px;
+	top: 4.125rem;
+	right: 0;
 	display: flex;
 	flex-direction: column;
 	gap: .5rem;
 	align-items: flex-end;
 	background-color: var(--color-brand-1);
-	padding: 12px 0;
+	padding: 0.75rem 0;
 }
 .nav-link {
 	color: var(--color-brand-1-c);
 	text-decoration: none;
 	width: 100%;
 	text-align: right;
-	padding: 4px 12px;
+	padding: 0.25rem 0.75rem;
 	box-sizing: border-box;
 }
 .nav-link:focus-within {
@@ -38,7 +38,7 @@ nav {
 	background-color: transparent;
 	font-family: inherit;
 	cursor: pointer;
-	margin-left: -2px;
+	margin-left: -0.125rem;
 }
 .subnav:focus-within {
 	background-color: var(--color-nav-hover);
@@ -49,29 +49,29 @@ nav {
 .subnav-content {
 	display: none;
 	flex-direction: column;
-	gap: 6px;
+	gap: 0.375rem;
 	position: absolute;
-	top: -13px;
-	right: 138px;
+	top: -0.813;
+	right: 8.625rem;
 	background-color: var(--color-brand-1);
 	z-index: 1;
-	border-radius: 5px;
+	border-radius: 0.375rem;
 	text-align: right;
-	min-width: 175px;
-	padding: 12px 0;
+	min-width: 11rem;
+	padding: 0.75rem 0;
 }
 .subnav-link {
-	padding: 4px 10px;
+	padding: 0.25rem 0.625rem;
 }
 .register-link {
 	font-family: "Brasspounder";
 	background-color: var(--color-brand-1-c);
 	border: 0 solid;
-	border-radius: 5px;
+	border-radius: 0.375rem;
 	color: var(--color-brand-1);
 	text-decoration: none;
-	padding: 10px 20px;
-	margin: 5px 10px;
+	padding: 0.625rem 1.25rem;
+	margin: 0.375rem 0.625rem;
 	display: inline-block;
 }
 `;

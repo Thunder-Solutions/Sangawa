@@ -18,7 +18,7 @@ const stylesheet = css`
 	.burger {
 		width: 2rem;
 		height: 0.25rem;
-		border-radius: 10px;
+		border-radius: 0.625rem;
 		background-color: white;
 		transform-origin: 1px;
 		transition: all 0.3s linear;
