@@ -1,11 +1,11 @@
 import { Result, safeTry } from '@/utilities/utilities';
 
+export type Content = {
+	[key: string]: string | Content[],
+}
+
 export type ContentSet = {
-	[collection: string]: {
-		text: string,
-		href?: string,
-		children?: { text: string, href: string }[],
-	}[],
+	[key: string]: Content[],
 };
 
 // this represents our content for now. Should be easy enough to swap in a CMS later, with this setup.

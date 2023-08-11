@@ -5,6 +5,8 @@ import { css, Scope } from 'react-shadow-scope';
 import { GlobalContent } from './page';
 import MobileNav from './mobileNav';
 import HamburgerIcon from './hamburgerIcon';
+import { getContent } from '@/utilities/utilities';
+import { Content } from '@/api-client/api-client';
 
 const stylesheet = css`
 header {
@@ -92,10 +94,10 @@ nav > .nav-link {
 
 const MenuBar = () => {
 	const global = useContext(GlobalContent);
-	const nav = global.nav ?? [];
-	const titleText = global.title?.[0]?.text ?? '';
-	const registerTxt = global.register?.[0]?.text ?? '';
-	const registerHref = global.register?.[0]?.href ?? '';
+	const nav = getContent<Content[]>(global.nav);
+	const titleText = getContent<string>(global.title?.[0]?.text);
+	const registerTxt = getContent<string>(global.register?.[0]?.text);
+	const registerHref = getContent<string>(global.register?.[0]?.href);
 
 	const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -117,17 +119,17 @@ const MenuBar = () => {
 				</Link>
 				<nav className="desktop-nav">
 					{nav?.map(({ text, href, children }) => {
-						if (children !== undefined && children.length > 0) {
+						if (Array.isArray(children) && children.length > 0) {
 							return (
-								<div key={href} className="subnav">
-									<button className="nav-link subnav-btn">{text}</button>
+								<div key={getContent<string>(href)} className="subnav">
+									<button className="nav-link subnav-btn">{getContent<string>(text)}</button>
 									<div className="subnav-content">
 										{children.map(({ text, href }) => (
 											<Link
-												key={href}
-												href={href}
+												key={getContent<string>(href)}
+												href={getContent<string>(href)}
 												className="nav-link subnav-link"
-											>{text}</Link>
+											>{getContent<string>(text)}</Link>
 										))}
 									</div>
 								</div>
@@ -136,10 +138,10 @@ const MenuBar = () => {
 
 						return (
 							<Link
-								key={href}
-								href={href}
+								key={getContent<string>(href)}
+								href={getContent<string>(href)}
 								className="nav-link"
-							>{text}</Link>
+							>{getContent<string>(text)}</Link>
 						);
 					})}
 					<Link
