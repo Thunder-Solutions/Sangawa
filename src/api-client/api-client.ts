@@ -31,6 +31,12 @@ const global: ContentSet = {
 	register: [
 		{ content: { text: 'REGISTER', href: '/registration' } },
 	],
+	twitter: [
+		{ content: { text: 'Twitter', href: 'https://twitter.com/sangawaproject' } },
+	],
+	facebook: [
+		{ content: { text: 'Facebook', href: 'https://facebook.com/sangawaproject' } },
+	],
 };
 
 export const fetchGlobalContent = async (): Promise<Result<ContentSet>> => {
@@ -50,7 +56,6 @@ const document = typeof window !== 'undefined' ? window.document : null;
 export const getContent = (collection: string): ContentSet => {
 	if (cache.content === null) {
 		const globalJSON = document?.querySelector('#GlobalContent')?.textContent;
-		console.log(globalJSON);
 		cache.content = JSON.parse(globalJSON ?? '{}');
 	}
 	return cache.content?.[collection] ?? {};
