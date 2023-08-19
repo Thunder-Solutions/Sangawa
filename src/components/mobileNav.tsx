@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useContext } from 'react';
 import { css, Scope } from 'react-shadow-scope';
 import { GlobalContent } from './page';
+import { getContent } from '@/utilities/utilities';
 
 const stylesheet = css`
 nav {
@@ -80,23 +81,24 @@ export interface Props {
 	isOpen: boolean,
 };
 
+type LinkContent = { text: string, href: string };
+
 const MobileNav = (props: Props) => {
 	const { isOpen } = props;
 	const global = useContext(GlobalContent);
-	const nav = global.nav ?? [];
-	const registerTxt = global.register?.[0]?.content?.text ?? '';
-	const registerHref = global.register?.[0]?.content?.href ?? '';
-	
+	const nav = getContent<LinkContent>(global.nav);
+	const register = getContent<LinkContent>(global.register)[0];
+
 	return (
 		<Scope stylesheet={stylesheet}>
 			<nav style={{ display: isOpen ? 'flex' : 'none'}}>
-				{nav?.map(({ content, children }) => {
+				{nav.map(({ content, children }) => {
 					if (children !== undefined && children.length > 0) {
 						return (
-							<div key={content?.href} className="subnav">
-								<button className="nav-link subnav-btn">{`< ${content?.text}`}</button>
+							<div key={content.href} className="subnav">
+								<button className="nav-link subnav-btn">{`< ${content.text}`}</button>
 								<div className="subnav-content">
-									{children.map(({ content }) => (
+									{getContent<LinkContent>(children).map(({ content }) => (
 										<Link
 											key={content?.href}
 											href={content?.href as string}
@@ -110,16 +112,16 @@ const MobileNav = (props: Props) => {
 
 					return (
 						<Link
-							key={content?.href}
-							href={content?.href as string}
+							key={content.href}
+							href={content.href as string}
 							className="nav-link"
-						>{content?.text}</Link>
+						>{content.text}</Link>
 					);
 				})}
 				<Link
-					href={registerHref}
+					href={register.content.href}
 					className="register-link"
-				>{registerTxt}</Link>
+				>{register.content.text}</Link>
 			</nav>
 		</Scope>
 	);

@@ -1,3 +1,5 @@
+import { Content } from '@/api-client/api-client';
+
 export type TypedObject<T> = { [key: PropertyKey]: T };
 export type UnknownObj = TypedObject<unknown>;
 
@@ -36,4 +38,8 @@ export const safeTry = <T>(fn: Promise<T> | (() => T)): Result<T> | Promise<Resu
 	}
 	error = new Error(`safeTry() expects a function or promise, but got ${fn}`);
 	return [error, result];
+};
+
+export const getContent = <T extends {}>(content: Content[]): Content<T>[] => {
+	return (content ?? []) as Content<T>[];
 };

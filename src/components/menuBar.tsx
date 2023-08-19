@@ -5,6 +5,7 @@ import { css, Scope } from 'react-shadow-scope';
 import { GlobalContent } from './page';
 import MobileNav from './mobileNav';
 import HamburgerIcon from './hamburgerIcon';
+import { getContent } from '@/utilities/utilities';
 
 const stylesheet = css`
 header {
@@ -90,12 +91,14 @@ nav > .nav-link {
 }
 `;
 
+type LinkContent = { text: string, href: string };
+type TextContent = { text: string };
+
 const MenuBar = () => {
 	const global = useContext(GlobalContent);
-	const nav = global.nav ?? [];
-	const titleText = global.title?.[0]?.content?.text;
-	const registerTxt = global.register?.[0]?.content?.text;
-	const registerHref = global.register?.[0]?.content?.href;
+	const nav = getContent<LinkContent>(global.nav);
+	const register = getContent<LinkContent>(global.register)[0];
+	const title = getContent<TextContent>(global.title)[0];
 
 	const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -110,24 +113,24 @@ const MenuBar = () => {
 					<Image
 						className="logo"
 						src="/sangawa-logo-light.svg"
-						alt={titleText as string}
+						alt={title.content.text}
 						height={50}
 						width={165}
 					/>
 				</Link>
 				<nav className="desktop-nav">
-					{nav?.map(({ content, children }) => {
+					{nav.map(({ content, children }) => {
 						if (Array.isArray(children) && children.length > 0) {
 							return (
-								<div key={content?.href} className="subnav">
-									<button className="nav-link subnav-btn">{content?.text}</button>
+								<div key={content.href} className="subnav">
+									<button className="nav-link subnav-btn">{content.text}</button>
 									<div className="subnav-content">
-										{children.map(({ content }) => (
+										{getContent<LinkContent>(children).map(({ content }) => (
 											<Link
-												key={content?.href}
-												href={content?.href as string}
+												key={content.href}
+												href={content.href}
 												className="nav-link subnav-link"
-											>{content?.text}</Link>
+											>{content.text}</Link>
 										))}
 									</div>
 								</div>
@@ -136,16 +139,16 @@ const MenuBar = () => {
 
 						return (
 							<Link
-								key={content?.href}
-								href={content?.href as string}
+								key={content.href}
+								href={content.href as string}
 								className="nav-link"
-							>{content?.text}</Link>
+							>{content.text}</Link>
 						);
 					})}
 					<Link
-						href={registerHref as string}
+						href={register.content.href}
 						className="register-link"
-					>{registerTxt}</Link>
+					>{register.content.text}</Link>
 					<div className="mobile-nav-icon">
 						<HamburgerIcon isOpen={mobileNavOpen} onClick={toggleMobileNav} />
 						<MobileNav isOpen={mobileNavOpen} />

@@ -1,9 +1,7 @@
 import { Result, safeTry } from '@/utilities/utilities';
 
-export type Content = {
-	content?: {
-		[key: string]: string,
-	},
+export type Content<T = { [key: string]: string }> = {
+	content: T,
 	children?: Content[],
 };
 
