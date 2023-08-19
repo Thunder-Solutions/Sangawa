@@ -145,10 +145,12 @@ const MenuBar = () => {
 							>{content.text}</Link>
 						);
 					})}
+
 					<Link
 						href={register.content.href}
 						className="register-link"
 					>{register.content.text}</Link>
+
 					<div className="mobile-nav-icon">
 						<HamburgerIcon isOpen={mobileNavOpen} onClick={toggleMobileNav} />
 						<MobileNav isOpen={mobileNavOpen} />
