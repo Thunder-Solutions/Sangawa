@@ -84,24 +84,24 @@ const MobileNav = (props: Props) => {
 	const { isOpen } = props;
 	const global = useContext(GlobalContent);
 	const nav = global.nav ?? [];
-	const registerTxt = global.register?.[0]?.text ?? '';
-	const registerHref = global.register?.[0]?.href ?? '';
+	const registerTxt = global.register?.[0]?.content?.text ?? '';
+	const registerHref = global.register?.[0]?.content?.href ?? '';
 	
 	return (
 		<Scope stylesheet={stylesheet}>
 			<nav style={{ display: isOpen ? 'flex' : 'none'}}>
-				{nav?.map(({ text, href, children }) => {
+				{nav?.map(({ content, children }) => {
 					if (children !== undefined && children.length > 0) {
 						return (
-							<div key={href} className="subnav">
-								<button className="nav-link subnav-btn">{`< ${text}`}</button>
+							<div key={content?.href} className="subnav">
+								<button className="nav-link subnav-btn">{`< ${content?.text}`}</button>
 								<div className="subnav-content">
-									{children.map(({ text, href }) => (
+									{children.map(({ content }) => (
 										<Link
-											key={href}
-											href={href}
+											key={content?.href}
+											href={content?.href as string}
 											className="nav-link subnav-link"
-										>{text}</Link>
+										>{content?.text}</Link>
 									))}
 								</div>
 							</div>
@@ -110,10 +110,10 @@ const MobileNav = (props: Props) => {
 
 					return (
 						<Link
-							key={href}
-							href={href}
+							key={content?.href}
+							href={content?.href as string}
 							className="nav-link"
-						>{text}</Link>
+						>{content?.text}</Link>
 					);
 				})}
 				<Link

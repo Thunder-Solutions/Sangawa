@@ -5,8 +5,6 @@ import { css, Scope } from 'react-shadow-scope';
 import { GlobalContent } from './page';
 import MobileNav from './mobileNav';
 import HamburgerIcon from './hamburgerIcon';
-import { getContent } from '@/utilities/utilities';
-import { Content } from '@/api-client/api-client';
 
 const stylesheet = css`
 header {
@@ -94,10 +92,10 @@ nav > .nav-link {
 
 const MenuBar = () => {
 	const global = useContext(GlobalContent);
-	const nav = getContent<Content[]>(global.nav);
-	const titleText = getContent<string>(global.title?.[0]?.text);
-	const registerTxt = getContent<string>(global.register?.[0]?.text);
-	const registerHref = getContent<string>(global.register?.[0]?.href);
+	const nav = global.nav ?? [];
+	const titleText = global.title?.[0]?.content?.text;
+	const registerTxt = global.register?.[0]?.content?.text;
+	const registerHref = global.register?.[0]?.content?.href;
 
 	const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -112,24 +110,24 @@ const MenuBar = () => {
 					<Image
 						className="logo"
 						src="/sangawa-logo-light.svg"
-						alt={titleText}
+						alt={titleText as string}
 						height={50}
 						width={165}
 					/>
 				</Link>
 				<nav className="desktop-nav">
-					{nav?.map(({ text, href, children }) => {
+					{nav?.map(({ content, children }) => {
 						if (Array.isArray(children) && children.length > 0) {
 							return (
-								<div key={getContent<string>(href)} className="subnav">
-									<button className="nav-link subnav-btn">{getContent<string>(text)}</button>
+								<div key={content?.href} className="subnav">
+									<button className="nav-link subnav-btn">{content?.text}</button>
 									<div className="subnav-content">
-										{children.map(({ text, href }) => (
+										{children.map(({ content }) => (
 											<Link
-												key={getContent<string>(href)}
-												href={getContent<string>(href)}
+												key={content?.href}
+												href={content?.href as string}
 												className="nav-link subnav-link"
-											>{getContent<string>(text)}</Link>
+											>{content?.text}</Link>
 										))}
 									</div>
 								</div>
@@ -138,14 +136,14 @@ const MenuBar = () => {
 
 						return (
 							<Link
-								key={getContent<string>(href)}
-								href={getContent<string>(href)}
+								key={content?.href}
+								href={content?.href as string}
 								className="nav-link"
-							>{getContent<string>(text)}</Link>
+							>{content?.text}</Link>
 						);
 					})}
 					<Link
-						href={registerHref}
+						href={registerHref as string}
 						className="register-link"
 					>{registerTxt}</Link>
 					<div className="mobile-nav-icon">

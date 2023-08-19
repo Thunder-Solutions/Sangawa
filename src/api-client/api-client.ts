@@ -1,8 +1,11 @@
 import { Result, safeTry } from '@/utilities/utilities';
 
 export type Content = {
-	[key: string]: string | Content[],
-}
+	content?: {
+		[key: string]: string,
+	},
+	children?: Content[],
+};
 
 export type ContentSet = {
 	[key: string]: Content[],
@@ -11,21 +14,24 @@ export type ContentSet = {
 // this represents our content for now. Should be easy enough to swap in a CMS later, with this setup.
 const global: ContentSet = {
 	title: [
-		{ text: 'Sangawa Project' },
+		{ content: { text: 'Sangawa Project' } },
 	],
 	nav: [
-		{ text: 'Home', href: '/' },
-		{ text: 'About', href: '#about', children: [
-			{ text: 'Contact Us', href: '/contact-us' },
-			{ text: 'Media & Press', href: '/press' },
-			{ text: 'Hotel Reservations', href: '/hotel-reservations' },
-			{ text: 'Rules', href: '/rules' },
-		]},
-		{ text: 'Guests', href: '/guests' },
-		{ text: 'Events', href: '/events' },
+		{ content: { text: 'Home', href: '/' } },
+		{
+			content: { text: 'About', href: '#about' },
+			children: [
+				{ content: { text: 'Contact Us', href: '/contact-us' } },
+				{ content: { text: 'Media & Press', href: '/press' } },
+				{ content: { text: 'Hotel Reservations', href: '/hotel-reservations' } },
+				{ content: { text: 'Rules', href: '/rules' } },
+			],
+		},
+		{ content: { text: 'Guests', href: '/guests' } },
+		{ content: { text: 'Events', href: '/events' } },
 	],
 	register: [
-		{ text: 'REGISTER', href: '/registration' },
+		{ content: { text: 'REGISTER', href: '/registration' } },
 	],
 };
 
