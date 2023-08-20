@@ -22,6 +22,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "cli": "file:cli",
     "eslint-plugin-prefer-arrow": "^1.2.3"
   }
 }
