@@ -99,10 +99,10 @@ const MobileNav = (props: Props) => {
 								<div className="subnav-content">
 									{getTypedContent<LinkContent>(children).map(({ content }) => (
 										<Link
-											key={content?.href}
-											href={content?.href as string}
+											key={content.href}
+											href={content.href}
 											className="nav-link subnav-link"
-										>{content?.text}</Link>
+										>{content.text}</Link>
 									))}
 								</div>
 							</div>
@@ -112,7 +112,7 @@ const MobileNav = (props: Props) => {
 					return (
 						<Link
 							key={content.href}
-							href={content.href as string}
+							href={content.href}
 							className="nav-link"
 						>{content.text}</Link>
 					);

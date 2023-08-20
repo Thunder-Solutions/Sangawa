@@ -56,7 +56,7 @@ const document = typeof window !== 'undefined' ? window.document : null;
 export const getContent = (collection: string): ContentSet => {
 	if (cache.content === null) {
 		const globalJSON = document?.querySelector('#GlobalContent')?.textContent;
-		cache.content = JSON.parse(globalJSON ?? '{}');
+		cache.content = JSON.parse(globalJSON ?? JSON.stringify({ global }));
 	}
-	return cache.content?.[collection] ?? {};
+	return cache.content?.[collection] ?? global;
 };

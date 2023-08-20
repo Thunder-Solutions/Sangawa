@@ -40,6 +40,11 @@ export const safeTry = <T>(fn: Promise<T> | (() => T)): Result<T> | Promise<Resu
 	return [error, result];
 };
 
-export const getTypedContent = <T extends {}>(content: Content[]): Content<T>[] => {
-	return (content ?? []) as Content<T>[];
+export const getTypedContent = <T extends {}>(
+	content: Content[] | undefined,
+): Content<T>[] => {
+	if (typeof content === 'undefined') {
+		return [{ content: {} }] as Content<T>[];
+	}
+	return content as Content<T>[];
 };

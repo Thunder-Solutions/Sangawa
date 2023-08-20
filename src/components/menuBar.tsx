@@ -143,7 +143,7 @@ const MenuBar = () => {
 						return (
 							<Link
 								key={content.href}
-								href={content.href as string}
+								href={content.href}
 								className="nav-link"
 							>{content.text}</Link>
 						);
