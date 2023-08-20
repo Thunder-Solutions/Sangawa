@@ -40,6 +40,6 @@ export const safeTry = <T>(fn: Promise<T> | (() => T)): Result<T> | Promise<Resu
 	return [error, result];
 };
 
-export const getContent = <T extends {}>(content: Content[]): Content<T>[] => {
+export const getTypedContent = <T extends {}>(content: Content[]): Content<T>[] => {
 	return (content ?? []) as Content<T>[];
 };

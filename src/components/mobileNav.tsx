@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useContext } from 'react';
 import { css, Scope } from 'react-shadow-scope';
 import { GlobalContent } from './page';
-import { getContent } from '@/utilities/utilities';
+import { getTypedContent } from '@/utilities/utilities';
 
 const stylesheet = css`
 nav {
@@ -85,8 +85,8 @@ type LinkContent = { text: string, href: string };
 const MobileNav = (props: Props) => {
 	const { isOpen } = props;
 	const global = useContext(GlobalContent);
-	const nav = getContent<LinkContent>(global.nav);
-	const register = getContent<LinkContent>(global.register)[0];
+	const nav = getTypedContent<LinkContent>(global.nav);
+	const register = getTypedContent<LinkContent>(global.register)[0];
 
 	return (
 		<Scope stylesheet={stylesheet}>
@@ -97,7 +97,7 @@ const MobileNav = (props: Props) => {
 							<div key={content.href} className="subnav">
 								<button className="nav-link subnav-btn">{`< ${content.text}`}</button>
 								<div className="subnav-content">
-									{getContent<LinkContent>(children).map(({ content }) => (
+									{getTypedContent<LinkContent>(children).map(({ content }) => (
 										<Link
 											key={content?.href}
 											href={content?.href as string}

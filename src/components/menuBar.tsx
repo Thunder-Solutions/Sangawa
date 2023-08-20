@@ -5,7 +5,7 @@ import { css, Scope } from 'react-shadow-scope';
 import { GlobalContent } from './page';
 import MobileNav from './mobileNav';
 import HamburgerIcon from './hamburgerIcon';
-import { getContent } from '@/utilities/utilities';
+import { getTypedContent } from '@/utilities/utilities';
 import Icon from './icon';
 
 const stylesheet = css`
@@ -97,11 +97,11 @@ type TextContent = { text: string };
 
 const MenuBar = () => {
 	const global = useContext(GlobalContent);
-	const nav = getContent<LinkContent>(global.nav);
-	const register = getContent<LinkContent>(global.register)[0];
-	const title = getContent<TextContent>(global.title)[0];
-	const facebook = getContent<LinkContent>(global.facebook)[0];
-	const twitter = getContent<LinkContent>(global.twitter)[0];
+	const nav = getTypedContent<LinkContent>(global.nav);
+	const register = getTypedContent<LinkContent>(global.register)[0];
+	const title = getTypedContent<TextContent>(global.title)[0];
+	const facebook = getTypedContent<LinkContent>(global.facebook)[0];
+	const twitter = getTypedContent<LinkContent>(global.twitter)[0];
 
 	const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -128,7 +128,7 @@ const MenuBar = () => {
 								<div key={content.href} className="subnav">
 									<button className="nav-link subnav-btn">{content.text}</button>
 									<div className="subnav-content">
-										{getContent<LinkContent>(children).map(({ content }) => (
+										{getTypedContent<LinkContent>(children).map(({ content }) => (
 											<Link
 												key={content.href}
 												href={content.href}
