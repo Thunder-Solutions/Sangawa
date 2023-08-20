@@ -85,6 +85,10 @@ nav > .nav-link {
 	padding: 1rem 2rem;
 	display: inline-block;
 }
+.icon {
+	color: var(--color-brand-1-c);
+	font-size: 2rem;
+}
 .mobile-nav-icon { display: none; }
 @media screen and (max-width: 767px) {
 	nav.desktop-nav .nav-link, a.register-link { display: none; }
