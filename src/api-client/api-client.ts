@@ -14,6 +14,15 @@ const global: ContentSet = {
 	title: [
 		{ content: { text: 'Sangawa Project' } },
 	],
+	page: [
+		{
+			content: {
+				page: 'home',
+				title: 'Sangawa Project',
+				backdrop: 'Tekko-Japanese-Anime-Convention-Dealers-Room.jpg',
+			},
+		},
+	],
 	nav: [
 		{ content: { text: 'Home', href: '/' } },
 		{
