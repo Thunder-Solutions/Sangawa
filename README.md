@@ -30,6 +30,11 @@ Or the shorthand syntax:
 ```
 npx cli -c MyComponent
 ```
+> If you encounter "permission denied" error, try removing node modules and freshly installing.
+> ```
+> rm -rf node_modules
+> npm i
+> ```
 
 ## Updates
 Feel free to update this README at any time. Change, add, or remove whatever makes this project easier to understand.
