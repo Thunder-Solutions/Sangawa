@@ -51,7 +51,7 @@ nav {
 	flex-direction: column;
 	gap: 0.375rem;
 	position: absolute;
-	top: -0.813;
+	top: -0.813rem;
 	right: 8.625rem;
 	background-color: var(--color-brand-1);
 	z-index: 1;

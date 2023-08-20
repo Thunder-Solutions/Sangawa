@@ -158,17 +158,17 @@ const MenuBar = () => {
 						className="register-link"
 					>{register.content.text}</Link>
 
-					<div className="mobile-nav-icon">
-						<HamburgerIcon isOpen={mobileNavOpen} onClick={toggleMobileNav} />
-						<MobileNav isOpen={mobileNavOpen} />
-					</div>
-
 					<Link href={twitter.content.href}>
 						<Icon type="twitter" title={twitter.content.text} className="icon icon--twitter" />
 					</Link>
 					<Link href={facebook.content.href}>
 						<Icon type="facebook" title={facebook.content.text} className="icon icon--facebook" />
 					</Link>
+
+					<div className="mobile-nav-icon">
+						<HamburgerIcon isOpen={mobileNavOpen} onClick={toggleMobileNav} />
+						<MobileNav isOpen={mobileNavOpen} />
+					</div>
 				</nav>
 			</header>
 		</Scope>
