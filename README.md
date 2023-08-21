@@ -1,6 +1,13 @@
 # Sangawa Project
 
-This is the 
+This is the website controller for the Sngawa Project
+
+## To build:
+1. Clone the repository
+2. Run npm install
+3. Run npm build
+4. Run npm start
+5. The site should be running locally on http://localhost:3000
 
 ## Styles
  1. Avoid global CSS
