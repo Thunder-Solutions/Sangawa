@@ -1,9 +1,10 @@
 import { IconBaseProps } from 'react-icons';
-import { FaFacebook, FaTwitter } from 'react-icons/fa';
+import { FaAngleDown, FaFacebook, FaTwitter } from 'react-icons/fa';
 
 const iconMap = {
-	facebook: FaFacebook,
-	twitter: FaTwitter,
+	'facebook': FaFacebook,
+	'twitter': FaTwitter,
+	'down-chevron': FaAngleDown,
 };
 
 export type IconProps = {
