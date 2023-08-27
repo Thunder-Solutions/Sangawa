@@ -9,9 +9,9 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import Splash from '@/components/splash';
 
 type PageContent = {
-	page: string,
-	title: string,
-	backdrop: string,
+	page: string;
+	title: string;
+	backdrop: string;
 };
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
 	const homePage = pages.find(({ content }) => content.page === 'home');
 	return (
 		<ParallaxProvider>
-			<Splash/>
+			<Splash />
 			<Page>
 				<Head>
 					<title>{homePage?.content.title}</title>

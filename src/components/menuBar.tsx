@@ -9,7 +9,7 @@ import { getTypedContent } from '@/utilities/utilities';
 import Icon from './icon';
 import { theme } from '@/utilities/theme';
 
-type LinkContent = { text: string, href: string };
+type LinkContent = { text: string; href: string };
 type TextContent = { text: string };
 
 const MenuBar = () => {
@@ -27,7 +27,7 @@ const MenuBar = () => {
 		}
 		nav {
 			display: flex;
-			gap: .5rem;
+			gap: 0.5rem;
 			align-items: center;
 		}
 		.nav-link {
@@ -82,7 +82,7 @@ const MenuBar = () => {
 			padding: 0.25rem 0.625rem;
 		}
 		.register-link {
-			font-family: "Brasspounder";
+			font-family: 'Brasspounder';
 			background-color: var(--color-brand-1-c);
 			border: 0 solid;
 			border-radius: 0.5rem;
@@ -95,10 +95,17 @@ const MenuBar = () => {
 			color: var(--color-brand-1-c);
 			font-size: 2rem;
 		}
-		.mobile-nav-icon { display: none; }
+		.mobile-nav-icon {
+			display: none;
+		}
 		@media screen and (max-width: 767px) {
-			nav.desktop-nav .nav-link, a.register-link { display: none; }
-			nav .mobile-nav-icon { display: block; }
+			nav.desktop-nav .nav-link,
+			a.register-link {
+				display: none;
+			}
+			nav .mobile-nav-icon {
+				display: block;
+			}
 		}
 	`;
 	const global = useContext(GlobalContent);
@@ -118,13 +125,7 @@ const MenuBar = () => {
 		<Scope stylesheets={[theme, stylesheet]}>
 			<header>
 				<Link href="/">
-					<Image
-						className="logo"
-						src="/sangawa-logo-light.svg"
-						alt={title.content.text}
-						height={50}
-						width={165}
-					/>
+					<Image className="logo" src="/sangawa-logo-light.svg" alt={title.content.text} height={50} width={165} />
 				</Link>
 				<nav className="desktop-nav">
 					{nav.map(({ content, children }) => {
@@ -134,11 +135,9 @@ const MenuBar = () => {
 									<button className="nav-link subnav-btn">{content.text}</button>
 									<div className="subnav-content">
 										{getTypedContent<LinkContent>(children).map(({ content }) => (
-											<Link
-												key={content.href}
-												href={content.href}
-												className="nav-link subnav-link"
-											>{content.text}</Link>
+											<Link key={content.href} href={content.href} className="nav-link subnav-link">
+												{content.text}
+											</Link>
 										))}
 									</div>
 								</div>
@@ -146,18 +145,15 @@ const MenuBar = () => {
 						}
 
 						return (
-							<Link
-								key={content.href}
-								href={content.href}
-								className="nav-link"
-							>{content.text}</Link>
+							<Link key={content.href} href={content.href} className="nav-link">
+								{content.text}
+							</Link>
 						);
 					})}
 
-					<Link
-						href={register.content.href}
-						className="register-link"
-					>{register.content.text}</Link>
+					<Link href={register.content.href} className="register-link">
+						{register.content.text}
+					</Link>
 
 					<Link href={twitter.content.href}>
 						<Icon type="twitter" title={twitter.content.text} className="icon icon--twitter" />

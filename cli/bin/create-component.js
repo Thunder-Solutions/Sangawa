@@ -16,8 +16,7 @@ Error:
 	const filepath = `./${path ?? 'src/components'}/${firstToLower(name)}.tsx`;
 	const ComponentName = firstToUpper(name);
 
-	const contents =
-`import { PropsWithChildren } from 'react';
+	const contents = `import { PropsWithChildren } from 'react';
 import { useCSS, Scope } from 'react-shadow-scope';
 import { theme } from '@/utilities/theme';
 

@@ -6,10 +6,10 @@ import { getTypedContent } from '@/utilities/utilities';
 import { theme } from '@/utilities/theme';
 
 export interface Props {
-	isOpen: boolean,
-};
+	isOpen: boolean;
+}
 
-type LinkContent = { text: string, href: string };
+type LinkContent = { text: string; href: string };
 
 const MobileNav = ({ isOpen }: Props) => {
 	const css = useCSS();
@@ -20,7 +20,7 @@ const MobileNav = ({ isOpen }: Props) => {
 			right: 0;
 			display: flex;
 			flex-direction: column;
-			gap: .5rem;
+			gap: 0.5rem;
 			align-items: flex-end;
 			background-color: var(--color-brand-1);
 			padding: 0.75rem 0;
@@ -73,7 +73,7 @@ const MobileNav = ({ isOpen }: Props) => {
 			padding: 0.25rem 0.625rem;
 		}
 		.register-link {
-			font-family: "Brasspounder";
+			font-family: 'Brasspounder';
 			background-color: var(--color-brand-1-c);
 			border: 0 solid;
 			border-radius: 0.375rem;
@@ -90,7 +90,7 @@ const MobileNav = ({ isOpen }: Props) => {
 
 	return (
 		<Scope stylesheets={[theme, stylesheet]}>
-			<nav style={{ display: isOpen ? 'flex' : 'none'}}>
+			<nav style={{ display: isOpen ? 'flex' : 'none' }}>
 				{nav.map(({ content, children }) => {
 					if (children !== undefined && children.length > 0) {
 						return (
@@ -98,11 +98,9 @@ const MobileNav = ({ isOpen }: Props) => {
 								<button className="nav-link subnav-btn">{`< ${content.text}`}</button>
 								<div className="subnav-content">
 									{getTypedContent<LinkContent>(children).map(({ content }) => (
-										<Link
-											key={content.href}
-											href={content.href}
-											className="nav-link subnav-link"
-										>{content.text}</Link>
+										<Link key={content.href} href={content.href} className="nav-link subnav-link">
+											{content.text}
+										</Link>
 									))}
 								</div>
 							</div>
@@ -110,17 +108,14 @@ const MobileNav = ({ isOpen }: Props) => {
 					}
 
 					return (
-						<Link
-							key={content.href}
-							href={content.href}
-							className="nav-link"
-						>{content.text}</Link>
+						<Link key={content.href} href={content.href} className="nav-link">
+							{content.text}
+						</Link>
 					);
 				})}
-				<Link
-					href={register.content.href}
-					className="register-link"
-				>{register.content.text}</Link>
+				<Link href={register.content.href} className="register-link">
+					{register.content.text}
+				</Link>
 			</nav>
 		</Scope>
 	);

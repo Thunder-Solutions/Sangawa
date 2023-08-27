@@ -14,9 +14,7 @@ const Footer = () => {
 	`;
 	return (
 		<Scope stylesheets={[theme, stylesheet]}>
-			<footer>
-				{'(placeholder content)'}
-			</footer>
+			<footer>{'(placeholder content)'}</footer>
 		</Scope>
 	);
 };

@@ -1,7 +1,6 @@
 import { css } from 'react-shadow-scope';
 
 export const theme = css`
-
 	@font-face {
 		font-family: 'Brasspounder';
 		src: url('BrasspSC.ttf');
@@ -30,7 +29,12 @@ export const theme = css`
 		font-family: var(--font-content);
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		all: unset;
 		display: block;
 		color: var(--color-brand-1);

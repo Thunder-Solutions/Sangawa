@@ -2,9 +2,9 @@ import { theme } from '@/utilities/theme';
 import { useCSS, Scope } from 'react-shadow-scope';
 
 export interface Props {
-	isOpen: boolean,
-	onClick: () => void,
-};
+	isOpen: boolean;
+	onClick: () => void;
+}
 
 const HamburgerIcon = (props: Props) => {
 	const { isOpen, onClick } = props;

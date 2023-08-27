@@ -8,15 +8,12 @@ const iconMap = {
 };
 
 export type IconProps = {
-	type: keyof typeof iconMap,
+	type: keyof typeof iconMap;
 } & IconBaseProps;
 
-const Icon = ({
-	type,
-	...props
-}: IconProps) => {
+const Icon = ({ type, ...props }: IconProps) => {
 	const IconComponent = iconMap[type];
-	return (<IconComponent {...props} />);
+	return <IconComponent {...props} />;
 };
 
 export default Icon;

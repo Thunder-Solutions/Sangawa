@@ -1,8 +1,6 @@
 {
 	"extends": "next/core-web-vitals",
-	"plugins": [
-		"prefer-arrow"
-	],
+	"plugins": ["prefer-arrow"],
 	"rules": {
 		"indent": ["error", "tab"],
 		"semi": ["error", "always"],
@@ -14,15 +12,8 @@
 				"classPropertiesAllowed": false
 			}
 		],
-		"prefer-arrow-callback": [
-			"error",
-			{ "allowNamedFunctions": true }
-		],
-		"func-style": [
-			"error",
-			"expression",
-			{ "allowArrowFunctions": true }
-		],
+		"prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+		"func-style": ["error", "expression", { "allowArrowFunctions": true }],
 		"comma-dangle": ["error", "always-multiline"]
 	}
 }

@@ -24,9 +24,7 @@ const Page = ({ children }: PageProps) => {
 			<Scope stylesheets={[theme, stylesheet]}>
 				<div className="page">
 					<MenuBar />
-					<main>
-						{children}
-					</main>
+					<main>{children}</main>
 					<Footer />
 				</div>
 			</Scope>

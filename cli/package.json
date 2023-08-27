@@ -1,14 +1,13 @@
 {
-  "name": "cli",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "bin": {
-    "cli": "bin/index.js"
-  },
-  "scripts": {
-  },
-  "author": "",
-  "license": "ISC"
+	"name": "cli",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"bin": {
+		"cli": "bin/index.js"
+	},
+	"scripts": {},
+	"author": "",
+	"license": "ISC"
 }

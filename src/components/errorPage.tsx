@@ -1,10 +1,8 @@
 export type ErrorPageProps = {
-	error: Error | string,
-}
+	error: Error | string;
+};
 
-const ErrorPage = ({
-	error,
-}: ErrorPageProps) => {
+const ErrorPage = ({ error }: ErrorPageProps) => {
 	const message = error instanceof Error ? error.message : error;
 	return (
 		<main>
