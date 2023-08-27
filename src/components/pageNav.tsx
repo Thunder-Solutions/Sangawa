@@ -5,6 +5,8 @@ import { GlobalContent } from './page';
 import { Scope, useCSS } from 'react-shadow-scope';
 import { theme } from '@/utilities/theme';
 
+export const PAGE_NAV_TAG = 'sg-page-nav';
+
 type LinkContent = { text: string; href: string };
 export type PageNavProps = {
 	isOpen?: boolean;
@@ -160,7 +162,7 @@ const PageNav = ({ isOpen = true, mobile = false }: PageNavProps) => {
 	const nav = getTypedContent<LinkContent>(global.nav);
 	const register = getTypedContent<LinkContent>(global.register)[0];
 	return (
-		<Scope stylesheets={[theme, stylesheet]}>
+		<Scope tag={PAGE_NAV_TAG} stylesheets={[theme, stylesheet]}>
 			<div className="wrapper">
 				<nav className="nav">
 					{nav.map(({ content, children }) => {

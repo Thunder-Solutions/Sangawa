@@ -8,6 +8,8 @@ import Icon from './icon';
 import { theme } from '@/utilities/theme';
 import PageNav from './pageNav';
 
+export const MENU_TOGGLER_TAG = 'sg-menu-toggler';
+
 type MenuTogglerProps = {
 	isOpen: boolean;
 	onClick: () => void;
@@ -46,7 +48,7 @@ const MenuToggler = ({ isOpen, onClick }: MenuTogglerProps) => {
 		}
 	`;
 	return (
-		<Scope stylesheets={[theme, stylesheet]}>
+		<Scope tag={MENU_TOGGLER_TAG} stylesheets={[theme, stylesheet]}>
 			<button onClick={onClick}>
 				<div className="line line-1" />
 				<div className="line line-2" />
@@ -55,6 +57,8 @@ const MenuToggler = ({ isOpen, onClick }: MenuTogglerProps) => {
 		</Scope>
 	);
 };
+
+export const MENU_BAR_TAG = 'sg-menu-bar';
 
 type LinkContent = { text: string; href: string };
 type TextContent = { text: string };
@@ -104,7 +108,7 @@ const MenuBar = () => {
 	};
 
 	return (
-		<Scope stylesheets={[theme, stylesheet]}>
+		<Scope tag={MENU_BAR_TAG} stylesheets={[theme, stylesheet]}>
 			<header>
 				<Link href="/">
 					<Image className="logo" src="/sangawa-logo-light.svg" alt={title.content.text} height={50} width={165} />

@@ -5,6 +5,8 @@ import Footer from './footer';
 import { Scope, useCSS } from 'react-shadow-scope';
 import { theme } from '@/utilities/theme';
 
+export const PAGE_TAG = 'sg-page';
+
 const global = getContent('global');
 export const GlobalContent = createContext<ContentSet>(global);
 
@@ -21,7 +23,7 @@ const Page = ({ children }: PageProps) => {
 	`;
 	return (
 		<GlobalContent.Provider value={global}>
-			<Scope stylesheets={[theme, stylesheet]}>
+			<Scope tag={PAGE_TAG} stylesheets={[theme, stylesheet]}>
 				<div className="page">
 					<MenuBar />
 					<main>{children}</main>

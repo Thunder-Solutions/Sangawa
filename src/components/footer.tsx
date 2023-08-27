@@ -1,6 +1,8 @@
 import { theme } from '@/utilities/theme';
 import { useCSS, Scope } from 'react-shadow-scope';
 
+export const FOOTER_TAG = 'sg-footer';
+
 const Footer = () => {
 	const css = useCSS();
 	const stylesheet = css`
@@ -13,7 +15,7 @@ const Footer = () => {
 		}
 	`;
 	return (
-		<Scope stylesheets={[theme, stylesheet]}>
+		<Scope tag={FOOTER_TAG} stylesheets={[theme, stylesheet]}>
 			<footer>{'(placeholder content)'}</footer>
 		</Scope>
 	);
