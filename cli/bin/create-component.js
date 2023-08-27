@@ -1,5 +1,6 @@
 import * as fs from 'node:fs';
-import { exec } from 'node:child_process';
+import { execSync } from 'node:child_process';
+import { firstToLower, firstToUpper, toLowerKebabCase, toUpperSnakeCase, tryCommandSync } from './utils.js';
 
 export const createComponent = (name, path) => {
 	if (!name) {
@@ -10,15 +11,20 @@ Error:
 `);
 		return;
 	}
-	const firstToUpper = (s) => s.charAt(0).toUpperCase() + s.slice(1);
-	const firstToLower = (s) => s.charAt(0).toLowerCase() + s.slice(1);
 
-	const filepath = `./${path ?? 'src/components'}/${firstToLower(name)}.tsx`;
+	const componentName = firstToLower(name);
 	const ComponentName = firstToUpper(name);
+	const COMPONENT_NAME = toUpperSnakeCase(name);
+
+	const filepath = `./${path ?? 'src/components'}/${componentName}.tsx`;
+	const importPath = filepath.replace('./src', '@').replace('.tsx', '');
+	const typesFilepath = './src/utilities/global.d.ts';
 
 	const contents = `import { PropsWithChildren } from 'react';
 import { useCSS, Scope } from 'react-shadow-scope';
 import { theme } from '@/utilities/theme';
+
+export const ${COMPONENT_NAME}_TAG = 'sg-${toLowerKebabCase(name)}';
 
 export type ${ComponentName}Props = PropsWithChildren<{
 	// add more prop types here...
@@ -30,7 +36,7 @@ const ${ComponentName} = ({ children }: ${ComponentName}Props) => {
 		/* add your CSS styles here */
 	\`;
 	return (
-		<Scope tag="sg-element" stylesheets={[theme, stylesheet]} slottedContent={children}>
+		<Scope tag={${COMPONENT_NAME}_TAG} stylesheets={[theme, stylesheet]} slottedContent={children}>
 			<slot></slot>
 		</Scope>
 	);
@@ -39,19 +45,22 @@ const ${ComponentName} = ({ children }: ${ComponentName}Props) => {
 export default ${ComponentName};
 `;
 
-	const checkSuccess = (err) => {
-		if (!err) return true;
-		console.error(err);
-		return false;
-	};
-
-	fs.writeFile(filepath, contents, (err) => {
-		const success = checkSuccess(err);
-		if (!success) return;
-		console.log('Successfully created component.');
-		exec(`code ${filepath}`, (err) => {
-			const success = checkSuccess(err);
-			if (!success) console.error('Failed to open file.');
-		});
+	tryCommandSync('Creating component...', () => {
+		fs.writeFileSync(filepath, contents);
 	});
+
+	const typesContent = fs
+		.readFileSync(typesFilepath, 'utf8')
+		.replace(/^/, `import { ${COMPONENT_NAME}_TAG } from '${importPath}';\n`)
+		.replace(/(interface CustomElements {(\n[^}]+))/, `$1\t[${COMPONENT_NAME}_TAG]: CustomIntrinsicElement;\n\t\t`);
+
+	tryCommandSync('Adding tag to intrinsic elements...', () => {
+		fs.writeFileSync(typesFilepath, typesContent);
+	});
+
+	tryCommandSync('Opening file...', () => {
+		execSync(`code ${filepath}`);
+	});
+
+	console.log('Done.');
 };
