@@ -5,7 +5,7 @@ Unfortunately, styling on html and body is necessary.
 html,
 body {
 	margin: 0;
-	padding: 0;
 	min-height: 100vh;
-	box-sizing: border-box
+	padding: 0;
+	scroll-behavior: smooth;
 }

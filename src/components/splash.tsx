@@ -7,11 +7,8 @@ import { theme } from '@/utilities/theme';
 const Splash = () => {
 	const css = useCSS();
 	const stylesheet = css`
-		.splash-container {
+		.container {
 			position: relative;
-			height: 100%;
-		}
-		.splash {
 			height: 100%;
 		}
 		h1 {
@@ -21,6 +18,8 @@ const Splash = () => {
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			box-sizing: border-box;
+			padding-bottom: 70vh;
 		}
 		.logo {
 			box-sizing: border-box;
@@ -32,32 +31,30 @@ const Splash = () => {
 		}
 		.scroll {
 			position: absolute;
-			bottom: 0;
+			top: 0;
 			width: 100%;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			gap: 0.5rem;
-			padding: 3rem 0 0.5rem;
+			padding: 0.5rem 0 3rem;
 			color: var(--color-brand-1);
 			font-weight: bold;
 			font-size: 2rem;
-			background-image: linear-gradient(transparent, rgba(255, 255, 255, 0.6) 50%);
+			background-image: linear-gradient(rgba(255, 255, 255, 0.3) 50%, transparent);
 		}
 	`;
 	return (
-		<div style={{ height: '100vh' }}>
+		<div style={{ height: '200vh' }}>
 			<ParallaxBanner style={{ aspectRatio: '2 / 1', height: '100%' }}>
-				<ParallaxBannerLayer image="mount-fuji.webp" speed={30} opacity={[1, 0]} />
-				<ParallaxBannerLayer image="snowflakes-small.webp" speed={-10} opacity={[2, 0]} />
-				<ParallaxBannerLayer speed={0} opacity={[2, 0]}>
+				<ParallaxBannerLayer image="mount-fuji.webp" speed={30} opacity={[0.8, 0]} />
+				<ParallaxBannerLayer image="snowflakes.webp" speed={-10} />
+				<ParallaxBannerLayer>
 					<Scope stylesheets={[theme, stylesheet]}>
-						<div className="splash-container">
-							<div className="splash">
-								<h1>
-									<Image className="logo" src="sangawa-logo.svg" width={704} height={236} alt="Sangawa Project" />
-								</h1>
-							</div>
+						<div className="container">
+							<h1>
+								<Image className="logo" src="sangawa-logo.svg" width={704} height={236} alt="Sangawa Project" />
+							</h1>
 							<div className="scroll">
 								<span>Scroll</span>
 								<Icon type="down-chevron" />
@@ -65,7 +62,7 @@ const Splash = () => {
 						</div>
 					</Scope>
 				</ParallaxBannerLayer>
-				<ParallaxBannerLayer image="snowflakes-large.webp" speed={-30} />
+				<ParallaxBannerLayer image="snowflakes.webp" speed={-50} />
 			</ParallaxBanner>
 		</div>
 	);
