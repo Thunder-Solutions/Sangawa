@@ -16,22 +16,22 @@ Error:
 	const filepath = `./${path ?? 'src/components'}/${firstToLower(name)}.tsx`;
 	const ComponentName = firstToUpper(name);
 
-	const contents =
-`import { PropsWithChildren } from 'react';
-import { css, Scope } from 'react-shadow-scope';
-
-const stylesheet = css\`
-	/* add your CSS styles here */
-\`;
+	const contents = `import { PropsWithChildren } from 'react';
+import { useCSS, Scope } from 'react-shadow-scope';
+import { theme } from '@/utilities/theme';
 
 export type ${ComponentName}Props = PropsWithChildren<{
 	// add more prop types here...
 }>;
 
 const ${ComponentName} = ({ children }: ${ComponentName}Props) => {
+	const css = useCSS();
+	const stylesheet = css\`
+		/* add your CSS styles here */
+	\`;
 	return (
-		<Scope stylesheet={stylesheet}>
-			{children}
+		<Scope tag="sg-element" stylesheets={[theme, stylesheet]} slottedContent={children}>
+			<slot></slot>
 		</Scope>
 	);
 };

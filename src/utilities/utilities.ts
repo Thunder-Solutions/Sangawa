@@ -27,22 +27,22 @@ export const safeTry = <T>(fn: Promise<T> | (() => T)): Result<T> | Promise<Resu
 		return [error, result];
 	} else if (fn instanceof Promise) {
 		return new Promise((resolve) => {
-			fn.then(val => {
+			fn.then((val) => {
 				result = val;
-			}).catch((err) => {
-				handleErr(err);
-			}).finally(() => {
-				resolve([error, result]);
-			});
+			})
+				.catch((err) => {
+					handleErr(err);
+				})
+				.finally(() => {
+					resolve([error, result]);
+				});
 		});
 	}
 	error = new Error(`safeTry() expects a function or promise, but got ${fn}`);
 	return [error, result];
 };
 
-export const getTypedContent = <T extends {}>(
-	content: Content[] | undefined,
-): Content<T>[] => {
+export const getTypedContent = <T extends {}>(content: Content[] | undefined): Content<T>[] => {
 	if (typeof content === 'undefined') {
 		return [{ content: {} }] as Content<T>[];
 	}

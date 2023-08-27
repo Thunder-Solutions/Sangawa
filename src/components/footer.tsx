@@ -1,21 +1,20 @@
-import { css, Scope } from 'react-shadow-scope';
-
-const stylesheet = css`
-footer {
-	background-color: var(--color-site-1);
-	border: 0 solid var(--color-brand-1);
-	border-width: 1rem 0;
-	color: var(--color-site-1-c);
-	padding: 0.5rem;
-}
-`;
+import { theme } from '@/utilities/theme';
+import { useCSS, Scope } from 'react-shadow-scope';
 
 const Footer = () => {
+	const css = useCSS();
+	const stylesheet = css`
+		footer {
+			background-color: var(--color-site-1);
+			border: 0 solid var(--color-brand-1);
+			border-width: 1rem 0;
+			color: var(--color-site-1-c);
+			padding: 0.5rem;
+		}
+	`;
 	return (
-		<Scope stylesheet={stylesheet}>
-			<footer>
-				{'(placeholder content)'}
-			</footer>
+		<Scope stylesheets={[theme, stylesheet]}>
+			<footer>{'(placeholder content)'}</footer>
 		</Scope>
 	);
 };
