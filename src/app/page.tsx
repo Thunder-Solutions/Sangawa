@@ -25,7 +25,7 @@ const Home = () => {
 				<Head>
 					<title>{homePage?.content.title}</title>
 				</Head>
-				<Section backdropUrl={homePage?.content.backdrop}>
+				<Section backdropUrl={homePage?.content.backdrop} heading="Section Title">
 					{'(placeholder content)'}
 				</Section>
 			</Page>

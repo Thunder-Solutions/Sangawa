@@ -13,6 +13,10 @@ const Section = ({ children, heading, backdropUrl }: SectionProps) => {
 		section {
 			background: center / cover no-repeat url('ice-texture.png');
 		}
+		header {
+			padding: 1rem;
+			background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), transparent);
+		}
 		.wrapper,
 		section {
 			height: 100%;
