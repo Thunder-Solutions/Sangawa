@@ -1,4 +1,4 @@
-import './theme.css';
+import './global.css';
 import type { Metadata } from 'next';
 import { Quicksand } from 'next/font/google';
 import { PropsWithChildren } from 'react';

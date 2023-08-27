@@ -1,15 +1,6 @@
+import { theme } from '@/utilities/theme';
 import { PropsWithChildren } from 'react';
-import { css, Scope } from 'react-shadow-scope';
-
-const stylesheet = css`
-	section {
-		background: center / cover no-repeat url('ice-texture.png');
-	}
-	.wrapper,
-	section {
-		height: 100%;
-	}
-`;
+import { useCSS, Scope } from 'react-shadow-scope';
 
 export type SectionProps = PropsWithChildren<{
 	heading?: string,
@@ -17,13 +8,21 @@ export type SectionProps = PropsWithChildren<{
 }>;
 
 const Section = ({ children, heading, backdropUrl }: SectionProps) => {
-	const runtimeStyles = css`
+	const css = useCSS();
+	const stylesheet = css`
+		section {
+			background: center / cover no-repeat url('ice-texture.png');
+		}
+		.wrapper,
+		section {
+			height: 100%;
+		}
 		.wrapper {
 			background: center / cover no-repeat url(${backdropUrl});
 		}
 	`;
 	return (
-		<Scope stylesheets={[stylesheet, runtimeStyles]} slottedContent={children}>
+		<Scope stylesheets={[theme, stylesheet]} slottedContent={children}>
 			<div className="wrapper">
 				<section>
 					{heading
