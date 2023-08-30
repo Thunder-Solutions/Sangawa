@@ -2,6 +2,8 @@ import { theme } from '@/utilities/theme';
 import { PropsWithChildren } from 'react';
 import { useCSS, Scope } from 'react-shadow-scope';
 
+export const SECTION_TAG = 'sg-section';
+
 export type SectionProps = PropsWithChildren<{
 	heading?: string;
 	backdropUrl?: string;
@@ -26,7 +28,7 @@ const Section = ({ children, heading, backdropUrl }: SectionProps) => {
 		}
 	`;
 	return (
-		<Scope stylesheets={[theme, stylesheet]} slottedContent={children}>
+		<Scope tag={SECTION_TAG} stylesheets={[theme, stylesheet]} slottedContent={children}>
 			<div className="wrapper">
 				<section>
 					{heading ? (

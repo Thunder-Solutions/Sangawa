@@ -4,6 +4,8 @@ import { useCSS, Scope } from 'react-shadow-scope';
 import Icon from './icon';
 import { theme } from '@/utilities/theme';
 
+export const SPLASH_TAG = 'sg-splash-container';
+
 const Splash = () => {
 	const css = useCSS();
 	const stylesheet = css`
@@ -50,7 +52,7 @@ const Splash = () => {
 				<ParallaxBannerLayer image="mount-fuji.webp" speed={30} opacity={[0.8, 0]} />
 				<ParallaxBannerLayer image="snowflakes.webp" speed={-10} />
 				<ParallaxBannerLayer>
-					<Scope stylesheets={[theme, stylesheet]}>
+					<Scope tag={SPLASH_TAG} stylesheets={[theme, stylesheet]}>
 						<div className="container">
 							<h1>
 								<Image className="logo" src="sangawa-logo.svg" width={704} height={236} alt="Sangawa Project" />
