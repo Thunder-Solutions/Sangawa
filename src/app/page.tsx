@@ -7,6 +7,8 @@ import { useContext } from 'react';
 import { getTypedContent } from '@/utilities/utilities';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import Splash from '@/components/splash';
+import CtaLayout from '@/components/ctaLayout';
+import CtaLink from '@/components/ctaLink';
 
 type PageContent = {
 	page: string;
@@ -26,7 +28,17 @@ const Home = () => {
 					<title>{homePage?.content.title}</title>
 				</Head>
 				<Section backdropUrl={homePage?.content.backdrop} heading="Section Title">
-					{'(placeholder content)'}
+					<CtaLayout>
+						<CtaLink icon="ticket" href="/register">
+							Register Now!
+						</CtaLink>
+						<CtaLink icon="bed" href="/hotels">
+							Book a Room!
+						</CtaLink>
+						<CtaLink icon="footsteps" href="/explore">
+							Explore Sangawa
+						</CtaLink>
+					</CtaLayout>
 				</Section>
 			</Page>
 		</ParallaxProvider>
