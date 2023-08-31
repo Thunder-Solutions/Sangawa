@@ -31,7 +31,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 							content: {
 								component: 'Text',
 								prop__text:
-									'The Sangawa Project, presented by the Pittsburgh Japanese Culture Society, is an 18+ convention in which fans can gather together to discuss their favorite anime, both new and old, challenge themselves in our retro gaming room, show off their best cosplay, attend awesome panels and just relax in a more mature environment. Additionally, Sangawa provides unique content such as the Taste of Japan which allows attendees (over the age of 21) to sample a variety of Japanese libations, including Saké, Shōchū and cultural beers!\n\nLocated in the Doubltree Hotel in Downtown Pittsburgh, PA on February 9th - 11th, 2024.',
+									'The Sangawa Project, presented by the Pittsburgh Japanese Culture Society, is an 18+ convention in which fans can gather together to discuss their favorite anime, both new and old, challenge themselves in our retro gaming room, show off their best cosplay, attend awesome panels and just relax in a more mature environment. Additionally, Sangawa provides unique content such as the Taste of Japan which allows attendees (over the age of 21) to sample a variety of Japanese libations, including Saké, Shōchū and cultural beers!',
 							},
 						},
 						{
@@ -122,11 +122,11 @@ To be announced...`,
 											id: '7271073c-874e-4b79-91dc-501cc4c323f2',
 											content: {
 												component: 'Text',
-												prop__text: `745 Grant St, Pittsburgh, PA, 15219
+												prop__text: `One Bigelow Sq, Pittsburgh, PA 15219
 
 ---
 
-Sangawa is held at the Drury Plaza Hotel in downtown Pittsburgh.
+Sangawa will be held in the Doubletree Hotel in Downtown Pittsburgh on February 9th&ndash;11th, 2024.
 
 [Click here](#) for parking information.`,
 											},
