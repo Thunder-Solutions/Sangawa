@@ -21,7 +21,7 @@ const Splash = () => {
 			align-items: center;
 			justify-content: center;
 			box-sizing: border-box;
-			padding-bottom: 70vh;
+			padding-bottom: 100vh;
 		}
 		.logo {
 			box-sizing: border-box;
@@ -49,8 +49,8 @@ const Splash = () => {
 	return (
 		<div style={{ height: '200vh' }}>
 			<ParallaxBanner style={{ aspectRatio: '2 / 1', height: '100%' }}>
-				<ParallaxBannerLayer image="mount-fuji.webp" speed={30} opacity={[0.8, 0]} />
-				<ParallaxBannerLayer image="snowflakes.webp" speed={-10} />
+				<ParallaxBannerLayer image="mount-fuji.webp" speed={40} opacity={[0.8, 0]} />
+				<ParallaxBannerLayer image="snowflakes.webp" speed={-20} />
 				<ParallaxBannerLayer>
 					<Scope tag={SPLASH_TAG} stylesheets={[theme, stylesheet]}>
 						<div className="container">
@@ -64,7 +64,7 @@ const Splash = () => {
 						</div>
 					</Scope>
 				</ParallaxBannerLayer>
-				<ParallaxBannerLayer image="snowflakes.webp" speed={-50} />
+				<ParallaxBannerLayer image="snowflakes.webp" speed={-70} />
 			</ParallaxBanner>
 		</div>
 	);

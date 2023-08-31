@@ -31,7 +31,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 							content: {
 								component: 'Text',
 								prop__text:
-									'The Sangawa Project, presented by the Pittsburgh Japanese Culture Society, is an 18+ convention in which fans can gather together to discuss their favorite anime, both new and old, challenge themselves in our retro gaming room, show off their best cosplay, attend awesome panels and just relax in a more mature environment. Additionally, Sangawa provides unique content such as the Taste of Japan which allows attendees (over the age of 21) to sample a variety of Japanese libations, including Saké, Shōchū and cultural beers!\n\nLocated in the Doubltree Hotel in Downtown Pittsburgh, PA on February 9th - 11th, 2024.',
+									'The Sangawa Project, presented by the Pittsburgh Japanese Culture Society, is an 18+ convention in which fans can gather together to discuss their favorite anime, both new and old, challenge themselves in our retro gaming room, show off their best cosplay, attend awesome panels and just relax in a more mature environment. Additionally, Sangawa provides unique content such as the Taste of Japan which allows attendees (over the age of 21) to sample a variety of Japanese libations, including Saké, Shōchū and cultural beers!',
 							},
 						},
 						{
@@ -77,6 +77,59 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 										{
 											id: 'ea8c3d15-cec6-4844-9d2a-e063b41c1554',
 											content: { __text: 'Explore Sangawa!' },
+										},
+									],
+								},
+							],
+						},
+						{
+							id: 'f32fb87c-995b-49e0-a676-1a284569d323',
+							content: {
+								component: 'InfoLayout',
+							},
+							childContent: [
+								{
+									id: 'f5261942-7cbc-40c4-aeb6-1eb96f3a2586',
+									content: {
+										component: 'Info',
+										prop__heading: 'Hours',
+									},
+									childContent: [
+										{
+											id: '7271073c-874e-4b79-91dc-501cc4c323f2',
+											content: {
+												component: 'Text',
+												prop__text: `## Friday
+To be announced ...
+
+## Saturday
+To be announced ...
+
+## Sunday
+To be announced...`,
+											},
+										},
+									],
+								},
+								{
+									id: 'f5261942-7cbc-40c4-aeb6-1eb96f3a2586',
+									content: {
+										component: 'Info',
+										prop__heading: 'Location',
+									},
+									childContent: [
+										{
+											id: '7271073c-874e-4b79-91dc-501cc4c323f2',
+											content: {
+												component: 'Text',
+												prop__text: `One Bigelow Sq, Pittsburgh, PA 15219
+
+---
+
+Sangawa will be held in the Doubletree Hotel in Downtown Pittsburgh on February 9th&ndash;11th, 2024.
+
+[Click here](#) for parking information.`,
+											},
 										},
 									],
 								},

@@ -28,7 +28,7 @@ const Section = ({ children, heading, backdropUrl }: SectionProps) => {
 		}
 		.content {
 			display: grid;
-			gap: 2rem;
+			gap: 4rem;
 			padding: 6rem 0;
 			box-sizing: border-box;
 		}
