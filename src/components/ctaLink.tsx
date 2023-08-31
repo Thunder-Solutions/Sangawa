@@ -13,19 +13,22 @@ export type CtaLinkProps = PropsWithChildren<{
 const CtaLink = ({ children, href, icon }: CtaLinkProps) => {
 	const css = useCSS();
 	const stylesheet = css`
-		a,
-		a:hover,
-		a:active,
-		a:visited {
-			all: unset;
-			color: var(--color-brand-1);
-			cursor: pointer;
-			display: grid;
-			font-family: 'Brasspounder';
-			font-size: 1.6rem;
-			justify-items: center;
-			width: 15rem;
-			text-align: center;
+		@layer {
+			a,
+			a:hover,
+			a:active,
+			a:visited {
+				all: unset;
+				color: var(--color-brand-1);
+				cursor: pointer;
+				display: grid;
+				font-family: 'Brasspounder';
+				font-size: 1.6rem;
+				justify-items: center;
+				width: 15rem;
+				text-align: center;
+				text-shadow: 0 0 0.3rem var(--color-brand-1-c);
+			}
 		}
 		.icon-wrapper {
 			--size: 1.5em;
@@ -39,6 +42,15 @@ const CtaLink = ({ children, href, icon }: CtaLinkProps) => {
 			width: var(--size);
 			color: var(--color-brand-1-c);
 			font-size: 6rem;
+			margin: 0.5rem;
+			transition: all 0.3s;
+		}
+		a:hover {
+			filter: hue-rotate(-25deg);
+		}
+		a:hover > .icon-wrapper {
+			--size: 1.6em;
+			margin: 0.2rem;
 		}
 	`;
 	return (

@@ -12,9 +12,11 @@ const CtaLayout = ({ children }: CtaLayoutProps) => {
 		nav {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: center;
+			align-items: center;
+			place-content: center;
 			gap: 4rem;
 			padding: 4rem 1rem;
+			min-height: 20rem;
 		}
 	`;
 	return (
