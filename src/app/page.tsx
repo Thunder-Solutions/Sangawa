@@ -1,45 +1,29 @@
-'use client';
-
 import Head from 'next/head';
-import Page, { GlobalContent } from '@/components/page';
-import Section from '@/components/section';
-import { useContext } from 'react';
+import { apiClient } from '@/api-client/api-client';
+import { PageContent } from '@/components/cmsComponent';
 import { getTypedContent } from '@/utilities/utilities';
-import { ParallaxProvider } from 'react-scroll-parallax';
-import Splash from '@/components/splash';
-import CtaLayout from '@/components/ctaLayout';
-import CtaLink from '@/components/ctaLink';
+import { ParallaxProvider, Splash, Page, CMSComponent } from '@/components/clientComponents';
 
-type PageContent = {
-	page: string;
-	title: string;
-	backdrop: string;
-};
+const [homePageError, homePage = {}] = await apiClient.fetchHomePageContent();
+if (homePageError) {
+	const _error = homePageError instanceof Error ? homePageError : new Error('Home page content could not be found.');
+	console.error(_error);
+}
 
 const Home = () => {
-	const global = useContext(GlobalContent);
-	const pages = getTypedContent<PageContent>(global.page);
-	const homePage = pages.find(({ content }) => content.page === 'home');
+	const meta = homePage.meta[0];
+	const pageContent = getTypedContent<PageContent>(homePage.pageContent);
+	console.log(pageContent);
 	return (
 		<ParallaxProvider>
 			<Splash />
 			<Page>
 				<Head>
-					<title>{homePage?.content.title}</title>
+					<title>{meta.content.title}</title>
 				</Head>
-				<Section backdropUrl={homePage?.content.backdrop} heading="Section Title">
-					<CtaLayout>
-						<CtaLink icon="ticket" href="/register">
-							Register Now!
-						</CtaLink>
-						<CtaLink icon="bed" href="/hotels">
-							Book a Room!
-						</CtaLink>
-						<CtaLink icon="footsteps" href="/explore">
-							Explore Sangawa
-						</CtaLink>
-					</CtaLayout>
-				</Section>
+				{pageContent.map(({ id, content, ...props }) => (
+					<CMSComponent key={id} content={content} {...props} />
+				))}
 			</Page>
 		</ParallaxProvider>
 	);

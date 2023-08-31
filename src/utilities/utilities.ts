@@ -3,7 +3,7 @@ import { Content } from '@/api-client/api-client';
 export type TypedObject<T> = { [key: PropertyKey]: T };
 export type UnknownObj = TypedObject<unknown>;
 
-export type Result<T> = [Error | undefined, T | undefined];
+export type Result<T> = [Error, undefined] | [undefined, T];
 
 export const safeTry = <T>(fn: Promise<T> | (() => T)): Result<T> | Promise<Result<T>> => {
 	let error: Error | undefined;
@@ -17,14 +17,14 @@ export const safeTry = <T>(fn: Promise<T> | (() => T)): Result<T> | Promise<Resu
 			console.error(err);
 			error = new Error('Something went wrong.');
 		}
+		return error;
 	};
 	if (typeof fn === 'function') {
 		try {
-			result = fn();
+			return [undefined, fn()];
 		} catch (err) {
-			handleErr(err);
+			return [handleErr(err), undefined];
 		}
-		return [error, result];
 	} else if (fn instanceof Promise) {
 		return new Promise((resolve) => {
 			fn.then((val) => {
@@ -34,12 +34,14 @@ export const safeTry = <T>(fn: Promise<T> | (() => T)): Result<T> | Promise<Resu
 					handleErr(err);
 				})
 				.finally(() => {
-					resolve([error, result]);
+					if (result) resolve([undefined, result]);
+					const err = error ?? new Error('Failed to get result.');
+					resolve([err, undefined]);
 				});
 		});
 	}
 	error = new Error(`safeTry() expects a function or promise, but got ${fn}`);
-	return [error, result];
+	return [error, undefined];
 };
 
 export const getTypedContent = <T extends {}>(content: Content[] | undefined): Content<T>[] => {

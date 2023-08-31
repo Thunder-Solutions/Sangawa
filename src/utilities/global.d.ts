@@ -1,3 +1,4 @@
+import { ContentSet } from '@/api-client/api-client';
 import { CTA_LAYOUT_TAG } from '@/components/ctaLayout';
 import { CTA_LINK_TAG } from '@/components/ctaLink';
 import { CTA_SECTION_TAG } from '@/components/ctaSection';
@@ -10,6 +11,7 @@ import { SPLASH_TAG } from '@/components/splash';
 import { CustomIntrinsicElement } from 'react-shadow-scope';
 
 declare global {
+	var _global: any;
 	namespace ReactShadowScope {
 		interface CustomElements {
 			[SPLASH_TAG]: CustomIntrinsicElement;
