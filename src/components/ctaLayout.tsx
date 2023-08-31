@@ -15,7 +15,7 @@ const CtaLayout = ({ children }: CtaLayoutProps) => {
 			align-items: center;
 			place-content: center;
 			gap: 4rem;
-			padding: 4rem 1rem;
+			padding: 0 1rem;
 			min-height: 20rem;
 		}
 	`;

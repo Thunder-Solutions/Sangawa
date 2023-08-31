@@ -1,3 +1,4 @@
+import { TEXT_P_TAG, TEXT_TAG } from '@/components/text';
 import { ContentSet } from '@/api-client/api-client';
 import { CTA_LAYOUT_TAG } from '@/components/ctaLayout';
 import { CTA_LINK_TAG } from '@/components/ctaLink';
@@ -24,6 +25,8 @@ declare global {
 			[CTA_SECTION_TAG]: CustomIntrinsicElement;
 			[CTA_LINK_TAG]: CustomIntrinsicElement;
 			[CTA_LAYOUT_TAG]: CustomIntrinsicElement;
+			[TEXT_TAG]: CustomIntrinsicElement;
+			[TEXT_P_TAG]: CustomIntrinsicElement;
 		}
 	}
 }

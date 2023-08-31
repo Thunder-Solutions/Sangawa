@@ -26,6 +26,12 @@ const Section = ({ children, heading, backdropUrl }: SectionProps) => {
 		.wrapper {
 			background: center / cover no-repeat url(${backdropUrl});
 		}
+		.content {
+			display: grid;
+			gap: 2rem;
+			padding: 6rem 0;
+			box-sizing: border-box;
+		}
 	`;
 	return (
 		<Scope tag={SECTION_TAG} stylesheets={[theme, stylesheet]} slottedContent={children}>
@@ -38,7 +44,7 @@ const Section = ({ children, heading, backdropUrl }: SectionProps) => {
 					) : (
 						<></>
 					)}
-					<slot></slot>
+					<slot className="content"></slot>
 				</section>
 			</div>
 		</Scope>

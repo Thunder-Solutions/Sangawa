@@ -13,7 +13,6 @@ if (homePageError) {
 const Home = () => {
 	const meta = homePage.meta[0];
 	const pageContent = getTypedContent<PageContent>(homePage.pageContent);
-	console.log(pageContent);
 	return (
 		<ParallaxProvider>
 			<Splash />
