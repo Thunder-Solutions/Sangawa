@@ -13,6 +13,7 @@ const InfoLayout = ({ children }: InfoLayoutProps) => {
 	const stylesheet = css`
 		aside {
 			display: flex;
+			flex-wrap: wrap;
 			justify-content: center;
 			gap: 1rem;
 			padding: 0 1rem;
