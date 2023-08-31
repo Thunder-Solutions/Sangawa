@@ -4,6 +4,8 @@ import { PropsWithChildren } from 'react';
 import CtaLayout from './ctaLayout';
 import CtaLink from './ctaLink';
 import Section from './section';
+import InfoLayout from './infoLayout';
+import Info from './info';
 import Text from './text';
 import { Content } from '@/api-client/api-client';
 
@@ -12,6 +14,8 @@ const Components = {
 	CtaLink,
 	Section,
 	Text,
+	InfoLayout,
+	Info,
 	__default: ({ children }: PropsWithChildren) => children,
 };
 

@@ -1,3 +1,5 @@
+import { INFO_TAG } from '@/components/info';
+import { INFO_LAYOUT_TAG } from '@/components/infoLayout';
 import { TEXT_P_TAG, TEXT_TAG } from '@/components/text';
 import { ContentSet } from '@/api-client/api-client';
 import { CTA_LAYOUT_TAG } from '@/components/ctaLayout';
@@ -27,6 +29,8 @@ declare global {
 			[CTA_LAYOUT_TAG]: CustomIntrinsicElement;
 			[TEXT_TAG]: CustomIntrinsicElement;
 			[TEXT_P_TAG]: CustomIntrinsicElement;
+			[INFO_LAYOUT_TAG]: CustomIntrinsicElement;
+			[INFO_TAG]: CustomIntrinsicElement;
 		}
 	}
 }

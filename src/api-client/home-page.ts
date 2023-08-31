@@ -82,6 +82,59 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 								},
 							],
 						},
+						{
+							id: 'f32fb87c-995b-49e0-a676-1a284569d323',
+							content: {
+								component: 'InfoLayout',
+							},
+							childContent: [
+								{
+									id: 'f5261942-7cbc-40c4-aeb6-1eb96f3a2586',
+									content: {
+										component: 'Info',
+										prop__heading: 'Hours',
+									},
+									childContent: [
+										{
+											id: '7271073c-874e-4b79-91dc-501cc4c323f2',
+											content: {
+												component: 'Text',
+												prop__text: `## Friday
+To be announced ...
+
+## Saturday
+To be announced ...
+
+## Sunday
+To be announced...`,
+											},
+										},
+									],
+								},
+								{
+									id: 'f5261942-7cbc-40c4-aeb6-1eb96f3a2586',
+									content: {
+										component: 'Info',
+										prop__heading: 'Location',
+									},
+									childContent: [
+										{
+											id: '7271073c-874e-4b79-91dc-501cc4c323f2',
+											content: {
+												component: 'Text',
+												prop__text: `745 Grant St, Pittsburgh, PA, 15219
+
+---
+
+Sangawa is held at the Drury Plaza Hotel in downtown Pittsburgh.
+
+[Click here](#) for parking information.`,
+											},
+										},
+									],
+								},
+							],
+						},
 					],
 				},
 			],
