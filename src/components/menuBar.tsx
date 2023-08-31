@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useContext, useState } from 'react';
 import { useCSS, Scope } from 'react-shadow-scope';
-import { GlobalContent } from './page';
+import { GlobalContext } from '@/api-client/context';
 import { getTypedContent } from '@/utilities/utilities';
 import Icon from './icon';
 import { theme } from '@/utilities/theme';
@@ -97,7 +97,7 @@ const MenuBar = () => {
 			}
 		}
 	`;
-	const global = useContext(GlobalContent);
+	const global = useContext(GlobalContext);
 	const title = getTypedContent<TextContent>(global.title)[0];
 	const facebook = getTypedContent<LinkContent>(global.facebook)[0];
 	const twitter = getTypedContent<LinkContent>(global.twitter)[0];
