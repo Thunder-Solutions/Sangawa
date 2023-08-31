@@ -7,7 +7,7 @@ import { ContentSet } from './api-client';
  * To generate a new ID, run `node` in the terminal, then run `crypto.randomUUID()`.
  */
 export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
-	return safeTry(() => {
+	return safeTry<any>(() => {
 		return {
 			meta: [
 				{
