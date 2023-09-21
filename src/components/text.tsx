@@ -9,8 +9,10 @@ export type TextProps = {
 	text: string;
 };
 
+const key = Symbol();
+
 const Text = ({ text }: TextProps) => {
-	const css = useCSS();
+	const css = useCSS(key);
 	const stylesheet = css`
 		.text {
 			display: grid;

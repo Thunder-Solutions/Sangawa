@@ -13,9 +13,13 @@ export type PageNavProps = {
 	mobile?: boolean;
 };
 
+const mobileKey = Symbol();
+const desktopKey = Symbol();
+
 const PageNav = ({ isOpen = true, mobile = false }: PageNavProps) => {
-	const css = useCSS();
-	const mobileStylesheet = css`
+	const mobileCSS = useCSS(mobileKey);
+	const desktopCSS = useCSS(desktopKey);
+	const mobileStylesheet = mobileCSS`
 		.nav {
 			position: absolute;
 			top: 1.6rem;
@@ -89,7 +93,7 @@ const PageNav = ({ isOpen = true, mobile = false }: PageNavProps) => {
 			display: inline-block;
 		}
 	`;
-	const desktopStylesheet = css`
+	const desktopStylesheet = desktopCSS`
 		.nav {
 			display: flex;
 			gap: 0.5rem;

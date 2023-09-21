@@ -8,8 +8,10 @@ export const PAGE_TAG = 'sg-page';
 
 export type PageProps = PropsWithChildren;
 
+const key = Symbol();
+
 const Page = ({ children }: PageProps) => {
-	const css = useCSS();
+	const css = useCSS(key);
 	const stylesheet = css`
 		.page {
 			display: grid;

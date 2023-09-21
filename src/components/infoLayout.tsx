@@ -8,8 +8,10 @@ export type InfoLayoutProps = PropsWithChildren<{
 	// add more prop types here...
 }>;
 
+const key = Symbol();
+
 const InfoLayout = ({ children }: InfoLayoutProps) => {
-	const css = useCSS();
+	const css = useCSS(key);
 	const stylesheet = css`
 		aside {
 			display: flex;

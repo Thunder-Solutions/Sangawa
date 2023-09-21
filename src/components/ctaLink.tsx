@@ -10,8 +10,10 @@ export type CtaLinkProps = PropsWithChildren<{
 	icon: IconProps['type'];
 }>;
 
+const key = Symbol();
+
 const CtaLink = ({ children, href, icon }: CtaLinkProps) => {
-	const css = useCSS();
+	const css = useCSS(key);
 	const stylesheet = css`
 		@layer {
 			a,

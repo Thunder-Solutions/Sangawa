@@ -6,8 +6,10 @@ import { theme } from '@/utilities/theme';
 
 export const SPLASH_TAG = 'sg-splash-container';
 
+const key = Symbol();
+
 const Splash = () => {
-	const css = useCSS();
+	const css = useCSS(key);
 	const stylesheet = css`
 		.container {
 			position: relative;

@@ -15,8 +15,10 @@ type MenuTogglerProps = {
 	onClick: () => void;
 };
 
+const togglerKey = Symbol();
+
 const MenuToggler = ({ isOpen, onClick }: MenuTogglerProps) => {
-	const css = useCSS();
+	const css = useCSS(togglerKey);
 	const stylesheet = css`
 		button {
 			background: none;
@@ -63,8 +65,10 @@ export const MENU_BAR_TAG = 'sg-menu-bar';
 type LinkContent = { text: string; href: string };
 type TextContent = { text: string };
 
+const menuKey = Symbol();
+
 const MenuBar = () => {
-	const css = useCSS();
+	const css = useCSS(menuKey);
 	const stylesheet = css`
 		header {
 			background-color: var(--color-brand-1);

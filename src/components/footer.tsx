@@ -3,8 +3,10 @@ import { useCSS, Scope } from 'react-shadow-scope';
 
 export const FOOTER_TAG = 'sg-footer';
 
+const key = Symbol();
+
 const Footer = () => {
-	const css = useCSS();
+	const css = useCSS(key);
 	const stylesheet = css`
 		footer {
 			background-color: var(--color-site-1);
