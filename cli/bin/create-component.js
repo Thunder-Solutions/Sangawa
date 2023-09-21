@@ -30,8 +30,10 @@ export type ${ComponentName}Props = PropsWithChildren<{
 	// add more prop types here...
 }>;
 
+const key = Symbol();
+
 const ${ComponentName} = ({ children }: ${ComponentName}Props) => {
-	const css = useCSS();
+	const css = useCSS(key);
 	const stylesheet = css\`
 		/* add your CSS styles here */
 	\`;
