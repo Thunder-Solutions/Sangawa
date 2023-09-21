@@ -101,6 +101,10 @@ const PageNav = ({ isOpen = true, mobile = false }: PageNavProps) => {
 		}
 		.nav-link {
 			color: var(--color-brand-1-c);
+			display: flex;
+			place-items: center;
+			padding: 0 1rem;
+			height: 100%;
 			text-decoration: none;
 			font-size: 1.2rem;
 		}
@@ -144,7 +148,7 @@ const PageNav = ({ isOpen = true, mobile = false }: PageNavProps) => {
 			z-index: 1;
 			border-radius: 0.375rem;
 			text-align: right;
-			min-width: 11rem;
+			min-width: 15rem;
 			padding: 0.75rem 0;
 		}
 		.subnav-link {
