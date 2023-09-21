@@ -35,7 +35,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 							},
 						},
 						{
-							id: 'c8eb4522-d8e2-427a-9a57-bcd657fe7345',
+							id: 'f7296397-b4f3-4983-8ca5-337951afdd21',
 							content: { component: 'CtaLayout' },
 							childContent: [
 								{
@@ -89,7 +89,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 							},
 							childContent: [
 								{
-									id: 'f5261942-7cbc-40c4-aeb6-1eb96f3a2586',
+									id: '730d8a6e-a07c-4475-a904-601135a1364e',
 									content: {
 										component: 'Info',
 										prop__heading: 'Hours',
