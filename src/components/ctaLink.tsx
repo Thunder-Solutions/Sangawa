@@ -33,26 +33,40 @@ const CtaLink = ({ children, href, icon }: CtaLinkProps) => {
 			}
 		}
 		.icon-wrapper {
+			--wrapper-size: 1.6em;
+			display: flex;
+			place-items: center;
+			place-content: center;
+			height: var(--wrapper-size);
+			width: var(--wrapper-size);
+			color: var(--color-brand-1-c);
+			font-size: 6rem;
+			position: relative;
+		}
+		.icon {
+			position: relative;
+			z-index: 1;
+		}
+		.icon-backdrop {
 			--size: 1.5em;
 			background-color: var(--color-brand-1);
 			border: 0 solid;
 			border-radius: 50%;
-			display: flex;
-			place-items: center;
-			place-content: center;
+			content: '';
+			display: block;
+			position: absolute;
+			inset: 0;
+			margin: auto;
 			height: var(--size);
 			width: var(--size);
-			color: var(--color-brand-1-c);
-			font-size: 6rem;
-			margin: 0.5rem;
 			transition: all 0.3s;
+			z-index: 0;
 		}
 		a:hover {
 			filter: hue-rotate(-25deg);
 		}
-		a:hover > .icon-wrapper {
+		a:hover .icon-backdrop {
 			--size: 1.6em;
-			margin: 0.2rem;
 		}
 	`;
 	return (
@@ -60,6 +74,7 @@ const CtaLink = ({ children, href, icon }: CtaLinkProps) => {
 			<a href={href}>
 				<div className="icon-wrapper">
 					<Icon type={icon} className="icon" />
+					<div className="icon-backdrop" />
 				</div>
 				<slot></slot>
 			</a>
