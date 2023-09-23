@@ -1,6 +1,6 @@
 import { getTypedContent } from '@/utilities/utilities';
 import Link from 'next/link';
-import { useContext } from 'react';
+import { HTMLAttributes, useContext } from 'react';
 import { GlobalContext } from '@/api-client/context';
 import { Scope, useCSS } from 'react-shadow-scope';
 import { theme } from '@/utilities/theme';
@@ -11,12 +11,12 @@ type LinkContent = { text: string; href: string };
 export type PageNavProps = {
 	isOpen?: boolean;
 	mobile?: boolean;
-};
+} & HTMLAttributes<HTMLDivElement>;
 
 const mobileKey = Symbol();
 const desktopKey = Symbol();
 
-const PageNav = ({ isOpen = true, mobile = false }: PageNavProps) => {
+const PageNav = ({ isOpen = true, mobile = false, ...forwardedProps }: PageNavProps) => {
 	const mobileCSS = useCSS(mobileKey);
 	const desktopCSS = useCSS(desktopKey);
 	const mobileStylesheet = mobileCSS`
@@ -170,7 +170,7 @@ const PageNav = ({ isOpen = true, mobile = false }: PageNavProps) => {
 	const nav = getTypedContent<LinkContent>(global.nav);
 	const register = getTypedContent<LinkContent>(global.register)[0];
 	return (
-		<Scope tag={PAGE_NAV_TAG} stylesheets={[theme, stylesheet]}>
+		<Scope {...forwardedProps} tag={PAGE_NAV_TAG} stylesheets={[theme, stylesheet]}>
 			<div className="wrapper">
 				<nav className="nav">
 					{nav.map(({ content, childContent: children }) => {

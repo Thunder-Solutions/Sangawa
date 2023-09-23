@@ -8,67 +8,25 @@ import Icon from './icon';
 import { theme } from '@/utilities/theme';
 import PageNav from './pageNav';
 
-export const MENU_TOGGLER_TAG = 'sg-menu-toggler';
-
-type MenuTogglerProps = {
-	isOpen: boolean;
-	onClick: () => void;
-};
-
-const togglerKey = Symbol();
-
-const MenuToggler = ({ isOpen, onClick }: MenuTogglerProps) => {
-	const css = useCSS(togglerKey);
-	const stylesheet = css`
-		button {
-			background: none;
-			border: none;
-			height: 2rem;
-			display: grid;
-			place-items: center;
-			z-index: 10;
-			cursor: pointer;
-			margin: 0 0 0 1rem;
-			padding: 0;
-		}
-		.line {
-			width: 2rem;
-			height: 0.25rem;
-			border-radius: 0.625rem;
-			background-color: white;
-			transform-origin: 0.1rem;
-			transition: all 0.3s linear;
-		}
-		.line-1 {
-			transform: ${isOpen ? 'rotate(45deg)' : 'rotate(0)'};
-		}
-		.line-2 {
-			opacity: ${isOpen ? '0' : '1'};
-		}
-		.line-3 {
-			transform: ${isOpen ? 'rotate(-45deg)' : 'rotate(0)'};
-		}
-	`;
-	return (
-		<Scope tag={MENU_TOGGLER_TAG} stylesheets={[theme, stylesheet]}>
-			<button onClick={onClick}>
-				<div className="line line-1" />
-				<div className="line line-2" />
-				<div className="line line-3" />
-			</button>
-		</Scope>
-	);
-};
-
 export const MENU_BAR_TAG = 'sg-menu-bar';
 
 type LinkContent = { text: string; href: string };
 type TextContent = { text: string };
 
-const menuKey = Symbol();
+const key = Symbol();
 
 const MenuBar = () => {
-	const css = useCSS(menuKey);
+	const global = useContext(GlobalContext);
+	const title = getTypedContent<TextContent>(global.title)[0];
+	const facebook = getTypedContent<LinkContent>(global.facebook)[0];
+	const twitter = getTypedContent<LinkContent>(global.twitter)[0];
+	const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+	const toggleMobileNav = () => {
+		setMobileNavOpen(!mobileNavOpen);
+	};
+
+	const css = useCSS(key);
 	const stylesheet = css`
 		header {
 			background-color: var(--color-brand-1);
@@ -92,6 +50,34 @@ const MenuBar = () => {
 		.desktop-nav {
 			display: none;
 		}
+		.toggler {
+			background: none;
+			border: none;
+			height: 2rem;
+			display: grid;
+			place-items: center;
+			z-index: 10;
+			cursor: pointer;
+			margin: 0 0 0 1rem;
+			padding: 0;
+		}
+		.toggler-line {
+			width: 2rem;
+			height: 0.25rem;
+			border-radius: 0.625rem;
+			background-color: white;
+			transform-origin: 0.1rem;
+			transition: all 0.3s linear;
+		}
+		.toggler-line-1 {
+			transform: ${mobileNavOpen ? 'rotate(45deg)' : 'rotate(0)'};
+		}
+		.toggler-line-2 {
+			opacity: ${mobileNavOpen ? '0' : '1'};
+		}
+		.toggler-line-3 {
+			transform: ${mobileNavOpen ? 'rotate(-45deg)' : 'rotate(0)'};
+		}
 		@media screen and (min-width: 70em) {
 			.mobile-nav {
 				display: none;
@@ -101,15 +87,6 @@ const MenuBar = () => {
 			}
 		}
 	`;
-	const global = useContext(GlobalContext);
-	const title = getTypedContent<TextContent>(global.title)[0];
-	const facebook = getTypedContent<LinkContent>(global.facebook)[0];
-	const twitter = getTypedContent<LinkContent>(global.twitter)[0];
-	const [mobileNavOpen, setMobileNavOpen] = useState(false);
-
-	const toggleMobileNav = () => {
-		setMobileNavOpen(!mobileNavOpen);
-	};
 
 	return (
 		<Scope tag={MENU_BAR_TAG} stylesheets={[theme, stylesheet]}>
@@ -130,8 +107,17 @@ const MenuBar = () => {
 					</Link>
 
 					<div className="mobile-nav">
-						<MenuToggler isOpen={mobileNavOpen} onClick={toggleMobileNav} />
-						<PageNav mobile={true} isOpen={mobileNavOpen} />
+						<button
+							className="toggler"
+							onClick={toggleMobileNav}
+							aria-controls="mobile-nav"
+							aria-expanded={mobileNavOpen}
+						>
+							<div className="toggler-line toggler-line-1" />
+							<div className="toggler-line toggler-line-2" />
+							<div className="toggler-line toggler-line-3" />
+						</button>
+						<PageNav id="mobile-nav" aria-hidden={!mobileNavOpen} mobile={true} isOpen={mobileNavOpen} />
 					</div>
 				</div>
 			</header>
