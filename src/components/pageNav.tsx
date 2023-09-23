@@ -1,5 +1,5 @@
 import { getTypedContent } from '@/utilities/utilities';
-import Link from 'next/link';
+import { Link } from '@/components/navigation';
 import { HTMLAttributes, useContext, useState } from 'react';
 import { GlobalContext } from '@/api-client/context';
 import { Scope, css } from 'react-shadow-scope';

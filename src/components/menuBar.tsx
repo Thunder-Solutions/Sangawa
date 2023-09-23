@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/components/navigation';
 import { useContext, useState } from 'react';
 import { useCSS, Scope } from 'react-shadow-scope';
 import { GlobalContext } from '@/api-client/context';
