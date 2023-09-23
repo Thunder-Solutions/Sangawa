@@ -20,7 +20,7 @@ export const fetchGlobalContent = async (): Promise<Result<ContentSet>> => {
 						{ id: '4722e7f0-3160-4c80-aba4-00f4ba885b2c', content: { text: 'Media & Press', href: '/press' } },
 						{
 							id: '9bb12ac3-592d-477c-8ded-2aef0930dac2',
-							content: { text: 'Hotel Reservations', href: '/hotel-reservations' },
+							content: { text: 'Hotel Reservations', href: '/hotel' },
 						},
 						{ id: 'f02e442e-b6ae-47c8-a04e-ad2e86fdf0b1', content: { text: 'Rules', href: '/rules' } },
 					],
