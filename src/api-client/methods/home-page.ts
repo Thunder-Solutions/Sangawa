@@ -1,5 +1,5 @@
 import { Result, safeTry } from '@/utilities/utilities';
-import { ContentSet } from './api-client';
+import { ContentSet } from '../api-client';
 
 /**
  * Response is mocked for now. Should be easy enough to swap for a CMS response later.
@@ -35,7 +35,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 							},
 						},
 						{
-							id: 'c8eb4522-d8e2-427a-9a57-bcd657fe7345',
+							id: 'f7296397-b4f3-4983-8ca5-337951afdd21',
 							content: { component: 'CtaLayout' },
 							childContent: [
 								{
@@ -43,7 +43,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 									content: {
 										component: 'CtaLink',
 										prop__icon: 'ticket',
-										prop__href: '/register',
+										prop__href: '/registration',
 									},
 									childContent: [
 										{
@@ -57,7 +57,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 									content: {
 										component: 'CtaLink',
 										prop__icon: 'bed',
-										prop__href: '/hotels',
+										prop__href: '/hotel',
 									},
 									childContent: [
 										{
@@ -71,7 +71,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 									content: {
 										component: 'CtaLink',
 										prop__icon: 'footsteps',
-										prop__href: '/explore',
+										prop__href: '/events',
 									},
 									childContent: [
 										{
@@ -89,7 +89,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 							},
 							childContent: [
 								{
-									id: 'f5261942-7cbc-40c4-aeb6-1eb96f3a2586',
+									id: '730d8a6e-a07c-4475-a904-601135a1364e',
 									content: {
 										component: 'Info',
 										prop__heading: 'Hours',

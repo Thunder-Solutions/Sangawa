@@ -6,8 +6,10 @@ export const CTA_LAYOUT_TAG = 'sg-cta-layout';
 
 export type CtaLayoutProps = PropsWithChildren;
 
+const key = Symbol();
+
 const CtaLayout = ({ children }: CtaLayoutProps) => {
-	const css = useCSS();
+	const css = useCSS(key);
 	const stylesheet = css`
 		nav {
 			display: flex;

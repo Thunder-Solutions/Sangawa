@@ -8,8 +8,10 @@ export type InfoProps = PropsWithChildren<{
 	heading: string;
 }>;
 
+const key = Symbol();
+
 const Info = ({ children, heading }: InfoProps) => {
-	const css = useCSS();
+	const css = useCSS(key);
 	const stylesheet = css`
 		.info {
 			border: 0.1rem solid var(--color-brand-1);

@@ -9,11 +9,13 @@ export type SectionProps = PropsWithChildren<{
 	backdropUrl?: string;
 }>;
 
+const key = Symbol();
+
 const Section = ({ children, heading, backdropUrl }: SectionProps) => {
-	const css = useCSS();
+	const css = useCSS(key);
 	const stylesheet = css`
 		section {
-			background: center / cover no-repeat url('ice-texture.png');
+			background: center / cover no-repeat url(ice-texture.png);
 		}
 		header {
 			padding: 1rem;

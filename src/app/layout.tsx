@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Quicksand } from 'next/font/google';
 import { PropsWithChildren } from 'react';
 import { GlobalProvider } from '@/api-client/context';
+import { NavigationProvider } from '@/components/navigation';
 
 const response = await apiClient.fetchGlobalContent();
 const [globalError, global = {}] = response;
@@ -26,7 +27,9 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 				<link rel="icon" href="/favicon.ico" />
 			</head>
 			<body className={font.className}>
-				<GlobalProvider value={global}>{children}</GlobalProvider>
+				<GlobalProvider value={global}>
+					<NavigationProvider>{children}</NavigationProvider>
+				</GlobalProvider>
 			</body>
 		</html>
 	);
