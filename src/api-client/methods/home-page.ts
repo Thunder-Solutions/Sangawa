@@ -1,5 +1,5 @@
 import { Result, safeTry } from '@/utilities/utilities';
-import { ContentSet } from './api-client';
+import { ContentSet } from '../api-client';
 
 /**
  * Response is mocked for now. Should be easy enough to swap for a CMS response later.

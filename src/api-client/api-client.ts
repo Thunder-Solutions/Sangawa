@@ -1,6 +1,7 @@
-import { UUID } from 'crypto';
+import { fetchGuestsPageContent } from './methods/guests-page';
+import { fetchHomePageContent } from './methods/home-page';
 import { fetchGlobalContent } from './global';
-import { fetchHomePageContent } from './home-page';
+import { UUID } from 'crypto';
 
 export type Content<T = { [key: string]: string }> = {
 	id?: UUID;
@@ -18,4 +19,5 @@ export type ContentSet = {
 export const apiClient = {
 	fetchGlobalContent,
 	fetchHomePageContent,
+	fetchGuestsPageContent,
 };
