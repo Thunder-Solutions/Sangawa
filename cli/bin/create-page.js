@@ -33,7 +33,7 @@ import { Page, CMSComponent } from '@/components/clientComponents';
 const [${pageName}PageError, ${pageName}Page = {}] = await apiClient.fetch${PageName}PageContent();
 if (${pageName}PageError) {
 	const _error =
-	${pageName}PageError instanceof Error ? ${pageName}PageError : new Error('${PageName} page content could not be found.');
+		${pageName}PageError instanceof Error ? ${pageName}PageError : new Error('${PageName} page content could not be found.');
 	console.error(_error);
 }
 

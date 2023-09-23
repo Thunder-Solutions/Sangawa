@@ -11,7 +11,7 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 		return {
 			meta: [
 				{
-					id: '98fcc94a-d8e9-4c7f-b400-19a3faffc09d',
+					id: '90f5d068-dd9e-44fe-ac5a-51a95f0398bb',
 					content: {
 						page: 'guests',
 						title: 'Sangawa Project | Guests',
@@ -20,17 +20,17 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 			],
 			pageContent: [
 				{
-					id: 'c8eb4522-d8e2-427a-9a57-bcd657fe7345',
+					id: 'f07adbb1-5095-419e-b800-64f9ea221f4a',
 					content: {
 						component: 'Section',
 						prop__backdropUrl: 'Tekko-Japanese-Anime-Convention-Dealers-Room.jpg',
 					},
 					childContent: [
 						{
-							id: '0aa5d08b-c281-47d6-bc15-5b3b9746e166',
+							id: 'dde7b21c-14d0-4aab-85c3-ee7df10f7eff',
 							content: {
 								component: 'Text',
-								prop__text: 'This is the guests page',
+								prop__text: 'This is the Guests page',
 							},
 						},
 					],
