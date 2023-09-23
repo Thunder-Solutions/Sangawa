@@ -4,6 +4,7 @@ import { HTMLAttributes, useContext } from 'react';
 import { GlobalContext } from '@/api-client/context';
 import { Scope, useCSS } from 'react-shadow-scope';
 import { theme } from '@/utilities/theme';
+import Icon from './icon';
 
 export const PAGE_NAV_TAG = 'sg-page-nav';
 
@@ -51,6 +52,9 @@ const PageNav = ({ isOpen = true, mobile = false, ...forwardedProps }: PageNavPr
 			width: 100%;
 		}
 		.subnav .subnav-btn {
+			display: flex;
+			place-items: center;
+			justify-content: end;
 			border: none;
 			outline: none;
 			background-color: transparent;
@@ -125,6 +129,8 @@ const PageNav = ({ isOpen = true, mobile = false, ...forwardedProps }: PageNavPr
 			cursor: pointer;
 		}
 		.subnav .subnav-btn {
+			display: flex;
+			place-items: center;
 			border: none;
 			outline: none;
 			background-color: transparent;
@@ -177,7 +183,11 @@ const PageNav = ({ isOpen = true, mobile = false, ...forwardedProps }: PageNavPr
 						if (Array.isArray(children) && children.length > 0) {
 							return (
 								<div key={content.href} className="subnav">
-									<button className="nav-link subnav-btn">{content.text}</button>
+									<button className="nav-link subnav-btn">
+										{mobile ? <Icon type="left-chevron" /> : <></>}
+										<span>{content.text}</span>
+										{mobile ? <></> : <Icon type="down-chevron" />}
+									</button>
 									<nav className="subnav-content">
 										{getTypedContent<LinkContent>(children).map(({ content }) => (
 											<Link key={content.href} href={content.href} className="nav-link subnav-link">
