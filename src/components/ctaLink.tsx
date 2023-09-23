@@ -2,6 +2,7 @@ import { PropsWithChildren } from 'react';
 import { useCSS, Scope } from 'react-shadow-scope';
 import { theme } from '@/utilities/theme';
 import Icon, { IconProps } from './icon';
+import { Link } from './navigation';
 
 export const CTA_LINK_TAG = 'sg-cta-link';
 
@@ -71,13 +72,13 @@ const CtaLink = ({ children, href, icon }: CtaLinkProps) => {
 	`;
 	return (
 		<Scope tag={CTA_LINK_TAG} stylesheets={[theme, stylesheet]} slottedContent={children}>
-			<a href={href}>
+			<Link href={href}>
 				<div className="icon-wrapper">
 					<Icon type={icon} className="icon" />
 					<div className="icon-backdrop" />
 				</div>
 				<slot></slot>
-			</a>
+			</Link>
 		</Scope>
 	);
 };

@@ -30,7 +30,7 @@ const Page = ({ children }: PageProps) => {
 			z-index: 100;
 			background-color: white;
 			opacity: 0;
-			transition: opacity 0.3s;
+			transition: opacity 0.5s;
 		}
 		.transition.loading {
 			pointer-events: initial;

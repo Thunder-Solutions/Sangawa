@@ -43,7 +43,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 									content: {
 										component: 'CtaLink',
 										prop__icon: 'ticket',
-										prop__href: '/register',
+										prop__href: '/registration',
 									},
 									childContent: [
 										{
@@ -57,7 +57,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 									content: {
 										component: 'CtaLink',
 										prop__icon: 'bed',
-										prop__href: '/hotels',
+										prop__href: '/hotel',
 									},
 									childContent: [
 										{
@@ -71,7 +71,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 									content: {
 										component: 'CtaLink',
 										prop__icon: 'footsteps',
-										prop__href: '/explore',
+										prop__href: '/events',
 									},
 									childContent: [
 										{

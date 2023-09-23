@@ -30,7 +30,6 @@ export const NavigationProvider = ({ children }: PropsWithChildren) => {
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		const url = `${pathname}?${searchParams}`;
 		setLoading(false);
 	}, [pathname, searchParams]);
 
