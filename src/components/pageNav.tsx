@@ -40,9 +40,6 @@ const mobileStylesheet = css`
 		padding: 0.25rem 0.75rem;
 		box-sizing: border-box;
 	}
-	.nav-link:focus-within {
-		background-color: var(--color-nav-hover);
-	}
 	.subnav {
 		position: relative;
 		cursor: pointer;
@@ -53,14 +50,10 @@ const mobileStylesheet = css`
 		place-items: center;
 		justify-content: end;
 		border: none;
-		outline: none;
 		background-color: transparent;
 		font-family: inherit;
 		cursor: pointer;
 		margin-left: -0.125rem;
-	}
-	.subnav:focus-within {
-		background-color: var(--color-nav-hover);
 	}
 	.subnav-content[aria-hidden='false'] {
 		display: flex;
@@ -129,7 +122,6 @@ const desktopStylesheet = css`
 		display: flex;
 		place-items: center;
 		border: none;
-		outline: none;
 		background-color: transparent;
 		font-family: inherit;
 		cursor: pointer;
@@ -183,7 +175,6 @@ const PageNav = ({ isOpen = true, mobile = false, ...forwardedProps }: PageNavPr
 						// eslint-disable-next-line
 						const [subnavOpen, setSubnavOpen] = useState(false);
 						const toggleSubnav = () => {
-							if (!mobile) return;
 							setSubnavOpen(!subnavOpen);
 						};
 						const handleHover = (on: boolean) => () => {
