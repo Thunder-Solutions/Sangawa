@@ -22,6 +22,7 @@ export const theme = css`
 
 		--color-site-1: #e3ebee;
 		--color-site-1-c: #000;
+		--color-site-2: #abb0b4;
 
 		--color-nav-hover: rgba(255, 255, 255, 0.25);
 
