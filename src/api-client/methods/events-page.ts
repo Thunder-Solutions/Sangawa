@@ -30,7 +30,7 @@ export const fetchEventsPageContent = async (): Promise<Result<ContentSet>> => {
 							id: 'e5b7ba0a-202b-4b1f-b725-956f20c9f28e',
 							content: {
 								component: 'Text',
-								prop__text: 'This is the Events page',
+								prop__text: 'Events to be announced soon, stay tuned!',
 							},
 						},
 					],

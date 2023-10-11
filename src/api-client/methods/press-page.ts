@@ -30,7 +30,7 @@ export const fetchPressPageContent = async (): Promise<Result<ContentSet>> => {
 							id: '26f768d2-3a89-42ef-b2d8-2b8effc8cb2a',
 							content: {
 								component: 'Text',
-								prop__text: 'This is the Press page',
+								prop__text: 'Press pass applications are not yet open, check back soon!',
 							},
 						},
 					],
