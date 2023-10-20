@@ -103,7 +103,7 @@ const desktopStylesheet = css`
 		font-size: 1.2rem;
 	}
 	.nav-link:hover {
-		background-color: var(--color-nav-hover);
+		background-color: var(--color-brand-1-1);
 	}
 	.nav > .nav-link {
 		height: 100%;
@@ -127,7 +127,7 @@ const desktopStylesheet = css`
 		cursor: pointer;
 	}
 	.subnav:hover {
-		background-color: var(--color-nav-hover);
+		background-color: var(--color-brand-1-1);
 	}
 	.subnav-content[aria-hidden='false'] {
 		display: flex;

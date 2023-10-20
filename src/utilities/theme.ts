@@ -18,13 +18,12 @@ export const theme = css`
 		--font-content: 'Quicksand', sans-serif;
 
 		--color-brand-1: #ff0000;
+		--color-brand-1-1: rgba(255, 255, 255, 0.25);
 		--color-brand-1-c: #fff;
 
 		--color-site-1: #e3ebee;
 		--color-site-1-c: #000;
 		--color-site-2: #abb0b4;
-
-		--color-nav-hover: rgba(255, 255, 255, 0.25);
 
 		color: var(--color-site-1-c);
 		font-family: var(--font-content);
