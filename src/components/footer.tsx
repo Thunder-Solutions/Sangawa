@@ -11,8 +11,8 @@ import { Content } from '@/api-client/api-client';
 export const FOOTER_TAG = 'sg-footer';
 export const FOOTER_LOGO_TAG = 'sg-footer-logo';
 export const FOOTER_SOCIAL_TAG = 'sg-footer-social';
-export const FOOTER_SITEMAP_TAG = 'sg-footer-social';
-export const FOOTER_COPYRIGHT_TAG = 'sg-footer-social';
+export const FOOTER_SITEMAP_TAG = 'sg-footer-sitemap';
+export const FOOTER_COPYRIGHT_TAG = 'sg-footer-copyright';
 
 type LinkContent = { text: string; href: string };
 
@@ -173,7 +173,6 @@ const SitemapSection = ({ id, content, childContent }: Content<LinkContent>) => 
 			max-height: 10rem;
 		}
 		.sitemap-section[aria-hidden='true'] {
-			height: 0;
 			max-height: 0;
 			overflow: hidden;
 		}
@@ -232,7 +231,7 @@ const Copyright = ({ className }: CopyrightProps) => {
 	`;
 	return (
 		<div className={className}>
-			<Scope tag={FOOTER_SITEMAP_TAG} stylesheets={[theme, stylesheet]}>
+			<Scope tag={FOOTER_COPYRIGHT_TAG} stylesheets={[theme, stylesheet]}>
 				<small className="copyright">
 					Copyright &copy; Pittsburgh Japanese Culture Society 2020 All Rights Reserved
 				</small>
