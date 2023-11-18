@@ -30,7 +30,12 @@ export const fetchRegistrationPageContent = async (): Promise<Result<ContentSet>
 							id: 'afa09d7b-57f8-4535-966e-4ae3c5897156',
 							content: {
 								component: 'Text',
-								prop__text: 'This is the Registration page',
+								prop__text: `Our Genin (general admission) badge is $65, with optional upgrades available, including:
+- Chūnin upgrade for + $15
+- Jōnin upgrade for + $45
+- Kage upgrade for + $60
+
+To purchase your badge, please visit our [Eventeny page](https://www.eventeny.com/events/ticket/?id=7388).`,
 							},
 						},
 					],
