@@ -2,7 +2,7 @@ import { theme } from '@/utilities/theme';
 import { useCSS, Scope } from 'react-shadow-scope';
 import Image from 'next/image';
 import Icon from './icon';
-import { Fragment, useContext, useState } from 'react';
+import { Fragment, useContext, useEffect, useState } from 'react';
 import { GlobalContext } from '@/api-client/context';
 import { getTypedContent } from '@/utilities/utilities';
 import Link from 'next/link';
@@ -49,6 +49,9 @@ const Footer = () => {
 			border: var(--border);
 			border-right: none;
 			border-left: none;
+			display: grid;
+			gap: 0.5rem;
+			padding: 1rem 2rem;
 		}
 		@media (min-width: 50em) {
 			footer {
@@ -59,6 +62,8 @@ const Footer = () => {
 				grid-template-rows: 1fr auto;
 			}
 			.sitemap {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
 				border: none;
 			}
 			.logo {
@@ -155,7 +160,6 @@ const SitemapSection = ({ id, content, childContent }: Content<LinkContent>) => 
 	};
 	const css = useCSS(sitemapKey);
 	const stylesheet = css`
-		nav,
 		.sitemap-section {
 			display: grid;
 		}
@@ -176,12 +180,41 @@ const SitemapSection = ({ id, content, childContent }: Content<LinkContent>) => 
 			max-height: 0;
 			overflow: hidden;
 		}
+		.top-level-link-container {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			gap: 0.5rem;
+		}
+		.toggler {
+			border: 0 solid;
+			border-radius: 0.3rem;
+			background-color: var(--color-brand-1);
+			color: var(--color-brand-1-c);
+			cursor: pointer;
+			display: inline-flex;
+			padding: 0.2rem;
+		}
 		@media (min-width: 50em) {
-			nav {
-				grid-template-columns: 1fr 1fr 1fr;
+			.toggler {
+				display: none;
+			}
+			.top-level-link-container {
+				grid-template-columns: 1fr;
+			}
+			.top-level-link {
+				padding-bottom: 0.5rem;
 			}
 		}
 	`;
+	useEffect(() => {
+		const handleMediaChange = (e: MediaQueryListEvent) => {
+			setExpanded(e.matches);
+		};
+		matchMedia('(min-width: 50em)').addEventListener('change', handleMediaChange);
+		return () => {
+			matchMedia('(min-width: 50em)').removeEventListener('change', handleMediaChange);
+		};
+	}, []);
 	return (
 		<Scope tag={FOOTER_SITEMAP_TAG} stylesheets={[theme, stylesheet]}>
 			<nav key={id}>
