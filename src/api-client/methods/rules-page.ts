@@ -117,7 +117,9 @@ Yes! We strongly encourage you to reserve a room at the Drury Plaza Hotel! Betwe
   - There is to be no smoking inside of the event venue.
     - This includes but is not limited to Cigarettes, Cigars, Pipes, and E-Cigs.
     - Chewing tobacco is also prohibited.
-  - All local, state and federal laws apply inside the confines of the event.`,
+  - All local, state and federal laws apply inside the confines of the event.
+
+Be advised: This page is still being developed, more information to come.`,
 							},
 						},
 					],
