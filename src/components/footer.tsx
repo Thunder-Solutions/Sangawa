@@ -207,12 +207,14 @@ const SitemapSection = ({ id, content, childContent }: Content<LinkContent>) => 
 		}
 	`;
 	useEffect(() => {
+		const mediaQuery = matchMedia('(min-width: 50em)');
 		const handleMediaChange = (e: MediaQueryListEvent) => {
 			setExpanded(e.matches);
 		};
-		matchMedia('(min-width: 50em)').addEventListener('change', handleMediaChange);
+		setExpanded(mediaQuery.matches);
+		mediaQuery.addEventListener('change', handleMediaChange);
 		return () => {
-			matchMedia('(min-width: 50em)').removeEventListener('change', handleMediaChange);
+			mediaQuery.removeEventListener('change', handleMediaChange);
 		};
 	}, []);
 	return (
