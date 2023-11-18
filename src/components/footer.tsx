@@ -110,7 +110,7 @@ const Logo = ({ className }: LogoProps) => {
 			<Scope tag={FOOTER_LOGO_TAG} stylesheets={[theme, stylesheet]}>
 				<div className="logo-wrapper">
 					<Image
-						src="/pittjcs-logo.svg"
+						src="/pittjcs-logo.png"
 						alt="Pittsburgh Japanese Culture Society"
 						height={600}
 						width={400}
