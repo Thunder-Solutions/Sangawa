@@ -9,3 +9,8 @@ body {
 	padding: 0;
 	scroll-behavior: smooth;
 }
+
+@font-face {
+	font-family: 'Brasspounder';
+	src: url('../../public/BrasspSC.ttf');
+}

@@ -30,7 +30,7 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 							id: 'dde7b21c-14d0-4aab-85c3-ee7df10f7eff',
 							content: {
 								component: 'Text',
-								prop__text: 'This is the Guests page',
+								prop__text: 'Guests to be announced soon, stay tuned!',
 							},
 						},
 					],

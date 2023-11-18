@@ -1,5 +1,14 @@
 import { IconBaseProps } from 'react-icons';
-import { FaAngleDown, FaAngleLeft, FaBed, FaFacebook, FaShoePrints, FaTicketAlt, FaTwitter } from 'react-icons/fa';
+import {
+	FaAngleDown,
+	FaAngleLeft,
+	FaBed,
+	FaFacebook,
+	FaPlus,
+	FaShoePrints,
+	FaTicketAlt,
+	FaTwitter,
+} from 'react-icons/fa';
 
 const iconMap = {
 	'facebook': FaFacebook,
@@ -9,6 +18,7 @@ const iconMap = {
 	'ticket': FaTicketAlt,
 	'bed': FaBed,
 	'footsteps': FaShoePrints,
+	'plus': FaPlus,
 };
 
 export type IconProps = {
