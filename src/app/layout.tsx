@@ -1,7 +1,6 @@
 import { apiClient } from '@/api-client/api-client';
 import './global.css';
 import type { Metadata } from 'next';
-import { Quicksand } from 'next/font/google';
 import { PropsWithChildren } from 'react';
 import { GlobalProvider } from '@/api-client/context';
 import { NavigationProvider } from '@/components/navigation';
@@ -13,8 +12,6 @@ if (globalError) {
 	console.error(_error);
 }
 
-const font = Quicksand({ subsets: ['latin'] });
-
 export const metadata: Metadata = {
 	title: 'Sangawa Project',
 	description: 'The Japanese pop culture convention for adults',
@@ -25,8 +22,14 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 		<html lang="en">
 			<head>
 				<link rel="icon" href="/favicon.ico" />
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" {...{ crossorigin: 'true' }} />
+				<link
+					href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+					rel="stylesheet"
+				/>
 			</head>
-			<body className={font.className}>
+			<body>
 				<GlobalProvider value={global}>
 					<NavigationProvider>{children}</NavigationProvider>
 				</GlobalProvider>
