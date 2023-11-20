@@ -20,6 +20,7 @@ export const theme = css`
 		--color-brand-1: #ff0000;
 		--color-brand-1-1: rgba(255, 255, 255, 0.25);
 		--color-brand-1-c: #fff;
+		--color-brand-1-c-1: #b7f8ff;
 
 		--color-site-1: #e3ebee;
 		--color-site-1-c: #000;

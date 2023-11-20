@@ -17,21 +17,27 @@ export type PageNavProps = {
 
 const mobileStylesheet = css`
 	.nav {
-		position: absolute;
-		top: 1.6rem;
-		right: 0;
 		display: none;
 		flex-direction: column;
 		gap: 0.5rem;
 		align-items: flex-end;
+	}
+	.nav,
+	.subnav-content {
 		background-color: var(--color-brand-1);
 		padding: 0.75rem 0;
+		border: 0;
+		border-radius: 0.4rem;
+		border-top-right-radius: 0;
+		box-shadow: -0.2rem 0.2rem 0 rgba(0, 0, 0, 0.4);
 	}
 	.nav[aria-hidden='false'] {
 		display: flex;
 	}
 	.wrapper {
-		position: relative;
+		position: absolute;
+		top: calc(100% + 0.02rem);
+		right: 0;
 	}
 	.nav-link {
 		color: var(--color-brand-1-c);
@@ -54,7 +60,6 @@ const mobileStylesheet = css`
 		background-color: transparent;
 		font-family: inherit;
 		cursor: pointer;
-		margin-left: -0.125rem;
 	}
 	.subnav-content[aria-hidden='false'] {
 		display: flex;
@@ -65,16 +70,17 @@ const mobileStylesheet = css`
 		gap: 0.375rem;
 		position: absolute;
 		top: -0.813rem;
-		right: 8.625rem;
-		background-color: var(--color-brand-1);
+		right: calc(100% + 0.1rem);
 		z-index: 1;
-		border-radius: 0.375rem;
 		text-align: right;
 		min-width: 11rem;
-		padding: 0.75rem 0;
 	}
 	.subnav-link {
 		padding: 0.25rem 0.625rem;
+	}
+	.subnav-mobile-icon {
+		font-size: 1.3rem;
+		flex: 1;
 	}
 	.register-link {
 		font-family: 'Brasspounder';
@@ -170,6 +176,10 @@ const desktopStylesheet = css`
 		text-decoration: none;
 		padding: 1rem 2rem;
 		display: inline-block;
+		transition: background-color 0.3s;
+	}
+	.register-link:hover {
+		background-color: var(--color-brand-1-c-1);
 	}
 `;
 
@@ -255,7 +265,6 @@ const MenuBar = () => {
 	const stylesheet = css`
 		header {
 			background-color: var(--color-brand-1);
-			padding: 0 2rem;
 			display: grid;
 			grid-template-columns: auto 1fr;
 			justify-items: right;
@@ -306,13 +315,24 @@ const MenuBar = () => {
 		}
 		.logo-link {
 			display: flex;
+			padding-left: 1rem;
 		}
-		@media screen and (min-width: 70em) {
+		.mobile-nav {
+			height: 100%;
+			display: flex;
+			place-items: center;
+			position: relative;
+			padding-right: 1rem;
+		}
+		@media screen and (min-width: 55em) {
 			.mobile-nav {
 				display: none;
 			}
 			.desktop-nav {
 				display: block;
+			}
+			.menu-items {
+				padding-right: 1rem;
 			}
 		}
 	`;
