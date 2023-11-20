@@ -66,8 +66,8 @@ const Footer = () => {
 				grid-template-rows: 1fr auto;
 			}
 			.sitemap {
-				display: grid;
-				grid-template-columns: 1fr 1fr 1fr;
+				display: flex;
+				justify-content: space-around;
 				border: none;
 			}
 			.logo {
@@ -131,6 +131,9 @@ const socialKey = Symbol();
 type SocialProps = { className?: string };
 
 const Social = ({ className }: SocialProps) => {
+	const global = useContext(GlobalContext);
+	const facebook = getTypedContent<LinkContent>(global.facebook)[0];
+	const twitter = getTypedContent<LinkContent>(global.twitter)[0];
 	const css = useCSS(socialKey);
 	const stylesheet = css`
 		:host {
@@ -147,8 +150,12 @@ const Social = ({ className }: SocialProps) => {
 	return (
 		<div className={className}>
 			<Scope tag={FOOTER_SOCIAL_TAG} stylesheets={[theme, stylesheet]}>
-				<Icon type="facebook" className="social-icon" />
-				<Icon type="twitter" className="social-icon" />
+				<Link className="social-link" href={facebook.content.href}>
+					<Icon type="facebook" className="social-icon" title={facebook.content.text} />
+				</Link>
+				<Link className="social-link" href={twitter.content.href}>
+					<Icon type="twitter" className="social-icon" title={twitter.content.text} />
+				</Link>
 			</Scope>
 		</div>
 	);

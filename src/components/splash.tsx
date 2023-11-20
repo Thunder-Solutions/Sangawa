@@ -41,10 +41,10 @@ const Splash = () => {
 			justify-content: center;
 			align-items: center;
 			gap: 0.5rem;
-			padding: 0.5rem 0 3rem;
+			padding: 1rem 0 3rem;
 			color: var(--color-brand-1);
 			font-weight: bold;
-			font-size: 2rem;
+			font-size: 1.2rem;
 			background-image: linear-gradient(rgba(255, 255, 255, 0.3) 50%, transparent);
 		}
 	`;
