@@ -1,21 +1,12 @@
 import { IconBaseProps } from 'react-icons';
-import {
-	FaAngleDown,
-	FaAngleLeft,
-	FaBed,
-	FaFacebook,
-	FaMinus,
-	FaPlus,
-	FaShoePrints,
-	FaTicketAlt,
-	FaTwitter,
-} from 'react-icons/fa';
+import { FaBed, FaFacebook, FaMinus, FaPlus, FaShoePrints, FaTicketAlt, FaTwitter } from 'react-icons/fa';
+import { HiChevronDown, HiChevronLeft } from 'react-icons/hi2';
 
 const iconMap = {
 	'facebook': FaFacebook,
 	'twitter': FaTwitter,
-	'left-chevron': FaAngleLeft,
-	'down-chevron': FaAngleDown,
+	'left-chevron': HiChevronLeft,
+	'down-chevron': HiChevronDown,
 	'ticket': FaTicketAlt,
 	'bed': FaBed,
 	'footsteps': FaShoePrints,
