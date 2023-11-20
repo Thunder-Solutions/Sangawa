@@ -89,10 +89,15 @@ const mobileStylesheet = css`
 	}
 `;
 const desktopStylesheet = css`
+	.wrapper,
+	.nav {
+		height: 100%;
+	}
 	.nav {
 		display: flex;
+		place-items: center;
 		gap: 0.5rem;
-		height: 3rem;
+		height: 100%;
 	}
 	.nav-link {
 		color: var(--color-brand-1-c);
@@ -121,6 +126,7 @@ const desktopStylesheet = css`
 	}
 	.subnav .subnav-btn {
 		display: flex;
+		gap: 0.2rem;
 		place-items: center;
 		border: none;
 		background-color: transparent;
@@ -136,16 +142,21 @@ const desktopStylesheet = css`
 	.subnav-content {
 		display: none;
 		flex-direction: column;
-		gap: 0.375rem;
+		gap: 0.4rem;
 		position: absolute;
-		top: 3rem;
+		top: calc(100% + 0.02rem);
 		right: 0;
 		background-color: var(--color-brand-1);
 		z-index: 1;
-		border-radius: 0.375rem;
+		border-radius: 0.4rem;
+		border-top-right-radius: 0;
+		box-shadow: 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.4);
 		text-align: right;
 		min-width: 15rem;
 		padding: 0.75rem 0;
+	}
+	.subnav-desktop-icon {
+		font-size: 1.6rem;
 	}
 	.subnav-link {
 		padding: 0.25rem 0.625rem;
@@ -195,9 +206,9 @@ const PageNav = ({ isOpen = true, mobile = false, ...forwardedProps }: PageNavPr
 									aria-controls={id}
 									aria-expanded={subnavOpen}
 								>
-									{mobile ? <Icon type="left-chevron" /> : <></>}
+									{mobile ? <Icon className="subnav-mobile-icon" type="left-chevron" /> : <></>}
 									<span>{content.text}</span>
-									{mobile ? <></> : <Icon type="down-chevron" />}
+									{mobile ? <></> : <Icon className="subnav-desktop-icon" type="down-chevron" />}
 								</button>
 								<nav className="subnav-content" id={id} aria-hidden={!subnavOpen}>
 									{getTypedContent<LinkContent>(childContent).map(({ content }) => (
@@ -244,7 +255,7 @@ const MenuBar = () => {
 	const stylesheet = css`
 		header {
 			background-color: var(--color-brand-1);
-			padding: 0.5rem 2rem;
+			padding: 0 2rem;
 			display: grid;
 			grid-template-columns: auto 1fr;
 			justify-items: right;
@@ -263,6 +274,7 @@ const MenuBar = () => {
 		}
 		.desktop-nav {
 			display: none;
+			height: 100%;
 		}
 		.toggler {
 			background: none;
@@ -292,6 +304,9 @@ const MenuBar = () => {
 		.toggler-line-3 {
 			transform: ${mobileNavOpen ? 'rotate(-45deg)' : 'rotate(0)'};
 		}
+		.logo-link {
+			display: flex;
+		}
 		@media screen and (min-width: 70em) {
 			.mobile-nav {
 				display: none;
@@ -305,7 +320,7 @@ const MenuBar = () => {
 	return (
 		<Scope tag={MENU_BAR_TAG} stylesheets={[theme, stylesheet]}>
 			<header>
-				<Link href="/">
+				<Link href="/" className="logo-link">
 					<Image className="logo" src="/sangawa-logo-light.svg" alt={title.content.text} height={50} width={165} />
 				</Link>
 				<div className="menu-items">
