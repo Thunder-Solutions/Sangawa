@@ -4,6 +4,7 @@ import {
 	FaAngleLeft,
 	FaBed,
 	FaFacebook,
+	FaMinus,
 	FaPlus,
 	FaShoePrints,
 	FaTicketAlt,
@@ -19,6 +20,7 @@ const iconMap = {
 	'bed': FaBed,
 	'footsteps': FaShoePrints,
 	'plus': FaPlus,
+	'minus': FaMinus,
 };
 
 export type IconProps = {

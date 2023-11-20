@@ -53,6 +53,10 @@ const Footer = () => {
 			gap: 0.5rem;
 			padding: 1rem 2rem;
 		}
+		.copy {
+			grid-area: copy;
+			padding-top: 1rem;
+		}
 		@media (min-width: 50em) {
 			footer {
 				grid-template-areas:
@@ -131,6 +135,7 @@ const Social = ({ className }: SocialProps) => {
 	const stylesheet = css`
 		:host {
 			display: grid;
+			justify-content: end;
 			padding: 2rem;
 			gap: 1.5rem;
 		}
@@ -175,10 +180,10 @@ const SitemapSection = ({ id, content, childContent }: Content<LinkContent>) => 
 		.sitemap-section {
 			transition: max-height 0.5s;
 			max-height: 10rem;
+			overflow: hidden;
 		}
 		.sitemap-section[aria-hidden='true'] {
 			max-height: 0;
-			overflow: hidden;
 		}
 		.top-level-link-container {
 			display: grid;
@@ -230,7 +235,7 @@ const SitemapSection = ({ id, content, childContent }: Content<LinkContent>) => 
 						aria-owns={`SitemapSection-${id}`}
 						onClick={toggleSitemapSection}
 					>
-						<Icon type="plus" />
+						{expanded ? <Icon type="minus" /> : <Icon type="plus" />}
 					</button>
 				</div>
 				<div className="sitemap-section" aria-hidden={!expanded} id={`SitemapSection-${id}`}>
