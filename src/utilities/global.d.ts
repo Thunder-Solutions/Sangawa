@@ -12,9 +12,8 @@ import {
 	FOOTER_SITEMAP_TAG,
 	FOOTER_COPYRIGHT_TAG,
 } from '@/components/footer';
-import { MENU_BAR_TAG } from '@/components/menuBar';
+import { MENU_BAR_TAG, PAGE_NAV_TAG } from '@/components/menuBar';
 import { PAGE_TAG } from '@/components/page';
-import { PAGE_NAV_TAG } from '@/components/pageNav';
 import { SECTION_TAG } from '@/components/section';
 import { SPLASH_TAG } from '@/components/splash';
 import { CustomIntrinsicElement } from 'react-shadow-scope';
