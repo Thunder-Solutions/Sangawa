@@ -270,7 +270,7 @@ const MenuBar = () => {
 			position: sticky;
 			justify-items: right;
 			top: 0;
-			width: 100vw;
+			max-width: 100vw;
 			z-index: 2;
 		}
 		.logo {
