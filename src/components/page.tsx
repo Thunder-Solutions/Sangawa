@@ -19,6 +19,8 @@ const Page = ({ children }: PageProps) => {
 			display: grid;
 			grid-template-rows: auto minmax(0, 1fr) auto;
 			min-height: 100vh;
+			position: relative;
+			z-index: 1;
 		}
 		.transition {
 			display: block;

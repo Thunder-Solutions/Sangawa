@@ -15,7 +15,7 @@ import {
 import { MENU_BAR_TAG, PAGE_NAV_TAG } from '@/components/menuBar';
 import { PAGE_TAG } from '@/components/page';
 import { SECTION_TAG } from '@/components/section';
-import { SPLASH_TAG } from '@/components/splash';
+import { SPLASH_TAG, SCROLL_TAG } from '@/components/splash';
 import { CustomIntrinsicElement } from 'react-shadow-scope';
 
 declare global {
@@ -23,6 +23,7 @@ declare global {
 	namespace ReactShadowScope {
 		interface CustomElements {
 			[SPLASH_TAG]: CustomIntrinsicElement;
+			[SCROLL_TAG]: CustomIntrinsicElement;
 			[SECTION_TAG]: CustomIntrinsicElement;
 			[PAGE_NAV_TAG]: CustomIntrinsicElement;
 			[PAGE_TAG]: CustomIntrinsicElement;
