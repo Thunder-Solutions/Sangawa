@@ -267,7 +267,10 @@ const MenuBar = () => {
 			background-color: var(--color-brand-1);
 			display: grid;
 			grid-template-columns: auto 1fr;
+			position: sticky;
 			justify-items: right;
+			top: 0;
+			z-index: 2;
 		}
 		.logo {
 			height: 4rem;
