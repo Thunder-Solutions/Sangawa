@@ -260,7 +260,13 @@ const SitemapSection = ({ id, content, childContent }: Content<LinkContent>) => 
 const Sitemap = ({ className }: SitemapProps) => {
 	const global = useContext(GlobalContext);
 	const sitemap = getTypedContent<LinkContent>(global.sitemap);
-	return <div className={className}>{sitemap.map(SitemapSection)}</div>;
+	return (
+		<div className={className}>
+			{sitemap.map((props) => (
+				<SitemapSection key={props.id} {...props} />
+			))}
+		</div>
+	);
 };
 
 const copyrightKey = Symbol();
