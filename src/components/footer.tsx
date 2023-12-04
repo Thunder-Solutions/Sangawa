@@ -2,7 +2,7 @@ import { theme } from '@/utilities/theme';
 import { useCSS, Scope } from 'react-shadow-scope';
 import Image from 'next/image';
 import Icon from './icon';
-import { Fragment, useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { GlobalContext } from '@/api-client/context';
 import { getTypedContent } from '@/utilities/utilities';
 import Link from 'next/link';
