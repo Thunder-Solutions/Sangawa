@@ -1,8 +1,8 @@
-import Head from 'next/head';
 import { apiClient } from '@/api-client/api-client';
 import { PageContent } from '@/components/cmsComponent';
 import { getTypedContent } from '@/utilities/utilities';
 import { ParallaxProvider, Splash, Page, CMSComponent } from '@/components/clientComponents';
+import { Metadata } from 'next';
 
 const [homePageError, homePage = {}] = await apiClient.fetchHomePageContent();
 if (homePageError) {
@@ -10,16 +10,14 @@ if (homePageError) {
 	console.error(_error);
 }
 
+export const metadata: Metadata = homePage.meta[0].content;
+
 const Home = () => {
-	const meta = homePage.meta[0];
 	const pageContent = getTypedContent<PageContent>(homePage.pageContent);
 	return (
 		<ParallaxProvider>
 			<Splash />
 			<Page>
-				<Head>
-					<title>{meta.content.title}</title>
-				</Head>
 				{pageContent.map(({ id, content, ...props }) => (
 					<CMSComponent key={id} content={content} {...props} />
 				))}

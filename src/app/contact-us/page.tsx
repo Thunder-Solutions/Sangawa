@@ -1,8 +1,8 @@
-import Head from 'next/head';
 import { apiClient } from '@/api-client/api-client';
 import { PageContent } from '@/components/cmsComponent';
 import { getTypedContent } from '@/utilities/utilities';
 import { Page, CMSComponent } from '@/components/clientComponents';
+import { Metadata } from 'next';
 
 const [contactPageError, contactPage = {}] = await apiClient.fetchContactPageContent();
 if (contactPageError) {
@@ -11,14 +11,12 @@ if (contactPageError) {
 	console.error(_error);
 }
 
+export const metadata: Metadata = contactPage.meta[0].content;
+
 const Contact = () => {
-	const meta = contactPage.meta[0];
 	const pageContent = getTypedContent<PageContent>(contactPage.pageContent);
 	return (
 		<Page>
-			<Head>
-				<title>{meta.content.title}</title>
-			</Head>
 			{pageContent.map(({ id, content, ...props }) => (
 				<CMSComponent key={id} content={content} {...props} />
 			))}

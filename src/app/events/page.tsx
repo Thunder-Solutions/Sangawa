@@ -1,8 +1,8 @@
-import Head from 'next/head';
 import { apiClient } from '@/api-client/api-client';
 import { PageContent } from '@/components/cmsComponent';
 import { getTypedContent } from '@/utilities/utilities';
 import { Page, CMSComponent } from '@/components/clientComponents';
+import { Metadata } from 'next';
 
 const [eventsPageError, eventsPage = {}] = await apiClient.fetchEventsPageContent();
 if (eventsPageError) {
@@ -11,14 +11,12 @@ if (eventsPageError) {
 	console.error(_error);
 }
 
+export const metadata: Metadata = eventsPage.meta[0].content;
+
 const Events = () => {
-	const meta = eventsPage.meta[0];
 	const pageContent = getTypedContent<PageContent>(eventsPage.pageContent);
 	return (
 		<Page>
-			<Head>
-				<title>{meta.content.title}</title>
-			</Head>
 			{pageContent.map(({ id, content, ...props }) => (
 				<CMSComponent key={id} content={content} {...props} />
 			))}
