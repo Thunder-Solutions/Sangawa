@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 import { GlobalProvider } from '@/api-client/context';
 import { NavigationProvider } from '@/components/navigation';
+import { ShadowScopeConfigProvider } from 'react-shadow-scope';
 
 const response = await apiClient.fetchGlobalContent();
 const [globalError, global = {}] = response;
@@ -23,7 +24,12 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 			<head>
 				<link rel="icon" href="/favicon.ico" />
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" {...{ crossorigin: 'true' }} />
+				<link
+					rel="preconnect"
+					href="https://fonts.gstatic.com"
+					/* @ts-ignore */
+					crossOrigin="true"
+				/>
 				<link
 					href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
 					rel="stylesheet"
@@ -31,7 +37,9 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 			</head>
 			<body>
 				<GlobalProvider value={global}>
-					<NavigationProvider>{children}</NavigationProvider>
+					<NavigationProvider>
+						<ShadowScopeConfigProvider config={{ dsd: 'emulated' }}>{children}</ShadowScopeConfigProvider>
+					</NavigationProvider>
 				</GlobalProvider>
 			</body>
 		</html>
