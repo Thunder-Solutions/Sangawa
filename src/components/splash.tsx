@@ -71,8 +71,8 @@ const Splash = () => {
 		}
 		.logo {
 			box-sizing: border-box;
-			height: 60.5rem;
-			/*object-fit: contain;*/
+			height: 20.5rem;
+			object-fit: contain;
 			padding: 2rem 3rem;
 			max-width: 100%;
 			width: 60rem;
@@ -88,7 +88,7 @@ const Splash = () => {
 						<Scope tag={SPLASH_TAG} stylesheets={[theme, stylesheet]}>
 							<div className="container">
 								<h1>
-									<Image className="logo" src="sangawa-logo_2024.svg" width={704} height={636} alt="Sangawa Project" />
+									<Image className="logo" src="sangawa-logo.svg" width={704} height={236} alt="Sangawa Project" />
 								</h1>
 							</div>
 						</Scope>
