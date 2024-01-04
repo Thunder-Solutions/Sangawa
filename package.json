@@ -15,7 +15,8 @@
 		"react-icons": "^4.10.1",
 		"react-markdown": "^9.0.1",
 		"react-scroll-parallax": "^3.4.2",
-		"react-shadow-scope": "^1.0.4"
+		"react-shadow-scope": "^1.0.4",
+		"sharp": "^0.33.1"
 	},
 	"devDependencies": {
 		"@types/node": "20.4.7",
