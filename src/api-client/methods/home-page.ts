@@ -126,9 +126,7 @@ To be announced...`,
 
 ---
 
-Sangawa will be held in the Doubletree Hotel in Downtown Pittsburgh on February 9th&ndash;11th, 2024.
-
-[Click here](#) for parking information.`,
+Sangawa will be held in the Doubletree Hotel in Downtown Pittsburgh on February 9th&ndash;11th, 2024.`,
 											},
 										},
 									],
