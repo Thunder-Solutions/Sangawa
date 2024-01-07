@@ -1,6 +1,8 @@
 import { useCSS, Scope } from 'react-shadow-scope';
 import { theme } from '@/utilities/theme';
-import ReactMarkdown from 'react-markdown';
+import React from 'react';
+import DOMPurify from 'isomorphic-dompurify';
+import { marked } from 'marked';
 
 export const TEXT_TAG = 'sg-text';
 export const TEXT_P_TAG = 'sg-text-p';
@@ -12,6 +14,8 @@ export type TextProps = {
 const key = Symbol();
 
 const Text = ({ text }: TextProps) => {
+	const markdown = marked.parse(text);
+	const sanitizedMarkdown = DOMPurify.sanitize(typeof markdown === 'string' ? markdown : '');
 	const css = useCSS(key);
 	const stylesheet = css`
 		.text {
@@ -53,7 +57,7 @@ const Text = ({ text }: TextProps) => {
 	`;
 	return (
 		<Scope tag={TEXT_TAG} stylesheets={[theme, stylesheet]}>
-			<ReactMarkdown className="text">{text}</ReactMarkdown>
+			<div className="text" dangerouslySetInnerHTML={{ __html: sanitizedMarkdown }} />
 		</Scope>
 	);
 };

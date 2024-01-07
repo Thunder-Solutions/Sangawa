@@ -1,3 +1,4 @@
+import { IMAGE_TAG } from '@/components/image';
 import { INFO_TAG } from '@/components/info';
 import { INFO_LAYOUT_TAG } from '@/components/infoLayout';
 import { TEXT_P_TAG, TEXT_TAG } from '@/components/text';
@@ -40,6 +41,7 @@ declare global {
 			[TEXT_P_TAG]: CustomIntrinsicElement;
 			[INFO_LAYOUT_TAG]: CustomIntrinsicElement;
 			[INFO_TAG]: CustomIntrinsicElement;
+			[IMAGE_TAG]: CustomIntrinsicElement;
 		}
 	}
 }

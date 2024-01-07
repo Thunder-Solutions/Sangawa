@@ -7,6 +7,7 @@ import Section from './section';
 import InfoLayout from './infoLayout';
 import Info from './info';
 import Text from './text';
+import Image from './image';
 import { Content } from '@/api-client/api-client';
 
 const Components = {
@@ -16,6 +17,7 @@ const Components = {
 	Text,
 	InfoLayout,
 	Info,
+	Image,
 	__default: ({ children }: PropsWithChildren) => children,
 };
 

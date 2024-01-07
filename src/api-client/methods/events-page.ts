@@ -27,11 +27,18 @@ export const fetchEventsPageContent = async (): Promise<Result<ContentSet>> => {
 					},
 					childContent: [
 						{
+							id: 'fac3352b-7380-4b26-aadf-b05eac75cab2',
+							content: {
+								component: 'Image',
+								prop__src: '/images/events/taste.png',
+								prop__alt: 'Taste of Japan - Explained',
+							},
+						},
+						{
 							id: '0d935233-ff0f-4244-b2ac-3ccf7c828b49',
 							content: {
 								component: 'Text',
-								prop__text: `![Taste of Japan Event](/events/taste.png "Taste of Japan")
-
+								prop__text: `
 Attention all anime enthusiasts aged **21 and above**!
 
 The exclusive Taste of Japan room is making its return at Sangawa Project!
@@ -52,11 +59,18 @@ Stay tuned for updates on this year's beverage selections! Let's elevate your an
 							},
 						},
 						{
+							id: 'ff304603-1b77-4e87-9e03-0e8a8837e025',
+							content: {
+								component: 'Image',
+								prop__src: '/images/events/social_tldr.png',
+								prop__alt: 'Social - What is it?',
+							},
+						},
+						{
 							id: '5ab81d46-4300-4374-848c-99cf43bebfd2',
 							content: {
 								component: 'Text',
-								prop__text: `![The Sangawa Social](/events/social_tldr.png "The Sangawa Social")
-
+								prop__text: `
 Kick off your Sangawa weekend in style at **The Sangawa Social!**
 
 Join us on **Friday Feb 9th** for a night of:
