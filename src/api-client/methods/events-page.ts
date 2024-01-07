@@ -74,17 +74,17 @@ Stay tuned for updates on this year's beverage selections! Let's elevate your an
 Kick off your Sangawa weekend in style at **The Sangawa Social!**
 
 Join us on **Friday Feb 9th** for a night of:
-								
+
 * Mingling with old and new friends
-								
+
 * Themed libations that set the tone for an epic weekend
-								
+
 * Try Mystic Mixtures' famed Health Potion cocktail!
-								
+
 * Exclusive to Chūnin & Kage upgrade holders
-								
+
 * Showcase your 2024 Sangawa Tumbler in style
-								
+
 This is your chance to start the fun early! Don't miss out!`,
 							},
 						},

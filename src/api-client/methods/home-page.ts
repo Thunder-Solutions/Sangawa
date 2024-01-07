@@ -100,13 +100,13 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 											content: {
 												component: 'Text',
 												prop__text: `## Friday
-To be announced ...
+12 PM (panels) 1 PM - 1 AM
 
 ## Saturday
-To be announced ...
+11 AM - 1 AM
 
 ## Sunday
-To be announced...`,
+11 AM - 4 PM`,
 											},
 										},
 									],
