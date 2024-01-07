@@ -55,27 +55,32 @@ const splashKey = Symbol();
 const Splash = () => {
 	const css = useCSS(splashKey);
 	const stylesheet = css`
-		.container {
-			position: relative;
-			height: 100%;
+		header {
+			height: 100vh;
+			display: grid;
+			justify-items: center;
+			align-content: center;
 		}
 		h1 {
 			margin: 0;
 			text-align: center;
-			height: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			box-sizing: border-box;
-			padding-bottom: 100vh;
+		}
+		h2 {
+			font-size: 8vw;
 		}
 		.logo {
 			box-sizing: border-box;
-			height: 20.5rem;
+			height: 28vw;
 			object-fit: contain;
-			padding: 2rem 3rem;
-			max-width: 100%;
-			width: 60rem;
+			padding: 0 3rem;
+			width: 100%;
+			max-width: 60rem;
+			max-height: 17rem;
+		}
+		@media (min-width: 62.5em) {
+			h2 {
+				font-size: 5rem;
+			}
 		}
 	`;
 	return (
@@ -86,11 +91,14 @@ const Splash = () => {
 					<ParallaxBannerLayer image="snowflakes.webp" speed={-20} />
 					<ParallaxBannerLayer>
 						<Scope tag={SPLASH_TAG} stylesheets={[theme, stylesheet]}>
-							<div className="container">
+							<header>
 								<h1>
 									<Image className="logo" src="sangawa-logo.svg" width={704} height={236} alt="Sangawa Project" />
 								</h1>
-							</div>
+								<h2>
+									<time dateTime="2024-02-09">February 9</time>&ndash;<time dateTime="2024-02-11">11, 2024</time>
+								</h2>
+							</header>
 						</Scope>
 					</ParallaxBannerLayer>
 					<ParallaxBannerLayer image="snowflakes.webp" speed={-70} />
