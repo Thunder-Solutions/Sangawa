@@ -68,11 +68,11 @@ The Sangawa Project is much too small of an event to financially afford single d
 
 **How do I pick up my badge? Is it mailed?**
 
-Currently, we do not mail out badges. However, we will send you a confirmation email that we encourage you to print out and bring with you to the registration desk, which will be easily discernible by signs at the Greentree Doubletree. With the confirmation email, our registration staff will be able to speedily get your badge.
+Currently, we do not mail out badges. However, we will send you a confirmation email that we encourage you to print out and bring with you to the registration desk, which will be easily discernible by signs at the Downtown Doubletree. With the confirmation email, our registration staff will be able to speedily get your badge.
 
 **Should I get a hotel room?**
 
-Yes! We strongly encourage you to reserve a room at the Drury Plaza Hotel! Between the extremely late night programming and the 21+ events reserving a hotel room will make your Sangawa experience fuller and safer!
+Yes! We strongly encourage you to reserve a room at the DoubleTree! Between the extremely late night programming and the 21+ events reserving a hotel room will make your Sangawa experience fuller and safer!
 
 # Attendance Rules
 
