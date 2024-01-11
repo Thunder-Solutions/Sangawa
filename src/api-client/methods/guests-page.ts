@@ -106,6 +106,22 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 									'Sav Hound, aka Houndorable Cosplay is a veteran cosplayer turned VTuber! She has been creating costumes and cosplay-related content for nearly a decade while attending various conventions across the Midwest. In April of 2023 she began streaming on Twitch with a new 2D form as the sus shape shifting HOUNDEMON VTuber known as the Ars Goetia Marchosias. On stream you can find her playing games, styling wigs, or working on props for her cosplays. She aims to spread body positivity and encourage others to not be afraid to show their true forms.',
 							},
 						},
+						{
+							id: '4c898a86-f6da-424d-808a-f18f9f7f8cdd',
+							content: {
+								component: 'Image',
+								prop__src: '/images/guests/jessica_calvello.png',
+								prop__alt: 'Picture of Jessica Calvello',
+							},
+						},
+						{
+							id: '622532d4-18e1-43e4-81cb-25ff2971e00e',
+							content: {
+								component: 'Text',
+								prop__text:
+									"Jessica Calvello began her work in the anime industry with ADVfilms (now Sentai Filmworks), with her first show being 3 BIG LINES in the TV Series Evangelion. Some of Jessica’s voice work in recent years includes: Life Lessons with Uramichi Oniisan (Utano Tadano), Attack on Titan (Hange Zoe), Call of the Night (Anko Uguisu), One Piece (Mother Caramel), Girls und Panzer (Saori), and a number of animated projects from famed comic strip Cyanide & Happiness (explosm.net) including: Charlene in The Stockholms, the twisted Grandma in the game Freakpocalypse, Lucy in Master Dater, and numerous animated shorts. Jessica also played Rip Van Winkle in Hellsing Ultimate Abridged (TeamFourStar) and has voiced hundreds of characters and creatures from the super popular MMORPG Wizard 101 game (also on mobile!). Some of Jessica's earlier work includes iconic titles such as Excel Saga (Excel Excel, [V1-3]), Yuri (Dirty Pair), Dragonhalf (Mink), Pokemon (Kay the Raichu Trainer) and New Cutey Honey in which she was personally cast by Go Nagai to play the lead role, Honey Kisaragi for the English dub. She also reprised her role as Honey in Cutie Honey Universe and the more recent Re. Cutie Honey.@JessicaCalvello Twitter, Facebook, Instagram",
+							},
+						},
 					],
 				},
 			],
