@@ -88,6 +88,56 @@ Join us on **Friday Feb 9th** for a night of:
 This is your chance to start the fun early! Don't miss out!`,
 							},
 						},
+						{
+							id: '98e68154-1200-4332-a680-322e07b5150c',
+							content: {
+								component: 'Image',
+								prop__src: '/images/events/Casual_Cosplay_Contest.png',
+								prop__alt: 'Casual Cosplay Contest?',
+							},
+						},
+						{
+							id: '4f8ae60d-6d14-4473-ae23-00a172c355dc',
+							content: {
+								component: 'Text',
+								prop__text: `
+Sangawa's **Casual Cosplay Contest** Returns! Did you handcraft a wearable work of art? Gather
+a cosplay coordinate from your closet? Any costume with user creativity is encouraged to enter!
+
+Rules:
+
+1) All costumes must display creativity from the entrant. 
+This means pieces are either hand crafted, modified, or individually gathered items 
+('closet' cosplay.) No costumes purchased as a set or fully commissioned costumes are permitted to enter.
+
+2) Group entries of up to four people are permitted. All members must either be from the same media or linked by a common theme. Prize distribution is up to the group,
+additional prizes will not be given. Only one sign up form per group. The person who
+submits the sign up form is responsible for communicating with the group.
+
+3) Sign ups will be taken starting at 1 PM at Tabletop 2 and continue until full. Judging will begin at 1:30 PM at the same location. Please return no more than five minutes earlier
+than your assigned time for judging. Staff will check you in at the door and send you in
+when it’s your turn. Entrants will have a maximum of 4 minutes to talk about their
+costume with our judges.
+
+4) Awards will be given for Best Crafted to a cosplay with mostly handcrafted parts, and Most Creative to the best use of mostly found items. Judging is done based on the
+cosplay only, physically looking like or acting like the character are not considered
+criteria. Any other awards will be based on user turn out at the judges’ discretion.
+Awards earned here do not count towards your craftsmanship ranking at Tekko.
+
+5) Winners will be announced at the Sangawa Parlor at 4 PM in the Event Room and
+posted on Sangawa Project’s social media. If unable to attend, winners can pick up their
+certificates at Registration until it closes on Sunday. Prizes will not be mailed.
+
+6) All entrants must have a valid Sangawa Project badge. Sangawa Project staff and
+guests are not permitted to compete.
+
+7) Want to participate in Iron Cosplay as well? Sign ups will be taken at the same place
+starting at 1:30 until 2:30 PM! For more information, check out the Iron Cosplay rules!
+	
+For any questions, please email cosplay@teamtekko.us
+								`,
+							},
+						},
 					],
 				},
 			],
