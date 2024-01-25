@@ -96,7 +96,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 									},
 									childContent: [
 										{
-											id: '7271073c-874e-4b79-91dc-501cc4c323f2',
+											id: '53acd43a-4914-4e88-9ec4-751e9e25200e',
 											content: {
 												component: 'Text',
 												prop__text: `## Friday
