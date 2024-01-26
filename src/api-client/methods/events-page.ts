@@ -51,7 +51,7 @@ Dive into the Taste of Japan experience:
 
 * Learn information on each drink while you enjoy it!
 
-* Saturday muli hour access lets you enjoy without missing any convention content.
+* Saturday multi hour access lets you enjoy without missing any convention content.
 
 **Limited to 100 lucky attendees**, so grab your tickets swiftly!
 Hurry, secure your spot for this exclusive tasting extravaganza! Don't miss out on this unique opportunity at Sangawa Project!
