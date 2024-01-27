@@ -118,6 +118,29 @@ Yes! We strongly encourage you to reserve a room at the DoubleTree! Between the 
     - This includes but is not limited to Cigarettes, Cigars, Pipes, and E-Cigs.
     - Chewing tobacco is also prohibited.
   - All local, state and federal laws apply inside the confines of the event.
+# Harassment Policy
+- **Harassment of any kind is not tolerated at any Pittsburgh Japanese Culture Society event. The safety and well-being of our attendees, guests, and staff is of the utmost importance.**
+  - Harassment is defined by the victim.
+  - Harassment can include but is not limited to:
+    - Intentionally making another uncomfortable.
+    - Physical or verbal assault.
+    - This could include offensive jokes or comments that you may believe to be ultimately harmless.
+    - Bullying or discrimination of any kind.
+    - Intimidation, stalking, and/or unwelcome physical attention.
+    - Non-consensual flirtation or sexual advances.
+    - Non-consensual photography or recording.
+    - Bathroom policing (The act of harassing someone for using the bathroom of the gender they identify with).
+  - Reporting
+    - We encourage you to make reports as soon as possible so that the situation can be dealt with immediately.
+    - If you feel that you are being harassed by anyone (attendee, staff, guest, press, venue personnel, etc.), please report it immediately to a member of our security staff.
+    - If you are not comfortable speaking with a member of our security staff, the Harassment Response Officer will be available at any time by calling 866-767-9708 ext. 1.
+    - E-mail reporting can be sent to  hro@pittjcs.org
+  - Consequences of Harassment
+    - At the discretion of the Harassment Response Officer (HRO) and in no specific order:
+      - Verbal warnings may be issued only once.
+      - Immediate ejection from the event with no refund.
+      - Placement upon a blacklist for all future PittJCS events.
+      - Law enforcement authorities will be notified where appropriate.
 
 Be advised: This page is still being developed, more information to come.`,
 							},

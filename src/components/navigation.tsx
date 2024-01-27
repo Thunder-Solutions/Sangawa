@@ -1,6 +1,6 @@
 'use client';
 
-import { HTMLAttributes, MouseEventHandler, PropsWithChildren, useContext, useEffect, useState } from 'react';
+import { HTMLAttributes, MouseEventHandler, PropsWithChildren, Suspense, useContext, useEffect, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import NextLink, { LinkProps } from 'next/link';
 import { createContext } from 'react';
@@ -24,7 +24,7 @@ export const Link = ({
 	return <NextLink onClick={handleClick} {...forwardedProps} />;
 };
 
-export const NavigationProvider = ({ children }: PropsWithChildren) => {
+const NavigationInternalProvider = ({ children }: PropsWithChildren) => {
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
 	const [loading, setLoading] = useState(false);
@@ -35,3 +35,9 @@ export const NavigationProvider = ({ children }: PropsWithChildren) => {
 
 	return <NavigationContext.Provider value={{ loading, setLoading }}>{children}</NavigationContext.Provider>;
 };
+
+export const NavigationProvider = ({ children }: PropsWithChildren) => (
+	<Suspense>
+		<NavigationInternalProvider>{children}</NavigationInternalProvider>
+	</Suspense>
+);

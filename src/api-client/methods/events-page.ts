@@ -51,7 +51,7 @@ Dive into the Taste of Japan experience:
 
 * Learn information on each drink while you enjoy it!
 
-* Saturday muli hour access lets you enjoy without missing any convention content.
+* Saturday multi hour access lets you enjoy without missing any convention content.
 
 **Limited to 100 lucky attendees**, so grab your tickets swiftly!
 Hurry, secure your spot for this exclusive tasting extravaganza! Don't miss out on this unique opportunity at Sangawa Project!
@@ -136,6 +136,42 @@ starting at 1:30 until 2:30 PM! For more information, check out the Iron Cosplay
 	
 For any questions, please email cosplay@teamtekko.us
 								`,
+							},
+						},
+						{
+							id: '78e68154-1200-4332-a680-322e07b5150c',
+							content: {
+								component: 'Image',
+								prop__src: '/images/events/iron cosplay.png',
+								prop__alt: 'Iron Cosplay',
+							},
+						},
+						{
+							id: '7f8ae60d-6d14-4473-ae23-00a172c355dc',
+							content: {
+								component: 'Text',
+								prop__text: `
+Join us for a fast-paced creative adventure, where you get to speed-build costumes, and maybe sabotage your friends a little bit along the way!  The audience will be split into teams to help their Cosplay Champions create the ultimate costume and win the competition! Champions will have to use scrap cosplay materials and their imagination to make a kick-ass costume before the time runs out. If you're not a creative type, never fear! Audience participation will be paramount in helping your team win this event.  Compete in mini-games in order to sabotage other teams, or to help your team receive items that will help them build their costume! All sorts of entertainment, inventiveness, and mischief will be had! Don't miss out on this outrageous event!
+
+Sign-ups will begin at 1 PM Saturday in Tabletop 2 and if space is left, 10 AM before the event in Main! Teams consist of four champions, so you can grab three friends or maybe you can make three new ones!
+								`,
+							},
+						},
+						{
+							id: '78e67154-1200-4332-a680-322e07b5150c',
+							content: {
+								component: 'Image',
+								prop__src: '/images/events/Photosets 02.jpg',
+								prop__alt: 'Candiiland Photoset',
+							},
+						},
+						{
+							id: '7f8ae6pd-6d14-4473-ae23-00a172c355dc',
+							content: {
+								component: 'Text',
+								prop__text: `
+Sangawa Project is pleased to welcome the photosets of CANDIILAND! Created by guest Abii Candii, these magical backdrops are free to use for the duration of the event. 
+										`,
 							},
 						},
 					],
