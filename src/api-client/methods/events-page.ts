@@ -142,7 +142,7 @@ For any questions, please email cosplay@teamtekko.us
 							id: '78e68154-1200-4332-a680-322e07b5150c',
 							content: {
 								component: 'Image',
-								prop__src: '/images/events/iron cosplay.png',
+								prop__src: '/images/events/iron_cosplay.png',
 								prop__alt: 'Iron Cosplay',
 							},
 						},
@@ -161,7 +161,7 @@ Sign-ups will begin at 1 PM Saturday in Tabletop 2 and if space is left, 10 AM b
 							id: '78e67154-1200-4332-a680-322e07b5150c',
 							content: {
 								component: 'Image',
-								prop__src: '/images/events/Photosets 02.jpg',
+								prop__src: '/images/events/Photosets_02.jpg',
 								prop__alt: 'Candiiland Photoset',
 							},
 						},
