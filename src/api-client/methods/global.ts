@@ -12,6 +12,7 @@ export const fetchGlobalContent = async (): Promise<Result<ContentSet>> => {
 			title: [{ id: 'bbdba644-9f04-44b3-bac7-4a84d4577e64', content: { text: 'Sangawa Project' } }],
 			nav: [
 				{ id: '81a73e65-4cbc-42e1-b73a-14ee1a6f6188', content: { text: 'Home', href: '/' } },
+
 				{
 					id: '48bf8456-ba1f-4917-b594-bbbc99346eed',
 					content: { text: 'About', href: '#about' },
@@ -26,7 +27,14 @@ export const fetchGlobalContent = async (): Promise<Result<ContentSet>> => {
 					],
 				},
 				{ id: '94be213a-141c-476a-96ad-4783708209e9', content: { text: 'Guests', href: '/guests' } },
-				{ id: 'cd51d2ee-2809-466e-905f-248f7b8717c5', content: { text: 'Events', href: '/events' } },
+				{
+					id: 'cd51d2ee-2809-466e-905f-248f7b8717c5',
+					content: { text: 'Events', href: '#events' },
+					childContent: [
+						{ id: '52d81da9-5324-4a99-857a-eef263d99345', content: { text: 'Features', href: '/events' } },
+						{ id: '4722e7f0-3160-4c80-aba4-00f4ba885b2c', content: { text: 'Schedule', href: '/schedule' } },
+					],
+				},
 			],
 			sitemap: [
 				{
