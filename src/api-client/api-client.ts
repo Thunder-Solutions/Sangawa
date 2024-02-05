@@ -1,3 +1,4 @@
+import { fetchSchedulePageContent } from './methods/schedule-page';
 import { fetchRulesPageContent } from './methods/rules-page';
 import { fetchHotelPageContent } from './methods/hotel-page';
 import { fetchPressPageContent } from './methods/press-page';
@@ -32,4 +33,5 @@ export const apiClient = {
 	fetchPressPageContent,
 	fetchHotelPageContent,
 	fetchRulesPageContent,
+	fetchSchedulePageContent,
 };
