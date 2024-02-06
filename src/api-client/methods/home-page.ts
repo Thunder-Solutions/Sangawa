@@ -67,6 +67,20 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 									],
 								},
 								{
+									id: 'bab16294-c509-4b43-909e-ccf466cfcb91',
+									content: {
+										component: 'CtaLink',
+										prop__icon: 'calendar',
+										prop__href: '/schedule',
+									},
+									childContent: [
+										{
+											id: '070830e9-e985-4559-8fdd-ac9c524d9b31',
+											content: { __text: 'Schedule' },
+										},
+									],
+								},
+								{
 									id: '8cee3990-f21d-4d82-ab2f-e4555465dde0',
 									content: {
 										component: 'CtaLink',
