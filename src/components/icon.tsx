@@ -1,5 +1,5 @@
 import { IconBaseProps } from 'react-icons';
-import { FaBed, FaFacebook, FaMinus, FaPlus, FaShoePrints, FaTicketAlt, FaTwitter } from 'react-icons/fa';
+import { FaBed, FaFacebook, FaMinus, FaPlus, FaShoePrints, FaTicketAlt, FaTwitter, FaCalendar } from 'react-icons/fa';
 import { HiChevronDown, HiChevronLeft } from 'react-icons/hi2';
 
 const iconMap = {
@@ -12,6 +12,7 @@ const iconMap = {
 	'footsteps': FaShoePrints,
 	'plus': FaPlus,
 	'minus': FaMinus,
+	'calendar': FaCalendar,
 };
 
 export type IconProps = {
