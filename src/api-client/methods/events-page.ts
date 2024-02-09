@@ -124,7 +124,7 @@ cosplay only, physically looking like or acting like the character are not consi
 criteria. Any other awards will be based on user turn out at the judges’ discretion.
 Awards earned here do not count towards your craftsmanship ranking at Tekko.
 
-5) Winners will be announced at the Sangawa Parlor at 4 PM in the Event Room and
+5) Winners will be announced at the Sangawa Parlor at 6PM in the Event Room and
 posted on Sangawa Project’s social media. If unable to attend, winners can pick up their
 certificates at Registration until it closes on Sunday. Prizes will not be mailed.
 
