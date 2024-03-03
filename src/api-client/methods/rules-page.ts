@@ -9,15 +9,9 @@ import { ContentSet } from '../api-client';
 export const fetchRulesPageContent = async (): Promise<Result<ContentSet>> => {
 	return safeTry<any>(() => {
 		return {
-			meta: [
-				{
-					id: 'd044e1c1-f7fc-41a7-8365-241f759b0be2',
-					content: {
-						page: 'rules',
-						title: 'Sangawa Project | Rules',
-					},
-				},
-			],
+			meta: {
+				title: 'Sangawa Project | Rules',
+			},
 			pageContent: [
 				{
 					id: '4cd47d8d-dfa0-4c4c-9c97-757786576386',

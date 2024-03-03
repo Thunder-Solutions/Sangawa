@@ -9,15 +9,9 @@ import { ContentSet } from '../api-client';
 export const fetchSchedulePageContent = async (): Promise<Result<ContentSet>> => {
 	return safeTry<any>(() => {
 		return {
-			meta: [
-				{
-					id: '6185bef8-3b2c-4d1e-9b0c-e44c30270ba8',
-					content: {
-						page: 'schedule',
-						title: 'Sangawa Project | Schedule',
-					},
-				},
-			],
+			meta: {
+				title: 'Sangawa Project | Schedule',
+			},
 			pageContent: [
 				{
 					id: '2ae8eab1-fe01-4ba6-8d98-a9f89372de8e',

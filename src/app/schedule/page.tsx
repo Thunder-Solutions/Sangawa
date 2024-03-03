@@ -1,19 +1,18 @@
 import { Metadata } from 'next';
-import { apiClient } from '@/api-client/api-client';
+import { DEFAULT_CONTENT_SET, apiClient } from '@/api-client/api-client';
 import { PageContent } from '@/components/cmsComponent';
 import { getTypedContent } from '@/utilities/utilities';
 import { Page, CMSComponent } from '@/components/clientComponents';
 
-const [schedulePageError, schedulePage = {}] = await apiClient.fetchSchedulePageContent();
+const [schedulePageError, schedulePage = DEFAULT_CONTENT_SET] = await apiClient.fetchSchedulePageContent();
 if (schedulePageError) {
 	const _error =
 		schedulePageError instanceof Error ? schedulePageError : new Error('Schedule page content could not be found.');
 	console.error(_error);
 }
-export const metadata: Metadata = schedulePage.meta[0].content;
+export const metadata: Metadata = schedulePage.meta;
 
 const Schedule = () => {
-	const meta = schedulePage.meta[0];
 	const pageContent = getTypedContent<PageContent>(schedulePage.pageContent);
 	return (
 		<Page>

@@ -1,16 +1,16 @@
-import { apiClient } from '@/api-client/api-client';
+import { DEFAULT_CONTENT_SET, apiClient } from '@/api-client/api-client';
 import { PageContent } from '@/components/cmsComponent';
 import { getTypedContent } from '@/utilities/utilities';
 import { Page, CMSComponent } from '@/components/clientComponents';
 import { Metadata } from 'next';
 
-const [pressPageError, pressPage = {}] = await apiClient.fetchPressPageContent();
+const [pressPageError, pressPage = DEFAULT_CONTENT_SET] = await apiClient.fetchPressPageContent();
 if (pressPageError) {
 	const _error = pressPageError instanceof Error ? pressPageError : new Error('Press page content could not be found.');
 	console.error(_error);
 }
 
-export const metadata: Metadata = pressPage.meta[0].content;
+export const metadata: Metadata = pressPage.meta;
 
 const Press = () => {
 	const pageContent = getTypedContent<PageContent>(pressPage.pageContent);

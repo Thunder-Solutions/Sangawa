@@ -9,15 +9,9 @@ import { ContentSet } from '../api-client';
 export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 	return safeTry<any>(() => {
 		return {
-			meta: [
-				{
-					id: '40f5d068-dd9e-44fe-ac5a-51a95f0398bb',
-					content: {
-						page: 'guests',
-						title: 'Sangawa Project | Guests',
-					},
-				},
-			],
+			meta: {
+				title: 'Sangawa Project | Guests',
+			},
 			pageContent: [
 				{
 					id: 'f07adbb1-5095-419e-b800-64f9ea221f4a',

@@ -1,4 +1,5 @@
 import { Content } from '@/api-client/api-client';
+import { UUID } from 'crypto';
 
 export type TypedObject<T> = { [key: PropertyKey]: T };
 export type UnknownObj = TypedObject<unknown>;
@@ -49,4 +50,52 @@ export const getTypedContent = <T extends {}>(content: Content[] | undefined): C
 		return [{ content: {} }] as Content<T>[];
 	}
 	return content as Content<T>[];
+};
+
+type RawContent = {
+	id: UUID;
+	content: { [prop: string]: string };
+	childIds: UUID[];
+};
+
+type RawResponse = {
+	meta: {
+		title: string;
+	};
+	content: {
+		id: UUID;
+		content: RawContent;
+		childIds: UUID[];
+	}[];
+	topLevelIds: UUID[];
+};
+
+type ProcessedResponse = {
+	meta: {
+		title: string;
+	};
+	pageContent: Content[];
+};
+
+export const nestFlatResponse = (response: RawResponse): ProcessedResponse => {
+	const { content, topLevelIds } = response;
+	const contentMap = content.reduce(
+		(acc, { id, content, childIds }) => {
+			acc[id] = { id, content, childIds };
+			return acc;
+		},
+		{} as Record<UUID, { id: UUID; content: RawContent; childIds: UUID[] }>,
+	);
+	const nest = (id: UUID): Content => {
+		const { content, childIds } = contentMap[id];
+		return {
+			id: content.id,
+			content: content.content,
+			childContent: childIds.map(nest),
+		};
+	};
+	return {
+		meta: response.meta,
+		pageContent: topLevelIds.map(nest),
+	};
 };

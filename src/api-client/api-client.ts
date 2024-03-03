@@ -9,6 +9,7 @@ import { fetchGuestsPageContent } from './methods/guests-page';
 import { fetchHomePageContent } from './methods/home-page';
 import { fetchGlobalContent } from './methods/global';
 import { UUID } from 'crypto';
+import { Metadata } from 'next';
 
 export type Content<T = { [key: string]: string }> = {
 	id?: UUID;
@@ -17,8 +18,14 @@ export type Content<T = { [key: string]: string }> = {
 };
 
 export type ContentSet = {
+	meta: Metadata;
+} & {
 	[key: string]: Content[];
 };
+
+export const DEFAULT_CONTENT_SET = {
+	meta: { title: 'Sangawa Project' },
+} as ContentSet;
 
 /**
  * Async methods to request content from an API.

@@ -9,15 +9,9 @@ import { ContentSet } from '../api-client';
 export const fetchPressPageContent = async (): Promise<Result<ContentSet>> => {
 	return safeTry<any>(() => {
 		return {
-			meta: [
-				{
-					id: '31407674-67a7-4289-aaed-f9cba229a9dc',
-					content: {
-						page: 'press',
-						title: 'Sangawa Project | Press',
-					},
-				},
-			],
+			meta: {
+				title: 'Sangawa Project | Press',
+			},
 			pageContent: [
 				{
 					id: '2da3c91a-b388-4332-80f6-96a09000500d',
