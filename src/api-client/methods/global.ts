@@ -7,7 +7,7 @@ import { ContentSet } from '../api-client';
  * To generate a new ID, run `node` in the terminal, then run `crypto.randomUUID()`.
  */
 export const fetchGlobalContent = async (): Promise<Result<ContentSet>> => {
-	return safeTry(() => {
+	return safeTry<any>(() => {
 		return {
 			title: [{ id: 'bbdba644-9f04-44b3-bac7-4a84d4577e64', content: { text: 'Sangawa Project' } }],
 			nav: [
