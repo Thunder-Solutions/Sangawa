@@ -16,9 +16,9 @@ const Schedule = () => {
 	const pageContent = getTypedContent<PageContent>(schedulePage.pageContent);
 	return (
 		<Page>
-			<a href="https://www.eventeny.com/events/embed/?ev=7388&type=schedule">Open Schedule on Eventeny</a>
+			<a href="https://www.eventeny.com/events/embed/?ev=13316&type=schedule">Open Schedule on Eventeny</a>
 			<br />
-			<embed src="https://www.eventeny.com/events/embed/?ev=7388&type=schedule" width="100%" height="100%" />
+			<embed src="https://www.eventeny.com/events/embed/?ev=13316&type=schedule" width="100%" height="100%" />
 			{pageContent.map(({ id, content, ...props }) => (
 				<CMSComponent key={id} content={content} {...props} />
 			))}
