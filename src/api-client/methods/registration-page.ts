@@ -29,7 +29,7 @@ export const fetchRegistrationPageContent = async (): Promise<Result<ContentSet>
 - Jōnin upgrade for + $45
 - Kage upgrade for + $60
 
-To purchase your badge, please visit our [Eventeny page](https://www.eventeny.com/events/ticket/?id=7388).`,
+To purchase your badge, please visit our [Eventeny page](https://www.eventeny.com/events/ticket/?id=13316).`,
 							},
 						},
 					],
