@@ -134,7 +134,7 @@ export const fetchHomePageContent = async (): Promise<Result<ContentSet>> => {
 
 ---
 
-Sangawa will be held in the Doubletree Hotel in Downtown Pittsburgh on February 9th&ndash;11th, 2024.`,
+Sangawa will be held in the Doubletree Hotel in Downtown Pittsburgh on February 7th&ndash;10th, 2025.`,
 											},
 										},
 									],
