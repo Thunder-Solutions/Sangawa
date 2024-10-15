@@ -38,7 +38,7 @@ export const fetchHotelPageContent = async (): Promise<Result<ContentSet>> => {
 											content: {
 												component: 'Text',
 												prop__text:
-													'Book your stay at the [Doubletree Hotel](https://maps.app.goo.gl/SNE8rC5gJqXiCbLT8) in downtown Pittsburgh!\n\n## [Book Now!](https://www.hilton.com/en/book/reservation/deeplink/?ctyhocn=PITDTDT&groupCode=CDTSGW&arrivaldate=2024-02-08&departuredate=2024-02-11&cid=OM,WW,HILTONLINK,EN,DirectLink&fromId=HILTONLINKDIRECT)',
+													'Book your stay at the [Doubletree Hotel](https://maps.app.goo.gl/SNE8rC5gJqXiCbLT8) in downtown Pittsburgh!\n\n## [Book Now!](https://www.hilton.com/en/book/reservation/deeplink/?ctyhocn=PITDTDT&groupCode=CDTSGW&arrivaldate=2025-02-06&departuredate=2025-02-10&cid=OM,WW,HILTONLINK,EN,DirectLink&fromId=HILTONLINKDIRECT)',
 											},
 										},
 									],
