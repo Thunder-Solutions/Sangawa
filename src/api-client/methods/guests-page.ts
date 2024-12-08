@@ -24,7 +24,7 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 							id: 'cbed1708-ac8b-466e-8658-eac11ca97792',
 							content: {
 								component: 'Image',
-								prop__src: '/images/guests/nancy_kepner.jpg',
+								prop__src: '/images/guests/nancy_kepner.png',
 								prop__alt: 'Picture of Nancy Kepner',
 							},
 						},
@@ -36,7 +36,7 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 									'Nancy Kepner returns, equipped with her guitar and hilariously clever lyrics! You can also find her all year round on her YouTube channel  HeartfeltHumor delighting viewers with original compositions, live performances, and the occasional music video. Welcome back, Nancy!',
 							},
 						},
-						{
+						/*{
 							id: '496ea3c9-2296-441b-917d-6cc23ec7a5a8',
 							content: {
 								component: 'Image',
@@ -51,12 +51,12 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 								prop__text:
 									'Abii Candii is  a content creator who enjoys cosplay,photography, and set design. They live by the thought that anything is possible. Be yourself and create an environment where you can truly be yourself. That is what they try to do with their art and set design.',
 							},
-						},
+						},*/
 						{
 							id: 'f8a5e6d3-2b7c-4e9d-9e4f-1a3b2c4d5e6f',
 							content: {
 								component: 'Image',
-								prop__src: '/images/guests/charles_dunbar.jpg',
+								prop__src: '/images/guests/charles_dunbar.png',
 								prop__alt: 'Picture of Charles Dunbar',
 							},
 						},
@@ -68,7 +68,7 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 									'Charles Dunbar is a graduate of Hunter College, CUNY, where he received a BA in Religion and Anthropology and an MA in Cultural Anthropology. His thesis, Pilgrimage, Pageantry and Fan Communities, was published in 2011 and focused on anime convention participation, including spending habits, cosplay, demographics, communal behavior and convention culture.',
 							},
 						},
-						{
+						/*{
 							id: '2ac0e659-69b4-4251-b050-4d36aa881df8',
 							content: {
 								component: 'Image',
@@ -115,7 +115,8 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 								prop__text:
 									"Jessica Calvello began her work in the anime industry with ADVfilms (now Sentai Filmworks), with her first show being 3 BIG LINES in the TV Series Evangelion. Some of Jessica’s voice work in recent years includes: Life Lessons with Uramichi Oniisan (Utano Tadano), Attack on Titan (Hange Zoe), Call of the Night (Anko Uguisu), One Piece (Mother Caramel), Girls und Panzer (Saori), and a number of animated projects from famed comic strip Cyanide & Happiness (explosm.net) including: Charlene in The Stockholms, the twisted Grandma in the game Freakpocalypse, Lucy in Master Dater, and numerous animated shorts. Jessica also played Rip Van Winkle in Hellsing Ultimate Abridged (TeamFourStar) and has voiced hundreds of characters and creatures from the super popular MMORPG Wizard 101 game (also on mobile!). Some of Jessica's earlier work includes iconic titles such as Excel Saga (Excel Excel, [V1-3]), Yuri (Dirty Pair), Dragonhalf (Mink), Pokemon (Kay the Raichu Trainer) and New Cutey Honey in which she was personally cast by Go Nagai to play the lead role, Honey Kisaragi for the English dub. She also reprised her role as Honey in Cutie Honey Universe and the more recent Re. Cutie Honey.@JessicaCalvello Twitter, Facebook, Instagram",
 							},
-						},
+						}*/
+						,
 					],
 				},
 			],
