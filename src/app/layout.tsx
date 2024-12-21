@@ -4,7 +4,6 @@ import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 import { GlobalProvider } from '@/api-client/context';
 import { NavigationProvider } from '@/components/navigation';
-import { ShadowScopeConfigProvider } from 'react-shadow-scope';
 
 const response = await apiClient.fetchGlobalContent();
 const [globalError, global = {}] = response;
@@ -37,9 +36,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 			</head>
 			<body>
 				<GlobalProvider value={global}>
-					<NavigationProvider>
-						<ShadowScopeConfigProvider config={{ dsd: 'emulated' }}>{children}</ShadowScopeConfigProvider>
-					</NavigationProvider>
+					<NavigationProvider>{children}</NavigationProvider>
 				</GlobalProvider>
 			</body>
 		</html>
