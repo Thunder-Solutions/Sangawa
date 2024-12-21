@@ -54,28 +54,6 @@ const Text = ({ text }: TextProps) => {
 			display: inline-block;
 			border-bottom: 0.1rem solid;
 		}
-		.bio {
-			display: flex;
-			flex-direction: column;
-		}
-		.bio .bio_content {
-			display: flex;
-			gap: 5rem;
-		}
-		.bio .bio_content .bio_pix {
-			display: flex;
-			flex-direction: row;
-			flex: 1;
-		}
-		.bio .bio_content .bio_pix img {
-			max-height: 500px;
-		}
-		.bio .bio_content .bio_data {
-			flex: 4;
-		}
-		.bio .bio_content .bio_data p {
-			margin: 0 0 2rem 0;
-		}
 	`;
 	return (
 		<Scope tag={TEXT_TAG} stylesheets={[theme, stylesheet]}>
