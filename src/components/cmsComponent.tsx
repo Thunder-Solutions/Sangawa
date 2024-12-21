@@ -9,6 +9,7 @@ import Info from './info';
 import Text from './text';
 import Image from './image';
 import { Content } from '@/api-client/api-client';
+import { FeaturedContent } from './featuredContent';
 
 const Components = {
 	CtaLayout,
@@ -18,6 +19,7 @@ const Components = {
 	InfoLayout,
 	Info,
 	Image,
+	FeaturedContent,
 	__default: ({ children }: PropsWithChildren) => children,
 };
 
