@@ -73,7 +73,7 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 													<div class="bio_data">
 														<p>Nancy Kepner returns, equipped with her guitar and hilariously clever lyrics! You can also find her all year round on her YouTube channel  HeartfeltHumor delighting viewers with original compositions, live performances, and the occasional music video. Welcome back, Nancy!</p>	
 													</div>
-											</div>`
+											</div>`,
 							},
 						},
 						{
@@ -89,7 +89,7 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 													<div class="bio_data">
 														<p>Charles Dunbar is a graduate of Hunter College, CUNY, where he received a BA in Religion and Anthropology and an MA in Cultural Anthropology. His thesis, Pilgrimage, Pageantry and Fan Communities, was published in 2011 and focused on anime convention participation, including spending habits, cosplay, demographics, communal behavior and convention culture.</p>	
 													</div>
-											</div>`
+											</div>`,
 							},
 						},
 					],
