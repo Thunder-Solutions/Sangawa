@@ -6,7 +6,7 @@ export const IMAGE_TAG = 'sg-image';
 
 const key = Symbol();
 
-const Image = (props: ImageProps) => {
+const Image = ({ className, ...props }: ImageProps) => {
 	const css = useCSS(key);
 	const stylesheet = css`
 		.img-container {
@@ -24,9 +24,9 @@ const Image = (props: ImageProps) => {
 		}
 	`;
 	return (
-		<Scope tag={IMAGE_TAG} stylesheets={[theme, stylesheet]}>
+		<Scope tag={IMAGE_TAG} className={className} stylesheets={[theme, stylesheet]}>
 			<div className="img-container">
-				<NextImage height={1080} width={1080} {...props} src={props.src} className="img" />
+				<NextImage height={1080} width={1080} {...props} {...{ part: 'img' }} src={props.src} className="img" />
 			</div>
 		</Scope>
 	);
