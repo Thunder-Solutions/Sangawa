@@ -21,6 +21,37 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 					},
 					childContent: [
 						{
+							id: '6c630392-a3ba-49e4-bc7a-954b0f7696f7',
+							content: {
+								component: 'FeaturedContent',
+								prop__imgSrc: '/images/guests/abii_candii_2025.jpg',
+								prop__heading: 'Abii Candii',
+								prop__description:
+									'Abii Candii is a content creator who enjoys cosplay,photography, and set design. They live by the thought that anything is possible. Be yourself and create an environment where you can truly be yourself. That is what they try to do with their art and set design.',
+							},
+						},
+						{
+							id: '8c6b3f85-07f8-4431-9138-4f290c428a0c',
+							content: {
+								component: 'Image',
+								prop__src: '/images/guests/CandiiLand/cl1.jpg',
+							},
+						},
+						{
+							id: '3dd9c1a6-6fcb-47a0-9e08-e8de1457a18a',
+							content: {
+								component: 'Image',
+								prop__src: '/images/guests/CandiiLand/cl2.jpg',
+							},
+						},
+						{
+							id: '3dd9c1a6-6fcb-47a0-9e08-e8de1457a18a',
+							content: {
+								component: 'Image',
+								prop__src: '/images/guests/CandiiLand/cl3.jpg',
+							},
+						},
+						{
 							id: '4cf8199b-f043-4e4b-bee5-7b4a6ad04b9e',
 							content: {
 								component: 'FeaturedContent',
@@ -31,14 +62,14 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 							},
 						},
 						{
-							id: 'd189496c-70b6-47ce-ba0c-ef334b2fcd3c',
+							id: '380fc87e-dd7e-4799-889b-81fb98a563a0',
 							content: {
 								component: 'Image',
-								prop__src: '/images/guests/matt_shipman_price_list.png',
+								prop__src: '/images/guests/matt_shipman_price_list.jpg',
 							},
 						},
 						{
-							id: 'd189496c-70b6-47ce-ba0c-ef334b2fcd3c',
+							id: 'ebe99392-7c09-4fb6-99a5-1636b17d6d6a',
 							content: {
 								component: 'FeaturedContent',
 								prop__imgSrc: '/images/guests/brittany_lauda_2025.jpg',
@@ -56,14 +87,14 @@ Website: [Brittany Lauda](https://brittanylauda.com/)`,
 							id: 'd189496c-70b6-47ce-ba0c-ef334b2fcd3c',
 							content: {
 								component: 'Image',
-								prop__src: '/images/guests/brittany_lauda_price_list.png',
+								prop__src: '/images/guests/brittany_lauda_price_list.jpg',
 							},
 						},
 						{
 							id: '841eba7d-d566-4b92-b1b6-289502170c3f',
 							content: {
 								component: 'FeaturedContent',
-								prop__imgSrc: '/images/guests/nancy_kepner_2025.png',
+								prop__imgSrc: '/images/guests/nancy_kepner_2025.jpg',
 								prop__heading: 'Nancy Kepner',
 								prop__description:
 									'Nancy Kepner returns, equipped with her guitar and hilariously clever lyrics! You can also find her all year round on her YouTube channel  HeartfeltHumor delighting viewers with original compositions, live performances, and the occasional music video. Welcome back, Nancy!',
@@ -73,7 +104,7 @@ Website: [Brittany Lauda](https://brittanylauda.com/)`,
 							id: '9053fa61-188b-41d1-80a3-4785e7dec912',
 							content: {
 								component: 'FeaturedContent',
-								prop__imgSrc: '/images/guests/charles_dunbar_2025.png',
+								prop__imgSrc: '/images/guests/charles_dunbar_2025.jpg',
 								prop__heading: 'Charles Dunbar',
 								prop__description:
 									'Charles Dunbar is a graduate of Hunter College, CUNY, where he received a BA in Religion and Anthropology and an MA in Cultural Anthropology. His thesis, Pilgrimage, Pageantry and Fan Communities, was published in 2011 and focused on anime convention participation, including spending habits, cosplay, demographics, communal behavior and convention culture.',
