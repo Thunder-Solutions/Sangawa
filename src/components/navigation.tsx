@@ -16,6 +16,7 @@ export const Link = ({
 }: PropsWithChildren<LinkProps & HTMLAttributes<HTMLAnchorElement>>) => {
 	const navigationContext = useContext(NavigationContext);
 	const handleClick: MouseEventHandler<HTMLAnchorElement> = (event) => {
+		if (location.href === event.currentTarget.href) return;
 		navigationContext.setLoading(true);
 		if (onClick instanceof Function) {
 			onClick(event);
