@@ -16,7 +16,7 @@
 		"react-dom": "^19.0.0",
 		"react-icons": "^4.10.1",
 		"react-scroll-parallax": "^3.4.5",
-		"react-shadow-scope": "^0.0.3-experimental-af6273c9-ee5b-47ed-9c1c-1a8a52d19e1f",
+		"react-shadow-scope": "^0.0.4-experimental-af6273c9-ee5b-47ed-9c1c-1a8a52d19e1f",
 		"sharp": "^0.33.1"
 	},
 	"devDependencies": {
