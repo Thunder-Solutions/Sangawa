@@ -6,6 +6,7 @@ import { GlobalContext } from '@/api-client/context';
 import { getTypedContent } from '@/utilities/utilities';
 import Icon from './icon';
 import { theme } from '@/utilities/theme';
+import { type UUID } from 'crypto';
 
 export const PAGE_NAV_TAG = 'sg-page-nav';
 
@@ -55,7 +56,7 @@ const mobileStylesheet = css`
 	.subnav .subnav-btn {
 		display: flex;
 		place-items: center;
-		justify-content: end;
+		justify-content: space-between;
 		border: none;
 		background-color: transparent;
 		font-family: inherit;
@@ -80,7 +81,7 @@ const mobileStylesheet = css`
 	}
 	.subnav-mobile-icon {
 		font-size: 1.3rem;
-		flex: 1;
+		min-width: 1em;
 	}
 	.register-link {
 		font-family: 'Brasspounder';
@@ -188,6 +189,7 @@ const PageNav = ({ isOpen = true, mobile = false, ...forwardedProps }: PageNavPr
 	const global = useContext(GlobalContext);
 	const nav = getTypedContent<LinkContent>(global.nav);
 	const register = getTypedContent<LinkContent>(global.register)[0];
+	const submenuMap = new Map<UUID, (subnavOpen: boolean) => void>();
 	return (
 		<Scope {...forwardedProps} tag={PAGE_NAV_TAG} stylesheets={[theme, stylesheet]}>
 			<div className="wrapper">
@@ -196,8 +198,14 @@ const PageNav = ({ isOpen = true, mobile = false, ...forwardedProps }: PageNavPr
 						// eslint doesn't recognize this as a component, even though it is
 						// eslint-disable-next-line
 						const [subnavOpen, setSubnavOpen] = useState(false);
+						submenuMap.set(id!, setSubnavOpen);
 						const toggleSubnav = () => {
 							setSubnavOpen(!subnavOpen);
+							// collapse all other subnavs...
+							for (const [mapId, mapSetter] of submenuMap) {
+								if (mapId === id) continue;
+								mapSetter(false);
+							}
 						};
 						const handleHover = (on: boolean) => () => {
 							if (mobile) return;
