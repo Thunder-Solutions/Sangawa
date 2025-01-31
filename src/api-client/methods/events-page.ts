@@ -100,54 +100,35 @@ a cosplay coordinate from your closet? Any costume with user creativity is encou
 
 Rules:
 
-1) All costumes must display creativity from the entrant. 
-This means pieces are either hand crafted, modified, or individually gathered items 
-('closet' cosplay.) No costumes purchased as a set or fully commissioned costumes are permitted to enter.
+1) All entrants must have a valid Sangawa Project badge. Sangawa Project staff and guests are not permitted to compete.
 
-2) Group entries of up to four people are permitted. All members must either be from the same media or linked by a common theme. Prize distribution is up to the group,
-additional prizes will not be given. Only one sign up form per group. The person who
-submits the sign up form is responsible for communicating with the group.
+2) Costumes may be from any source including original characters. Reference images are encouraged, but not required.
 
-3) Sign ups will be taken starting at 1 PM at Tabletop 2 and continue until full. Judging will begin at 1:30 PM at the same location. Please return no more than five minutes earlier
-than your assigned time for judging. Staff will check you in at the door and send you in
-when it’s your turn. Entrants will have a maximum of 4 minutes to talk about their
-costume with our judges.
+3) All costumes must display creativity from the entrant. This means pieces are either hand crafted, modified, or individually gathered items (‘closet’ cosplay.)
+Costumes purchased as a set or fully commissioned costumes are not permitted to enter. Costumes that have previously won awards are also ineligible.
+Judging is done based on the cosplay only, physically looking like or acting like the character are not considered criteria.
 
-4) Awards will be given for Best Crafted to a cosplay with mostly handcrafted parts, and Most Creative to the best use of mostly found items. Judging is done based on the
-cosplay only, physically looking like or acting like the character are not considered
-criteria. Any other awards will be based on user turn out at the judges’ discretion.
-Awards earned here do not count towards your craftsmanship ranking at Tekko.
+4) Group entries of up to four people are permitted. All members must either be from the same media or linked by a common theme. 
+Prize distribution is up to the group, additional prizes will not be given. Only one sign up form per group. The person who submits 
+the sign up form is responsible for communicating with the group. 
 
-5) Winners will be announced at the Sangawa Parlor at 6PM in the Event Room and
-posted on Sangawa Project’s social media. If unable to attend, winners can pick up their
-certificates at Registration until it closes on Sunday. Prizes will not be mailed.
+5) Pre-con sign ups will be taken on Eventeny. Additional time slots will be available at con. All entrants must check in 
+between 1-2 PM at the Hall Cosplay room to receive their judging times.
 
-6) All entrants must have a valid Sangawa Project badge. Sangawa Project staff and
-guests are not permitted to compete.
+6) Judging will be on Saturday afternoon in the Hall Cosplay room. Interviews will be held from 2-5pm. 
+Please arrive no more than five minutes earlier than your assigned time for judging. Staff will check 
+you in at the door and send you in when it’s your turn. 
+Entrants will have a maximum of 4 minutes to talk about their costume with our judges.
 
-7) Want to participate in Iron Cosplay as well? Sign ups will be taken at the same place
-starting at 1:30 until 2:30 PM! For more information, check out the Iron Cosplay rules!
-	
+7) Awards will be given for Best Crafted to a cosplay with mostly handcrafted parts, and Most Creative to the best use of 
+mostly found items. Any other awards will be based on user turn out at the judges’ discretion. Awards earned here do not 
+count towards your craftsmanship ranking at Tekko.
+
+8) Winners will be announced at the Variety Show on Saturday night at 10 PM in Main Events, and posted on Sangawa Project’s 
+social media. If unable to attend, winners can pick up their certificates at Registration until it closes on Sunday. 
+Prizes will not be mailed.
+
 For any questions, please email cosplay@teamtekko.us
-								`,
-							},
-						},
-						{
-							id: '78e68154-1200-4332-a680-322e07b5150c',
-							content: {
-								component: 'Image',
-								prop__src: '/images/events/iron_cosplay.png',
-								prop__alt: 'Iron Cosplay',
-							},
-						},
-						{
-							id: '7f8ae60d-6d14-4473-ae23-00a172c355dc',
-							content: {
-								component: 'Text',
-								prop__text: `
-Join us for a fast-paced creative adventure, where you get to speed-build costumes, and maybe sabotage your friends a little bit along the way!  The audience will be split into teams to help their Cosplay Champions create the ultimate costume and win the competition! Champions will have to use scrap cosplay materials and their imagination to make a kick-ass costume before the time runs out. If you're not a creative type, never fear! Audience participation will be paramount in helping your team win this event.  Compete in mini-games in order to sabotage other teams, or to help your team receive items that will help them build their costume! All sorts of entertainment, inventiveness, and mischief will be had! Don't miss out on this outrageous event!
-
-Sign-ups will begin at 1 PM Saturday in Tabletop 2 and if space is left, 10 AM before the event in Main! Teams consist of four champions, so you can grab three friends or maybe you can make three new ones!
 								`,
 							},
 						},
