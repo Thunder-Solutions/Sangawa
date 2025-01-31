@@ -45,7 +45,7 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 							},
 						},
 						{
-							id: '3dd9c1a6-6fcb-47a0-9e08-e8de1457a18a',
+							id: 'fefdf095-396c-4071-b3c2-836557c802f2',
 							content: {
 								component: 'Image',
 								prop__src: '/images/guests/CandiiLand/cl3.jpg',
@@ -91,30 +91,12 @@ Website: [Brittany Lauda](https://brittanylauda.com/)`,
 							},
 						},
 						{
-							id: '92280b77-c6cd-479b-8878-e46d31b39da5',
-							content: {
-								component: 'FeaturedContent',
-								prop__imgSrc: '/images/guests/houndorable_1.jpg',
-								prop__heading: 'Houndorable',
-								prop__description:
-									'Joining us once again to judge the Casual Costume Contest is Sav Hound aka. Houndorable! Houndorable is a shapeshifting cosplayer and also a shapeshifting VTuber! She has been creating costumes and cosplay related content for close to a decade while attending a wide variety of conventions across the Midwest.On stream you can find her playing games, styling wigs, or working on props for her cosplays. She aims to spread body positivity and encourage others to not be afraid to show their true forms. Sav especially loves anime and video games with her favorite facet of cosplay creation being wigwork.',
-							},
-						},
-						{
-							id: '1108b358-e7fa-4cdc-9da5-a0d42c761e6c',
-							content: {
-								component: 'Image',
-								prop__src: '/images/guests/houndorable_2.jpg',
-							},
-						},
-						{
 							id: '8ffa881d-aef8-4063-8ea4-18671ded2e37',
 							content: {
 								component: 'FeaturedContent',
 								prop__imgSrc: '/images/guests/rakumaroo.png',
 								prop__heading: 'Rakumaroo',
-								prop__description:
-									`Pronouns: she/her
+								prop__description: `Pronouns: she/her
 									Rakumaroo performed at a convention for the first time in 2016. After winning a Judge's Award, she continued to build her skills by competing at more conventions. She has earned Judge's Awards, First Place, and Best in Show prizes since then and has coached a handful of cosplayers on performance tips and tricks. After years of competing, she decided to make a change to further her cosplay career and become a guest performer. Since 2022, she has performed Tekko's Masquerade Half-time Show with musical parodies and is excited to share more with Sangawa!`,
 							},
 						},
