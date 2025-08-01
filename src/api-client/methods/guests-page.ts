@@ -14,6 +14,15 @@ export const fetchGuestsPageContent = async (): Promise<Result<ContentSet>> => {
 			},
 			pageContent: [
 				{
+					id: '34f5eb98-6c25-4fb6-90e4-0187f2baa68c',
+					content: {
+						component: 'Info',
+						prop__heading: '2026 Guest List Coming Soon!',
+					},
+				},
+			],
+			/*pageContent: [
+				{
 					id: 'f07adbb1-5095-419e-b800-64f9ea221f4a',
 					content: {
 						component: 'Section',
@@ -129,7 +138,7 @@ Website: [Brittany Lauda](https://brittanylauda.com/)`,
 						},
 					],
 				},
-			],
+			],*/
 		};
 	});
 };
