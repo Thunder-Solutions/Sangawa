@@ -14,6 +14,15 @@ export const fetchEventsPageContent = async (): Promise<Result<ContentSet>> => {
 			},
 			pageContent: [
 				{
+					id: '6033f8ea-73d5-4e1e-bac7-e5d18ab1ab0d',
+					content: {
+						component: 'Info',
+						prop__heading: '2026 Events List Coming Soon!',
+					},
+				},
+			],
+			/*pageContent: [
+				{
 					id: '5b39097c-6c66-475c-b058-23cfa530858d',
 					content: {
 						component: 'Section',
@@ -151,7 +160,7 @@ Sangawa Project is pleased to welcome the photosets of CANDIILAND! Created by gu
 						},
 					],
 				},
-			],
+			],*/
 		};
 	});
 };

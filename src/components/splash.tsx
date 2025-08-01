@@ -119,7 +119,7 @@ const Splash = () => {
 									<Image className="logo" src="sangawa-logo.svg" width={704} height={236} alt="Sangawa Project" />
 								</h1>
 								<h2>
-									<time dateTime="2025-02-07">February 7</time>&ndash;<time dateTime="2025-02-09">9, 2025</time>
+									<time dateTime="2026-02-06">February 6</time>&ndash;<time dateTime="2026-02-08">8, 2026</time>
 								</h2>
 								<Link className="register" href="/registration">
 									Register Now!

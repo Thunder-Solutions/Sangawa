@@ -14,7 +14,7 @@ export const metadata: Metadata = schedulePage.meta;
 
 const Schedule = () => {
 	const pageContent = getTypedContent<PageContent>(schedulePage.pageContent);
-	return (
+	/*return (
 		<Page>
 			<a href="https://www.eventeny.com/events/embed/?ev=13316&type=schedule">Open Schedule on Eventeny</a>
 			<br />
@@ -23,7 +23,8 @@ const Schedule = () => {
 				<CMSComponent key={id} content={content} {...props} />
 			))}
 		</Page>
-	);
+	);*/
+	return <Page>2026 Schedule Coming Soon!</Page>;
 };
 
 export default Schedule;
